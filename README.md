@@ -2,13 +2,13 @@
 
 # SITE Capstone Project
 
-SITE Course Year: **20__**
+SITE Course Year: **2022**
 
-Cohort: **Add Company Sponsor Name**
+Cohort: **Workday**
 
-Team Member Names:**Insert Team Member Names**
+Team Member Names:**Nasradin Kewden, Adamari Pici and Esteban Ayala**
 
-Mentors Names: **Insert Professional Mentor Names**
+Mentors Names: **Cris Lopez, Marisa Doig, Bill Darryl**
 
 Project Code Repository Links
 
