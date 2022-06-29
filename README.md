@@ -6,7 +6,7 @@ SITE Course Year: **2022**
 
 Cohort: **Workday**
 
-Team Member Names:**Nasradin Kewden, Adamari Pici and Esteban Ayala**
+Team Member Names:** Nasradin Kewden, Adamari Pici and Esteban Ayala**
 
 Mentors Names: **Cris Lopez, Marisa Doig, Darryl Nguyen**
 
