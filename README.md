@@ -8,7 +8,7 @@ Cohort: **Workday**
 
 Team Member Names:**Nasradin Kewden, Adamari Pici and Esteban Ayala**
 
-Mentors Names: **Cris Lopez, Marisa Doig, Bill Darryl**
+Mentors Names: **Cris Lopez, Marisa Doig, Darryl Nguyen**
 
 Project Code Repository Links
 
