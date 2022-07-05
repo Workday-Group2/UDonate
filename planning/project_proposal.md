@@ -7,7 +7,7 @@ Pod Members: Ada Pici, Nasradin Kewden, Estaban Ayala
 Insert your groups problem statement and target audience.
 
 Prevent food waste by creating a website where neighbors can post food they no longer need and someone who needs it can pick it up.
-Target audience: 
+Target audience: People with excess food that want to donate food.
 
 ## Description
 
