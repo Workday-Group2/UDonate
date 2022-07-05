@@ -53,5 +53,7 @@ Our website will differ from these because it will be used specifically for food
 ## Open Questions
 
 What questions do you still have? What topics do you need to research more for your project?
-Research accessibility issues 
-Research messaging in react
+
+•Research accessibility issues 
+
+•Research messaging in react
