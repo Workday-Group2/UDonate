@@ -1,6 +1,7 @@
 # Project Proposal
 
-Pod Members: **Add Pod Members Names**
+Pod Members: Ada Pici, Nasradin Kewden, Esteban Ayala
+
 
 ## Problem Statement
 
