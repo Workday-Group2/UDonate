@@ -34,23 +34,24 @@ Receiver:
 Include at least 10 user stories.
 
 1. **As a [user role], I want to [what], so that [why]**
-2. “As a donator, I want to see a list of people in my area who are food insecure”
-As a user I would like to communicate with other users who are donating
-As a receiver I would like to request items.
-As a receiver I want to see items users are donating
-As a donator/receiver I would like a confirmation email 
-As a receiver I want to be able to know where the donater is located
-As a receiver I want to be able to filter items by category
-As a receiver I would like to see a donaters profile
- As a receiver/donater I would like to see my past activity
-As a donater I would like to upload images of the products I want to donate
- As a receiver I want to have a detailed description of the product
-As a user I want to be able to reset my password when I forget my password
- As a user I would like to be leave a rating and comment reviews on my experience with another user.
-As a user I would like to see my account details 
- As a user I would like to have a bio and a profile picture
-As a receiver I would like to choose dietary preferences 
-As a donater I would like to add pick up times to my posts
+2. As a user I would like to communicate with other users who are donating
+3. As a receiver I would like to request items.
+4. As a receiver I want to see items users are donating
+5. As a donator/receiver I would like a confirmation email 
+6. As a receiver I want to be able to know where the donater is located
+7. As a receiver I want to be able to filter items by category
+8. As a receiver I would like to see a donaters profile
+9. As a receiver/donater I would like to see my past activity
+10. As a donater I would like to upload images of the products I want to donate
+11. As a receiver I want to have a detailed description of the product
+12. As a user I want to be able to reset my password when I forget my password
+13. As a user I would like to be leave a rating and comment reviews on my experience with another user.
+14. As a user I would like to see my account details 
+15. As a user I would like to have a bio and a profile picture
+16. As a receiver I would like to choose dietary preferences 
+17.As a donater I would like to add pick up times to my posts
+
+
 
 
 ## Wireframe (Bonus)
