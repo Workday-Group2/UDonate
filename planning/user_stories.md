@@ -34,10 +34,10 @@ Receiver:
 Include at least 10 user stories.
 
 1. **As a [user role], I want to [what], so that [why]**
-2. As a user I would like to communicate with other users who are donating
+2. As a user I would like to communicate with other users who are donating //say how you want to communicate
 3. As a receiver I would like to request items.
 4. As a receiver I want to see items users are donating
-5. As a donator/receiver I would like a confirmation email 
+5. As a donator/receiver I would like a confirmation email //be more specific
 6. As a receiver I want to be able to know where the donater is located
 7. As a receiver I want to be able to filter items by category
 8. As a receiver I would like to see a donaters profile
