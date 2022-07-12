@@ -67,9 +67,14 @@ Describe your app's data model using diagrams or tables
 
 | Property  |   Type| Description  |   |   |
 |---|---|---|---|---|
-|   |   |   |   |   |
-|   |   |   |   |   |
-|   |   |   |   |   |
+|rating   |   integer|   |  Rating for the booking/user |   |
+|  booking_id |  integer | 
+integer
+Unique id from the users booking
+
+  |   |   |
+| user_id  |   |  integer |   |   |
+|  created at | integer  |   |   |   |
 
 
 ![IMG_0903](https://user-images.githubusercontent.com/99931474/178592634-1171f70a-8bf3-4605-a96d-c57ebf37c758.jpg)
