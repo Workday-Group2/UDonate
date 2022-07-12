@@ -56,10 +56,14 @@ List all the pages and screens in the app. Include wireframes for at least 3 of 
 
 Describe your app's data model using diagrams or tables
 
-| Left-aligned | Center-aligned | Right-aligned |
-| :---         |     :---:      |          |
-| git status   | git status     | git status    |
-| git diff     | git diff       | git diff      |
+## Objects our Data Model is going to have:
+Users
+Donation Post
+Rating
+Booking
+Comments
+Message
+
 
 ## Endpoints
 
