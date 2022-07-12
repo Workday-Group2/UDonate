@@ -65,16 +65,12 @@ Describe your app's data model using diagrams or tables
 6. Message
 
 
-| Property  |   Type| Description  |   |   |
-|---|---|---|---|---|
-|rating|integer|   | |   |
-|booking_id|integer| 
-integer
-Unique id from the users booking
-
-  |   |   |
-| user_id  |   |  integer |   |   |
-|  created at | integer  |   |   |   |
+|Property   |Type   |Description|  
+|---|---|---|
+|rating   |Integer   |Rating for the booking/user   |   
+|booking_id   |Integer   |Unique id from the users booking   |   
+|User_id   |Integer   |Unique id from user   |   
+|created_at   | dateTime  |Date when rating is created   | 
 
 
 ![IMG_0903](https://user-images.githubusercontent.com/99931474/178592634-1171f70a-8bf3-4605-a96d-c57ebf37c758.jpg)
