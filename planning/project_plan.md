@@ -56,13 +56,15 @@ List all the pages and screens in the app. Include wireframes for at least 3 of 
 
 Describe your app's data model using diagrams or tables
 
-### Objects our Data Model is going to have:
+#### Objects our Data Model is going to have:
 1. Users
 2. Donation Post
 3. Rating
 4. Booking
 5. Comments
 6. Message
+7. 
+![IMG_0896](https://user-images.githubusercontent.com/99931474/178591904-214202ce-0859-4a8e-b4a8-c3307a30246f.jpg)
 
 
 ## Endpoints
