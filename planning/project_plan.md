@@ -76,3 +76,20 @@ Describe your app's data model using diagrams or tables
 List the API endpoints you will need to implement.
 
 ***Don't forget to set up your Issues, Milestones, and Project Board!***
+
+![IMG_0903](https://user-images.githubusercontent.com/99931474/178593740-ba95ed5e-fb6e-443b-9ffd-516392b698ed.jpg)
+![IMG_0904](https://user-images.githubusercontent.com/99931474/178593733-bfe7da05-b59b-43fe-abd3-7e10e82e7695.jpg)
+![IMG_0905](https://user-images.githubusercontent.com/99931474/178593727-dfb26df2-1d62-4680-a64b-c02bdfd3f99a.jpg)
+![IMG_0906](https://user-images.githubusercontent.com/99931474/178593722-ea9a2502-f8cc-4af2-8cf5-4c1e1cb9d1fb.jpg)
+![IMG_0907](https://user-images.githubusercontent.com/99931474/178593710-ff4bdba0-0335-4d85-ab32-b81f2d99cd6d.jpg)
+![IMG_0908](https://user-images.githubusercontent.com/99931474/178593707-9a7f909d-79fc-4649-a3b8-12bf3a0d5f43.jpg)
+![IMG_0909](https://user-images.githubusercontent.com/99931474/178593695-2d0a1cc3-6c80-4e66-a3cd-3203188d3b15.jpg)
+
+
+
+
+
+
+
+
+
