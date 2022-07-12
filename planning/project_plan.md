@@ -15,14 +15,14 @@ Include the most up-to-date user roles and personas.
 - “Donater+receiver” - having the option to play both roles
 
 Donater: 
-“Carmen is a 25-year-old grad student living in Columbus, Ohio. She notices that every week she ends up throwing out and wasting a lot of her groceries since she cannot finish a lot of it herself. Carmen would like to help fight food waste by finding someone who could use some extra groceries.”
+- “Carmen is a 25-year-old grad student living in Columbus, Ohio. She notices that every week she ends up throwing out and wasting a lot of her groceries since she cannot finish a lot of it herself. Carmen would like to help fight food waste by finding someone who could use some extra groceries.”
 
-“Mary and Jenny are roomates living in Los Angeles, California. They both do grocery shopping separately. At the end of the week, Mary and Jenny realize a lot of their groceries are about to expire since they overbought groceries this week. They also cannot finish the food on time. They both hate wasting food and wish they would give it to someone who needs it”
+- “Mary and Jenny are roomates living in Los Angeles, California. They both do grocery shopping separately. At the end of the week, Mary and Jenny realize a lot of their groceries are about to expire since they overbought groceries this week. They also cannot finish the food on time. They both hate wasting food and wish they would give it to someone who needs it”
 
 Receiver:
-“Alicia has multiple kids and she needs help with providing food for her family. She usually surfs the internet on her computer to find websites that can help her find suitable food donators. “
+- “Alicia has multiple kids and she needs help with providing food for her family. She usually surfs the internet on her computer to find websites that can help her find suitable food donators. “
 
-“Joe a student from Texas Tech is currently short on food due to money problems. He goes to the school’s food pantry but the lines are too long and he doesn’t have enough time to wait when he has classes to get to. (Someone in need but still has access to technology)”
+- “Joe a student from Texas Tech is currently short on food due to money problems. He goes to the school’s food pantry but the lines are too long and he doesn’t have enough time to wait when he has classes to get to. (Someone in need but still has access to technology)”
 
 
 ## User Stories
