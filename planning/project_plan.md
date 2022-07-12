@@ -56,6 +56,11 @@ List all the pages and screens in the app. Include wireframes for at least 3 of 
 
 Describe your app's data model using diagrams or tables
 
+| Left-aligned | Center-aligned | Right-aligned |
+| :---         |     :---:      |          |
+| git status   | git status     | git status    |
+| git diff     | git diff       | git diff      |
+
 ## Endpoints
 
 List the API endpoints you will need to implement.
