@@ -9,10 +9,10 @@ Prevent food waste by creating a website where neighbors can post food they no l
 
 ## User Roles
 
-Include at least at least 1, but no more than 3, user roles
-"receiver": a user who is seeking food to pick up 
-"donater": a user who is providing food items
-“Donater+receiver” - having the option to play both roles
+Include at least 1, but no more than 3, user roles
+- "receiver": a user who is seeking food to pick up 
+- "donater": a user who is providing food items
+- “Donater+receiver” - having the option to play both roles
 
 
 ## User Personas
