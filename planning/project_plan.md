@@ -67,8 +67,8 @@ Describe your app's data model using diagrams or tables
 
 | Property  |   Type| Description  |   |   |
 |---|---|---|---|---|
-|rating   |   integer|   |  Rating for the booking/user |   |
-|  booking_id |  integer | 
+|rating|integer|   | |   |
+|booking_id|integer| 
 integer
 Unique id from the users booking
 
