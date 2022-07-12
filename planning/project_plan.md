@@ -64,7 +64,64 @@ Describe your app's data model using diagrams or tables
 5. Comments
 6. Message
 
+### Users Table:
+| Property  |Type   | Description  | 
+|---|---|---|
+|  id | string  |users username   |
+|  password |  string | users password  |
+|  first_name |  string | users firstname  |
+| last_name  | string  | users last name  | 
+| email  | string  | users email  |
+| created_at  |  dateTime |  date when donation is created |
+|  updated_at |dateTime   | date when donation is last updated  | 
+| image_url  | file  | profile picture for user  | 
+| zip_code  | integer  | user zip code  | 
 
+### Rating Table:
+|Property   |Type   |Description|
+|---|---|---|
+|rating   |Integer   |Rating for the booking/user   | 
+|booking_id   |Integer   |Unique id from the users booking   | 
+|User_id   |Integer   |Unique id from user   | 
+|created_at   | dateTime  |Date when rating is created   | 
+
+### Donation Table:
+|Property   |Type   |Description   | 
+|---|---|---|
+|id   |Integer   |Unique id for the donation   |
+|name   |String   |Name of the donation   | 
+|catergory   |String   |Category of the donation   | 
+|quantity   |Integer   |Quantity of the donation   |
+|image_url   |File   |Image for user donation   |
+|user_id   |Integer   |Unique id from user   |
+|created_at   |DateTime   |Date when donation is created   |
+
+
+### Bookings Table:
+|  Property |  Type | Description  | 
+|---|---|---|
+| Booking_id  | integer  | unique id for the booking  |
+|  post_id | integer  | unique id from the users donation  |
+|  created_at | datetime  | date when booking was created  | 
+
+### Comment Table:
+|Property   |Type   |Description   |
+|---|---|---|
+|Likes   |Integer   |Number of Likes a comment has   |
+|user_id   |integer|Unique id from user   |
+|comment_text   |string|Text from the comment   |
+|image_url   |string   |Image upload for the comment   |
+|created_at   |timestamp   |Time the comment was uploaded   |
+|Updated_at (?)   |timestamp   |Time comment was updated   |
+
+### Message Table:
+| Property | Type | Description  | 
+|---|---|---|
+| recipient_id | Integer | Unique id from recipient | 
+| sender_id | integer | Unique id from sender | 
+|message_text| string | message text | 
+| created_at | timestamp | Time Message was sent | 
+| Image_url | string | image upload for messaging |
 
 
 ## Endpoints
@@ -73,7 +130,46 @@ List the API endpoints you will need to implement.
 
 ***Don't forget to set up your Issues, Milestones, and Project Board!***
 
+### user
+|CRUD   |HTTP verb   |Description   |User Stories   |
+|---|---|---|---|
+|Create   |POST   |Create user   |   | 
+|Login   |POST   |Login User   |   | 
+|Read   |GET   |Fetch existing user   |   | 
 
+### Donation
+|CRUD   |HTTP verb   |Description   |User Stories   |
+|---|---|---|---|
+|Create   |POST   |Create donation   |   | 
+|Read   |GET   |List all donation   |   | 
+|Read   |GET   |List a single donation   |   |
+|Update   |PATCH   |Update a single donation   |   |
+
+### Ratings:
+| CRUD  |  HTTP verb |Description   | User Stories  | 
+|---|---|---|---|
+| Create  |  Post | Add a rating to a user  |   | 
+|  Read | GET  | Fetch the ratings of the user  |   |
+
+### Bookings:
+| CRUD  |  HTTP verb |Description   | User Stories  | 
+|---|---|---|---|
+| Read  | Get  |List all bookings created by authenticated user   |   | 
+|  Create | Post  | Create a new booking for a donation  |   |
+
+### comment
+|CRUD   |HTTP verb   |Description   |User Stories   |
+|---|---|---|---|
+|Create   |POST   |Create a new comment   |   | 
+|update   |POST   |Add likes to a users comment  |   | 
+|Read   |GET   |Fetch existing likes to a comment   |   |
+
+
+### Message:
+| CRUD  | HTTP Verb  | Description  | User Stories  | 
+|---|---|---|---|
+| Create  |     POST | Create a new message  |   |
+|READ   |GET   |Fetch previous messages   |   |
 
 
 
