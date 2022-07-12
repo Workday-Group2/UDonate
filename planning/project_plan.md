@@ -10,9 +10,9 @@ Insert the latest summary of your problem statement and app description.
 ## User Roles and Personas
 
 Include the most up-to-date user roles and personas.
-"receiver": a user who is seeking food to pick up 
-"donater": a user who is providing food items
-“Donater+receiver” - having the option to play both roles
+- "receiver": a user who is seeking food to pick up 
+- "donater": a user who is providing food items
+- “Donater+receiver” - having the option to play both roles
 
 Donater: 
 “Carmen is a 25-year-old grad student living in Columbus, Ohio. She notices that every week she ends up throwing out and wasting a lot of her groceries since she cannot finish a lot of it herself. Carmen would like to help fight food waste by finding someone who could use some extra groceries.”
