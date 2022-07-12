@@ -63,9 +63,13 @@ Describe your app's data model using diagrams or tables
 4. Booking
 5. Comments
 6. Message
-7. 
-![IMG_0896](https://user-images.githubusercontent.com/99931474/178591904-214202ce-0859-4a8e-b4a8-c3307a30246f.jpg)
 
+![IMG_0903](https://user-images.githubusercontent.com/99931474/178592634-1171f70a-8bf3-4605-a96d-c57ebf37c758.jpg)
+![IMG_0897](https://user-images.githubusercontent.com/99931474/178592323-6af2c6a8-2bed-4db6-94ee-69b22b4ca70d.jpg)
+![IMG_0898](https://user-images.githubusercontent.com/99931474/178592337-72212a5d-9576-4660-8bb3-4c334c0d46c6.jpg)
+![IMG_0899](https://user-images.githubusercontent.com/99931474/178592348-714cf4e2-768d-4560-bdd2-d77d415fbf2b.jpg)
+![IMG_0900](https://user-images.githubusercontent.com/99931474/178592358-e176d13b-2cd0-49d7-a03b-3f7ee44a51b6.jpg)
+![IMG_0901](https://user-images.githubusercontent.com/99931474/178592368-4e5832d5-3e50-4b4b-a026-58e7a21e7414.jpg)
 
 ## Endpoints
 
