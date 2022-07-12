@@ -64,6 +64,14 @@ Describe your app's data model using diagrams or tables
 5. Comments
 6. Message
 
+
+| Property  |   Type| Description  |   |   |
+|---|---|---|---|---|
+|   |   |   |   |   |
+|   |   |   |   |   |
+|   |   |   |   |   |
+
+
 ![IMG_0903](https://user-images.githubusercontent.com/99931474/178592634-1171f70a-8bf3-4605-a96d-c57ebf37c758.jpg)
 ![IMG_0897](https://user-images.githubusercontent.com/99931474/178592323-6af2c6a8-2bed-4db6-94ee-69b22b4ca70d.jpg)
 ![IMG_0898](https://user-images.githubusercontent.com/99931474/178592337-72212a5d-9576-4660-8bb3-4c334c0d46c6.jpg)
