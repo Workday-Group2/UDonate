@@ -57,12 +57,12 @@ List all the pages and screens in the app. Include wireframes for at least 3 of 
 Describe your app's data model using diagrams or tables
 
 # Objects our Data Model is going to have:
-1.Users
-2.Donation Post
-3.Rating
-4.Booking
-5.Comments
-6.Message
+1. Users
+2. Donation Post
+3. Rating
+4. Booking
+5. Comments
+6. Message
 
 
 ## Endpoints
