@@ -49,11 +49,13 @@ List the current user stories you will implement.
 
 
 ## Pages/Screens
-![0001](https://user-images.githubusercontent.com/55006272/178788689-fe7ae743-c606-4e7d-9008-812273896065.jpg)
-![0002](https://user-images.githubusercontent.com/55006272/178788692-af8bf5ab-ed77-4eeb-a9dd-1ea2e08db51c.jpg)
-
 
 List all the pages and screens in the app. Include wireframes for at least 3 of them.
+
+![CapStone WireFrame-1](https://user-images.githubusercontent.com/99931474/178790026-d1a8cf08-95ce-41e8-8b54-58a8fe4c9606.jpg)
+![CapStone WireFrame-2](https://user-images.githubusercontent.com/99931474/178790009-ced5c17f-1be8-4656-9357-bf9bae64613e.jpg)
+
+
 
 ## Data Model
 
