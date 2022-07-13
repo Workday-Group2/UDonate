@@ -49,13 +49,11 @@ List the current user stories you will implement.
 
 
 ## Pages/Screens
-[CapStone WireFrame.pdf](https://github.com/Workday-Group2/Capstone-Project/files/9103443/CapStone.WireFrame.pdf)
-
+![0001](https://user-images.githubusercontent.com/55006272/178788689-fe7ae743-c606-4e7d-9008-812273896065.jpg)
+![0002](https://user-images.githubusercontent.com/55006272/178788692-af8bf5ab-ed77-4eeb-a9dd-1ea2e08db51c.jpg)
 
 
 List all the pages and screens in the app. Include wireframes for at least 3 of them.
-![CapStone WireFrame-1](https://user-images.githubusercontent.com/99931474/178371363-0c0036ca-6a58-4b99-96da-5dc189239e06.jpg)
-![CapStone WireFrame-2](https://user-images.githubusercontent.com/99931474/178371376-e29c6898-2d32-452e-a1e9-af9c4b03d8e3.jpg)
 
 ## Data Model
 
