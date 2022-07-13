@@ -52,8 +52,9 @@ List the current user stories you will implement.
 
 List all the pages and screens in the app. Include wireframes for at least 3 of them.
 
-![CapStone WireFrame-1](https://user-images.githubusercontent.com/99931474/178790026-d1a8cf08-95ce-41e8-8b54-58a8fe4c9606.jpg)
-![CapStone WireFrame-2](https://user-images.githubusercontent.com/99931474/178790009-ced5c17f-1be8-4656-9357-bf9bae64613e.jpg)
+![CapStone WireFrame-1 2](https://user-images.githubusercontent.com/99931474/178790528-c7c8c7ef-d7d2-4118-857d-6cad37a92b57.jpg)
+![CapStone WireFrame-2 2](https://user-images.githubusercontent.com/99931474/178790523-264cdaad-af96-4a2e-907c-45c8c077eb1d.jpg)
+
 
 
 
