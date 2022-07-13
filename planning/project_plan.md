@@ -49,6 +49,9 @@ List the current user stories you will implement.
 
 
 ## Pages/Screens
+[CapStone WireFrame.pdf](https://github.com/Workday-Group2/Capstone-Project/files/9103443/CapStone.WireFrame.pdf)
+
+
 
 List all the pages and screens in the app. Include wireframes for at least 3 of them.
 ![CapStone WireFrame-1](https://user-images.githubusercontent.com/99931474/178371363-0c0036ca-6a58-4b99-96da-5dc189239e06.jpg)
