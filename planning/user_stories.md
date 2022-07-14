@@ -5,51 +5,50 @@ Pod Members: Ada Pici, Nasradin Kewden, Esteban Ayala
 
 ## Problem Statement
 
-Prevent food waste by creating a website where neighbors can post food they no longer need and someone who needs it can pick it up. Target audience: People with excess food that want to donate food.
+We want to break the barrier by giving low income college students or adults the ability to receive food donations when they don't have the ability to afford them. We are also fighting food waste by giving the option for others to donate quality food items that might've gone to waste otherwise.
 
 ## User Roles
 
 Include at least 1, but no more than 3, user roles
-- "receiver": a user who is seeking food to pick up 
-- "donater": a user who is providing food items
-- “Donater+receiver” - having the option to play both roles
+- "receiver": The user is needs assistance with food donation.
+- "donater": The user who is posting quality food for others.
+- “Donater+receiver” - having the option to play both roles.
 
 
 ## User Personas
 
 Include at least 2 personas per User Role
-Donater: 
-“Carmen is a 25-year-old grad student living in Columbus, Ohio. She notices that every week she ends up throwing out and wasting a lot of her groceries since she cannot finish a lot of it herself. Carmen would like to help fight food waste by finding someone who could use some extra groceries.”
 
-“Mary and Jenny are roomates living in Los Angeles, California. They both do grocery shopping separately. At the end of the week, Mary and Jenny realize a lot of their groceries are about to expire since they overbought groceries this week. They also cannot finish the food on time. They both hate wasting food and wish they would give it to someone who needs it”
+Donater: 
+- “Carmen is a 25-year-old grad student living in Columbus, Ohio. She notices that every week she ends up throwing out and wasting a lot of her groceries since she cannot finish a lot of it herself. Carmen would like to help fight food waste by finding someone who could use some extra groceries.”
+
+- “Mary and Jenny are roomates living in Los Angeles, California. They both do grocery shopping separately. At the end of the week, Mary and Jenny realize a lot of their groceries are about to expire since they overbought groceries this week. They also cannot finish the food on time. They both dislike wasting food and wish they would give it to someone who needs it”
 
 Receiver:
-“Alicia has multiple kids and she needs help with providing food for her family. She usually surfs the internet on her computer to find websites that can help her find suitable food donators. “
+- “Joe, a student from Texas Tech is currently short on food due to money problems. He doesn't want to go to class on an empty stomach so he can have enough energy to be productive"(Someone in need but still has access to technology).
 
-“Joe a student from Texas Tech is currently short on food due to money problems. He goes to the school’s food pantry but the lines are too long and he doesn’t have enough time to wait when he has classes to get to. (Someone in need but still has access to technology)”
+- “Alicia has multiple kids and she needs help with providing food for her family. She usually surfs the internet on her computer to find websites that can help her find suitable food donators".
+
 
 
 ## User Stories
 
-Include at least 10 user stories.
+**As a [user role], I want to [what], so that [why]**
 
-1. **As a [user role], I want to [what], so that [why]**
-2. As a user I would like to communicate with other users who are donating //say how you want to communicate
-3. As a receiver I would like to request items.
-4. As a receiver I want to see items users are donating
-5. As a donator/receiver I would like a confirmation email //be more specific
-6. As a receiver I want to be able to know where the donater is located
-7. As a receiver I want to be able to filter items by category
-8. As a receiver I would like to see a donaters profile
-9. As a receiver/donater I would like to see my past activity
-10. As a donater I would like to upload images of the products I want to donate
-11. As a receiver I want to have a detailed description of the product
-12. As a user I want to be able to reset my password when I forget my password
-13. As a user I would like to be leave a rating and comment reviews on my experience with another user.
-14. As a user I would like to see my account details 
-15. As a user I would like to have a bio and a profile picture
-16. As a receiver I would like to choose dietary preferences 
-17.As a donater I would like to add pick up times to my posts
+1. As a receiver I would like to book food items posted for donation.
+2. As a receiver I want to have the option to browse all the donation.
+3. As a donator/receiver I would like a confirmation email for the booked donation. 
+4. As a receiver I want to be able to filter food items by category.
+5. As a user I would like to see a other users profile information.
+6. As a receiver/donater I would like to see my past activity.
+7. As a donater I would like to upload images of the products I want to donate
+8. As a receiver I want to have a detailed description of the food item posted for donation.
+9. As a user I want to have the option to reset my password if I forget it.
+10. As a user I would like to be leave a rating on my experience with another user.
+11. As a user I would like to see my account details(bio, profile, etc).
+12. As a receiver I would like to choose dietary preferences.
+13. As a donater I would like to add pick up times to my posts.
+14. As a receiver, I would like the location posted for the donation.
 
 
 
