@@ -57,7 +57,7 @@ Receiver:
 
 Figma: https://www.figma.com/file/qaT71vL6ZI9cZ07a5TCjIo/Capstone-Project?node-id=0%3A1 
 
-![CapStone WireFrame-1](https://user-images.githubusercontent.com/99931474/178371363-0c0036ca-6a58-4b99-96da-5dc189239e06.jpg)
-![CapStone WireFrame-2](https://user-images.githubusercontent.com/99931474/178371376-e29c6898-2d32-452e-a1e9-af9c4b03d8e3.jpg)
+Sketch: ![CapStone WireFrame-1](https://user-images.githubusercontent.com/99931474/178371363-0c0036ca-6a58-4b99-96da-5dc189239e06.jpg)
+        ![CapStone WireFrame-2](https://user-images.githubusercontent.com/99931474/178371376-e29c6898-2d32-452e-a1e9-af9c4b03d8e3.jpg)
 
 
