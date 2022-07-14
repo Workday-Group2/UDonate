@@ -52,6 +52,8 @@ List the current user stories you will implement.
 
 List all the pages and screens in the app. Include wireframes for at least 3 of them.
 
+Figma: https://www.figma.com/file/qaT71vL6ZI9cZ07a5TCjIo/Capstone-Project?node-id=0%3A1 
+
 ![CapStone WireFrame-1 2](https://user-images.githubusercontent.com/99931474/178790528-c7c8c7ef-d7d2-4118-857d-6cad37a92b57.jpg)
 ![CapStone WireFrame-2 2](https://user-images.githubusercontent.com/99931474/178790523-264cdaad-af96-4a2e-907c-45c8c077eb1d.jpg)
 
