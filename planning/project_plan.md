@@ -58,8 +58,6 @@ Sketch:
 ![CapStone WireFrame-1 2](https://user-images.githubusercontent.com/99931474/178790528-c7c8c7ef-d7d2-4118-857d-6cad37a92b57.jpg)
 ![CapStone WireFrame-2 2](https://user-images.githubusercontent.com/99931474/178790523-264cdaad-af96-4a2e-907c-45c8c077eb1d.jpg)
 
-
-
 ## Data Model
 
 Describe your app's data model using diagrams or tables
@@ -69,13 +67,18 @@ Describe your app's data model using diagrams or tables
 2. Donation Post
 3. Rating
 4. Booking
-5. Comments
-6. Message
+5. Category
+6. Location
+
+### Stretch Features
+8. Comments?
+9. Message?
 
 ### Users Table:
 | Property  |Type   | Description  | 
 |---|---|---|
-|  id | string  |users username   |
+|  id | integer  |serial primary key|
+|username|string|users username|
 |  password |  string | users password  |
 |  first_name |  string | users firstname  |
 | last_name  | string  | users last name  | 
@@ -83,11 +86,12 @@ Describe your app's data model using diagrams or tables
 | created_at  |  dateTime |  date when donation is created |
 |  updated_at |dateTime   | date when donation is last updated  | 
 | image_url  | file  | profile picture for user  | 
-| zip_code  | integer  | user zip code  | 
+| location_id  | integer  | unique id for the users location   | 
 
 ### Rating Table:
 |Property   |Type   |Description|
 |---|---|---|
+|  id | integer  |serial primary key|
 |rating   |Integer   |Rating for the booking/user   | 
 |booking_id   |Integer   |Unique id from the users booking   | 
 |User_id   |Integer   |Unique id from user   | 
@@ -96,23 +100,40 @@ Describe your app's data model using diagrams or tables
 ### Donation Table:
 |Property   |Type   |Description   | 
 |---|---|---|
-|id   |Integer   |Unique id for the donation   |
+|id   |Integer   |serial primary key|
 |name   |String   |Name of the donation   | 
 |catergory   |String   |Category of the donation   | 
 |quantity   |Integer   |Quantity of the donation   |
 |image_url   |File   |Image for user donation   |
 |user_id   |Integer   |Unique id from user   |
-|created_at   |DateTime   |Date when donation is created   |
+|created_at   |DateTime   |Date when donation is created |
+
+
 
 
 ### Bookings Table:
 |  Property |  Type | Description  | 
 |---|---|---|
-| Booking_id  | integer  | unique id for the booking  |
+| id  | integer  | serial primary key  |
 |  post_id | integer  | unique id from the users donation  |
 |  created_at | datetime  | date when booking was created  | 
 
-### Comment Table:
+### Catergory:
+|Property   |Type   |Description   | 
+|---|---|---|
+|id |integer|serial primary key|
+|name|string|name of the food catergory| 
+
+
+
+### Location:
+|Property   |Type   |Description   |
+|---|---|---|
+|id|integer|serial primary key|
+|location_name   |string|the name of the location  |
+
+
+### Stretch Feature - Comment Table:
 |Property   |Type   |Description   |
 |---|---|---|
 |Likes   |Integer   |Number of Likes a comment has   |
@@ -122,7 +143,7 @@ Describe your app's data model using diagrams or tables
 |created_at   |timestamp   |Time the comment was uploaded   |
 |Updated_at (?)   |timestamp   |Time comment was updated   |
 
-### Message Table:
+### Stretch Feature - Message Table:
 | Property | Type | Description  | 
 |---|---|---|
 | recipient_id | Integer | Unique id from recipient | 
@@ -130,15 +151,11 @@ Describe your app's data model using diagrams or tables
 |message_text| string | message text | 
 | created_at | timestamp | Time Message was sent | 
 | Image_url | string | image upload for messaging |
+ 
 
+**Endpoints**
 
-## Endpoints
-
-List the API endpoints you will need to implement.
-
-***Don't forget to set up your Issues, Milestones, and Project Board!***
-
-### user
+### user 
 |CRUD   |HTTP verb   |Description   |User Stories   |
 |---|---|---|---|
 |Create   |POST   |Create user   |   | 
@@ -165,7 +182,21 @@ List the API endpoints you will need to implement.
 | Read  | Get  |List all bookings created by authenticated user   |   | 
 |  Create | Post  | Create a new booking for a donation  |   |
 
-### comment
+### Categories:
+| CRUD  | HTTP Verb  | Description  | User Stories  | 
+|---|---|---|---|
+|READ   |GET   |Fetch categories   |   |
+|update   |POST   |update post categories  |   | 
+
+
+### Location:
+| CRUD  | HTTP Verb  | Description  | User Stories  | 
+|---|---|---|---|
+|update   |POST   |update post location  |   | 
+|READ   |GET   |Fetch Location   |   |
+
+
+### Stretch Feature - Comment:
 |CRUD   |HTTP verb   |Description   |User Stories   |
 |---|---|---|---|
 |Create   |POST   |Create a new comment   |   | 
@@ -173,17 +204,8 @@ List the API endpoints you will need to implement.
 |Read   |GET   |Fetch existing likes to a comment   |   |
 
 
-### Message:
+### Stretch Feature - Message:
 | CRUD  | HTTP Verb  | Description  | User Stories  | 
 |---|---|---|---|
 | Create  |     POST | Create a new message  |   |
 |READ   |GET   |Fetch previous messages   |   |
-
-
-
-
-
-
-
-
-
