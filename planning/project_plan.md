@@ -153,7 +153,7 @@ Describe your app's data model using diagrams or tables
 | Image_url | string | image upload for messaging |
  
 
-**Endpoints**
+## Endpoints
 
 ### user 
 |CRUD   |HTTP verb   |Description   |User Stories   |
