@@ -2,7 +2,6 @@
 
 # SITE Capstone Project
 
-a test 
 
 SITE Course Year: **2022**
 
