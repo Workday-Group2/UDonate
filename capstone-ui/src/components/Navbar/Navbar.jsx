@@ -2,10 +2,10 @@ import * as React from "react"
 import NavLink from "../NavLink/NavLink"
 import "./Navbar.css"
 
-export default function Navbar() {
+export default function Navbar(props) {
     return (
         <nav className="navbar">
-            <NavLink/>
+            <NavLink user={props.user} handleLogout={props.handleLogout}/>
         </nav>
     )
 }
