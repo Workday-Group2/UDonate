@@ -1,11 +1,7 @@
-import { useState, useEffect } from "react"
-import { useNavigate } from "react-router-dom"
-// import axios from "axios"
+import { useState } from "react"
 import "./Register.css"
 
 export default function Register({user, setUser}) {
-    const navigate = useNavigate()
-    const [isProcessing, setIsProcessing] = useState(false)
     const [errors, setErrors] = useState({})
     const [form, setForm] = useState({
         email: "",
@@ -64,6 +60,40 @@ export default function Register({user, setUser}) {
                 />
                 {errors.username && <span className="error">{errors.username}</span>}
            </div>
+           <div className="form-input">
+                <label htmlFor="name">First Name</label>
+                <input
+                    type="text"
+                    name="firstname"
+                    placeholder="First Name"
+                    value={form.firstname}
+                    onChange={handleOnInputChange}
+                />
+                {errors.firstname && <span className="error">{errors.firstname}</span>}
+           </div>
+           <div className="form-input">
+                <label htmlFor="name">Last Name</label>
+                <input
+                    type="text"
+                    name="lastname"
+                    placeholder="Last Name"
+                    value={form.lastname}
+                    onChange={handleOnInputChange}
+                />
+                {errors.lastname && <span className="error">{errors.lastname}</span>}
+           </div>
+           <div className="form-input">
+                <label htmlFor="password">Password</label>
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="password"
+                    value={form.password}
+                    onChange={handleOnInputChange}
+                />
+                {errors.password && <span className="error">{errors.password}</span>}
+           </div>
+            {/* <button className="submit-registration" onClick={handleOnSubmit} >Create Account</button> */}
         </nav>
     )
 }
