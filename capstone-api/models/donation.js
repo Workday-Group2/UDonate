@@ -40,11 +40,15 @@ class Donation {
             d.user_id,
             d.created_at,
             d.quantity,
-            u.email
-            
+            u.email,
+            CAST(AVG(r.rating) AS DECIMAL(10,1)) AS "avgRating",
+            COUNT(r.rating) AS "totalRatings"
             FROM donation AS d
                 LEFT JOIN users AS u ON u.id = d.user_id
-            WHERE d.id = $1`)
+                LEFT JOIN rating AS r ON r.donation_id = d.id
+            WHERE d.id = $1
+            GROUP BY d.id, u.email
+            `)
         
 
         const result = await db.query(query, [id])
@@ -67,7 +71,7 @@ class Donation {
                    d.user_id AS "userId",
                    u.email AS "userEmail",
                    d.created_at AS "createdAt",
-                   AVG(r.rating) AS "rating",
+                   CAST(AVG(r.rating) AS DECIMAL(10,1)) AS "avgRating",
                    COUNT(r.rating) AS "totalRatings"
             FROM donation AS d
                 LEFT JOIN users AS u ON u.id = d.user_id
