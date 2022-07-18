@@ -12,14 +12,14 @@ export default function NavLink(props) {
                 <Link to="/about" label="About" className="btn about">About</Link>
                 <Link to="/contact" label="Contact" className="btn contact">Contact</Link>
                 <Link to="/browse" label="Browse" className="btn browse">Browse</Link>
-                {props.user.email ? (<li onClick={props.handleLogout}><Link to="/" className="btn ghost" >Logout</Link></li>) : 
+                {props.user.email ? (<ul> <li onClick={props.handleLogout}>  <Link to="/" className="btn ghost" >Logout</Link></li> </ul>) : 
                 (
                 <div>
                     <Link to="/login" label="Login" className="btn ghost">Login</Link>
                     <Link to="/register" label="Sign Up" className="btn primary">Sign Up</Link>
                 </div>
                 )}
-                <Link classname = "btn logo"  to="/"> <img alt="website logo" src="https://www.fbd.org/wp-content/uploads/2021/08/Donate-page-button-1-480x480.png"/></Link> 
+                <Link classname = "btn logo"  to="/"> <img alt="website" src="https://www.fbd.org/wp-content/uploads/2021/08/Donate-page-button-1-480x480.png"/></Link> 
             
         </div>
     )

@@ -66,9 +66,11 @@ class Donation {
                    d.image_url AS "imageUrl",
                    d.user_id AS "userId",
                    u.email AS "userEmail",
-                   d.created_at AS "createdAt"
+                   d.created_at AS "createdAt",
+                   AVG(r.rating)
             FROM donation AS d
-                JOIN users AS u ON u.id = d.user_id
+                LEFT JOIN users AS u ON u.id = d.user_id
+                LEFT JOIN rating AS r ON r.donation_id = d.id
             WHERE d.user_id = (SELECT users.id FROM users WHERE email = $1)
             ORDER BY d.created_at DESC
             `,[user.email]
