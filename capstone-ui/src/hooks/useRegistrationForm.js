@@ -1,11 +1,11 @@
 import * as React from "react"
-// import apiClient from "../services/apiClient"
+import apiClient from "../services/apiClient"
 import {useAuthenticationForm} from "../hooks/useAuthenticationForm"
 import { useAuthContext } from "../contexts/auth"
 
 export const useRegistrationForm = () => {
   const {user, setUser } = useAuthContext()
-    const { input, errors, setErrors, handleOnInputChange} = useAuthenticationForm({user})
+    const { form, errors, setErrors, handleOnInputChange} = useAuthenticationForm({user})
     const [isLoading, setIsLoading] = React.useState(false)
     
     const handleOnSubmit = async (event) => {
@@ -13,7 +13,7 @@ export const useRegistrationForm = () => {
       setIsLoading(true)
       setErrors((e) => ({ ...e, input: null }))
   
-      if (input.passwordConfirm !== input.password) {
+      if (form.passwordConfirm !== form.password) {
         setErrors((e) => ({ ...e, passwordConfirm: "Passwords do not match." }))
         setIsLoading(false)
         return
@@ -21,20 +21,18 @@ export const useRegistrationForm = () => {
         setErrors((e) => ({ ...e, passwordConfirm: null }))
       }
       
-    //   const { data, error } = await apiClient.signupUser( { email : input.email, 
-    //     password: input.password, username: input.username, firstname: input.firstname, lastname: input.lastname})
-      if (error) setErrors((e) => ({ ...e, input: error }))
+      const { data, error } = await apiClient.signupUser( { email : form.email, 
+        password: form.password, username: form.username, firstname: form.firstname, lastname: form.lastname})
+      if (error) setErrors((e) => ({ ...e, form: error }))
       if (data?.user) {
         setUser(data.user)
-        // apiClient.setToken(data.token)
+        apiClient.setToken(data.token)
       }
       setIsLoading(false)
     }
     return {
-        isLoading,
-        input,
+        form,
         errors,
-        isLoading,
         handleOnInputChange,
         handleOnSubmit,
     }

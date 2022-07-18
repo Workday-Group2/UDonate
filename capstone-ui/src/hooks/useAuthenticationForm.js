@@ -4,7 +4,7 @@ import { useNavigate} from "react-router-dom"
 export const useAuthenticationForm = ({user}) => {
     const navigate = useNavigate()
     const [errors, setErrors] = useState({})
-    const [input, setInput] = useState({
+    const [form, setForm] = useState({
         email: "",
         username: "",
         firstname: "",
@@ -23,14 +23,14 @@ export const useAuthenticationForm = ({user}) => {
 
     const handleOnInputChange = (event) => {
         if (event.target.name === "password") {
-            if (input.passwordConfirm && input.passwordConfirm !== event.target.value) {
+            if (form.passwordConfirm && form.passwordConfirm !== event.target.value) {
               setErrors((e) => ({ ...e, passwordConfirm: "Password's do not match" }))
             } else {
               setErrors((e) => ({ ...e, passwordConfirm: null }))
             }
           }
         if (event.target.name === "passwordConfirm") {
-            if (input.password && input.password !== event.target.value) {
+            if (form.password && form.password !== event.target.value) {
               setErrors((e) => ({ ...e, passwordConfirm: "Password's do not match" }))
             } else {
               setErrors((e) => ({ ...e, passwordConfirm: null }))
@@ -44,11 +44,11 @@ export const useAuthenticationForm = ({user}) => {
           }
         }
     
-        setInput((f) => ({ ...f, [event.target.name]: event.target.value }))
+        setForm((f) => ({ ...f, [event.target.name]: event.target.value }))
     }
     
     return {
-        input,
+        form,
         errors,
         setErrors,
         handleOnInputChange

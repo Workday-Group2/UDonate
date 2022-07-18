@@ -1,39 +1,11 @@
 import * as React from "react"
-import { useState } from "react"
 import { Link } from "react-router-dom"
+import { useLoginForm } from "../../hooks/useLoginForm"
 import "./Login.css"
 
 export default function Login() {
-    const [errors, setErrors] = useState({})
-    const [form, setForm] = useState({
-        email: "",
-        password: ""
-    })
-    const handleOnInputChange = (event) => {
-        if (event.target.name === "password") {
-          if (form.passwordConfirm && form.passwordConfirm !== event.target.value) {
-            setErrors((e) => ({ ...e, passwordConfirm: "Password's do not match" }))
-          } else {
-            setErrors((e) => ({ ...e, passwordConfirm: null }))
-          }
-        }
-        if (event.target.name === "passwordConfirm") {
-          if (form.password && form.password !== event.target.value) {
-            setErrors((e) => ({ ...e, passwordConfirm: "Password's do not match" }))
-          } else {
-            setErrors((e) => ({ ...e, passwordConfirm: null }))
-          }
-        }
-        if (event.target.name === "email") {
-          if (event.target.value.indexOf("@") === -1) {
-            setErrors((e) => ({ ...e, email: "Please enter a valid email." }))
-          } else {
-            setErrors((e) => ({ ...e, email: null }))
-          }
-        }
-    
-        setForm((f) => ({ ...f, [event.target.name]: event.target.value }))
-      }
+    const { form, errors, isLoading, handleOnInputChange, handleOnSubmit } = useLoginForm()
+  
     return (
         <div className="login">
             <h1>Login</h1>
@@ -61,6 +33,7 @@ export default function Login() {
                 />
                 {errors.password && <span className="error">{errors.password}</span>}
            </div>
+           <button className="submit-login" onClick={handleOnSubmit} >Login</button>
            <div className="footer">
             <p>
               Don't have an account? Sign up <Link to="/register">here</Link>
