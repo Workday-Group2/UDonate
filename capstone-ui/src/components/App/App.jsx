@@ -7,6 +7,9 @@ import Register from "../Register/Register"
 import Login from "../Login/Login"
 import About from "../About/About"
 import Contact from "../Contact/Contact"
+import Browse from "../Browse/Browse"
+import NotFound from "../NotFound/NotFound"
+import AccessForbidden from "../AccessForbidden/AccessForbidden"
 import { useAuthContext, AuthContextProvider } from "../../contexts/auth"
 import apiClient from "../../services/apiClient"
 import './App.css';
@@ -22,6 +25,7 @@ export default function AppContainter() {
 function App() {
   const {user, setUser} = useAuthContext()
   const [error, setError] = useState()
+  const [posts, setPosts] = useState([])
   useEffect(() => {
     const fetchUser = async () => {
       const { data, err } = await apiClient.fetchUserFromToken()
@@ -37,7 +41,9 @@ function App() {
       fetchUser()
     }
   }, [])
-
+  const addPost = (newPost) => {
+    setPosts((oldPosts) => [newPost, ...oldPosts])
+  }
   const handleLogout = async () => {
     await apiClient.logoutUser()
     setUser({})
@@ -53,6 +59,8 @@ function App() {
             <Route path="/register" element={<Register  user={user} setUser={setUser} />}/>
             <Route path="/about" element={<About  user={user} setUser={setUser}/>}/>
             <Route path="/contact" element={<Contact user={user} setUser={setUser}/>}/>
+            <Route path="/browse/*" element={user?.email ? (<Browse user={user} addPost={addPost} posts = {posts}/>) : (<AccessForbidden/>)}/>
+            <Route path="*" element={<NotFound/>}/>
           </Routes>
       </BrowserRouter>
     </div>

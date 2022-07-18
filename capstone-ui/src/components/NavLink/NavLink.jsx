@@ -7,11 +7,11 @@ export default function NavLink(props) {
     return (
         <div className="navlink">
                 <h1 className= "btn userEmail">{props.user.email}</h1>
-                {/* <Link classname = "btn logo"  to="/"> <img src="https://www.fbd.org/wp-content/uploads/2021/08/Donate-page-button-1-480x480.png"/></Link>  */}
+                
                 <Link to="/" label="Home" className="btn home">Home</Link>
                 <Link to="/about" label="About" className="btn about">About</Link>
                 <Link to="/contact" label="Contact" className="btn contact">Contact</Link>
-                 
+                <Link to="/browse" label="Browse" className="btn browse">Browse</Link>
                 {props.user.email ? (<li onClick={props.handleLogout}><Link to="/" className="btn ghost" >Logout</Link></li>) : 
                 (
                 <div>
@@ -19,7 +19,7 @@ export default function NavLink(props) {
                     <Link to="/register" label="Sign Up" className="btn primary">Sign Up</Link>
                 </div>
                 )}
-                
+                <Link classname = "btn logo"  to="/"> <img alt="website logo" src="https://www.fbd.org/wp-content/uploads/2021/08/Donate-page-button-1-480x480.png"/></Link> 
             
         </div>
     )
