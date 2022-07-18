@@ -15,6 +15,7 @@ name        TEXT NOT NULL,
 category    TEXT NOT NULL,
 quantity    INTEGER NOT NULL DEFAULT 1,
 image_url   TEXT NOT NULL,
+expiration_date TIMESTAMP NOT NULL,
 user_id     INTEGER NOT NULL,
 created_at  TIMESTAMP NOT NULL DEFAULT NOW(),
 FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
@@ -26,4 +27,11 @@ CREATE TABLE rating (
   user_id     INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
   created_at  TIMESTAMP NOT NULL DEFAULT NOW(),  
   PRIMARY KEY (donation_id, user_id)
+);
+
+CREATE TABLE booking (
+  id             SERIAL PRIMARY KEY,  
+  donation_id    INTEGER NOT NULL REFERENCES donation(id) ON DELETE CASCADE,
+  user_id        INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  created_at     TIMESTAMP NOT NULL DEFAULT NOW()
 );
