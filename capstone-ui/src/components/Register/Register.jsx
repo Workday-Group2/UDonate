@@ -63,6 +63,17 @@ export default function Register() {
                 />
                 {errors.password && <span className="error">{errors.password}</span>}
            </div>
+           <div className="form-input">
+                <label htmlFor="name">Confirm Password</label>
+                <input
+                    type="password"
+                    name="passwordConfirm"
+                    placeholder="Confirm your password"
+                    value={form.confirmPass}
+                    onChange={handleOnInputChange}
+                />
+                {errors.password && <span className="error">{errors.password}</span>}
+           </div>
             <button className="submit-registration" onClick={handleOnSubmit} >Create Account</button>
         </nav>
     )

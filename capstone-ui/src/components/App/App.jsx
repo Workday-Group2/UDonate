@@ -21,7 +21,6 @@ export default function AppContainter() {
 
 function App() {
   const {user, setUser} = useAuthContext()
-  console.log(2,user)
   const [error, setError] = useState()
   useEffect(() => {
     const fetchUser = async () => {
@@ -52,8 +51,8 @@ function App() {
             <Route path="/" element={<Home/>}/>
             <Route path="/login" element={<Login user={user} setUser={setUser} />}/>
             <Route path="/register" element={<Register  user={user} setUser={setUser} />}/>
-            <Route path="/about" element={<About/>}/>
-            <Route path="/contact" element={<Contact/>}/>
+            <Route path="/about" element={<About  user={user} setUser={setUser}/>}/>
+            <Route path="/contact" element={<Contact user={user} setUser={setUser}/>}/>
           </Routes>
       </BrowserRouter>
     </div>
