@@ -33,18 +33,18 @@ class Donation {
             throw new BadRequestError("Please provide ID")
         }
         const query = ( `SELECT 
-            n.id,
-            n.name,
-            n.category,
-            n.image_url,
-            n.user_id,
-            n.created_at,
-            n.quantity,
+            d.id,
+            d.name,
+            d.category,
+            d.image_url,
+            d.user_id,
+            d.created_at,
+            d.quantity,
             u.email
             
-            FROM donation AS n
-                LEFT JOIN users AS u ON u.id = n.user_id
-            WHERE n.id = $1`)
+            FROM donation AS d
+                LEFT JOIN users AS u ON u.id = d.user_id
+            WHERE d.id = $1`)
         
 
         const result = await db.query(query, [id])
@@ -59,18 +59,18 @@ class Donation {
     static async listDonationForUser({user}) {
         const results = await db.query(
             `
-            SELECT n.id,
-                   n.name,
-                   n.category,
-                   n.quantity,
-                   n.image_url AS "imageUrl",
-                   n.user_id AS "userId",
+            SELECT d.id,
+                   d.name,
+                   d.category,
+                   d.quantity,
+                   d.image_url AS "imageUrl",
+                   d.user_id AS "userId",
                    u.email AS "userEmail",
-                   n.created_at AS "createdAt"
-            FROM donation AS n
-                JOIN users AS u ON u.id = n.user_id
-            WHERE n.user_id = (SELECT users.id FROM users WHERE email = $1)
-            ORDER BY n.created_at DESC
+                   d.created_at AS "createdAt"
+            FROM donation AS d
+                JOIN users AS u ON u.id = d.user_id
+            WHERE d.user_id = (SELECT users.id FROM users WHERE email = $1)
+            ORDER BY d.created_at DESC
             `,[user.email]
         )
         return results.rows
