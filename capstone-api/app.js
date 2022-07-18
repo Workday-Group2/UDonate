@@ -4,6 +4,7 @@ const morgan = require("morgan")
 const { NotFoundError, BadRequestError} = require("./utils/errors")
 const authRoutes = require("./routes/auth")
 const security = require("./middleware/security")
+const donationRoutes = require("./routes/donation")
 
 const app = express()
 
@@ -16,6 +17,7 @@ app.use(morgan("tiny"))
 app.use(security.extractUserFromJwt)
 
 app.use("/auth", authRoutes)
+app.use("/donation", donationRoutes)
 
 // app.get("/", async(req, res, next) => {
 //     res.status(200).json({ ping: "pong"})
