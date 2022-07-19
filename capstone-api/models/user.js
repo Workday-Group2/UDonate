@@ -3,6 +3,7 @@ const db = require("../db")
 const { c } = require("tar")
 const bcrypt = require("bcrypt")
 const { BCRYPT_WORK_FACTOR } = require("../config")
+const tokens = require("../utils/tokens")
 
 class User {
 
@@ -85,6 +86,42 @@ class User {
         return user
 
     }
+    static async savePasswordResetToken(email,resetToken){
+        
+        const result = await db.query(
+            `
+            UPDATE users
+            SET pw_reset_token  =$1,
+                pw_reset_token_exp  =$2,
+            WHERE email = $3
+            RETURNING id,email,username,created_at;
+            `,
+            [resetToken.token,resetToken.expiresAt, email]
+        )
+        const user = result.rows[0]
+        if (user) return User.makePublicUser(user)
+    }
+
+    static async resetPassword(token,newPassword){
+        const hashedPassword = await bcrypt.hash(newPassword, BCRYPT_WORK_FACTOR)
+        
+        const result = await db.query(
+            `
+            UPDATE users
+            SET password =  $1,
+                pw_reset_token = NULL,
+                pw_reset_token_exp = NULL,
+            WHERE pw_reset_token = $2,
+            AND pw_reset_token_exp > NOW()
+            RETURNING id, email, username, created_at;
+            `,
+            [hashedPassword, token]
+        )
+        const user = result.rows[0]
+        if (user) return User.makePublicUser(user)
+        throw new BadRequestError("That token is either expires or invalid")
+    }
+    
 }
 
 module.exports = User

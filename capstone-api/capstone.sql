@@ -6,3 +6,4 @@ CREATE DATABASE capstone;
 \connect capstone;
 
 \i capstone-schema.sql
+

@@ -1,8 +1,9 @@
 const express = require("express")
 const User = require("../models/user")
 const router = express.Router()
-const {createUserJwt} = require("../utils/tokens")
+const {createUserJwt, generatePasswordResetToken} = require("../utils/tokens")
 const security = require("../middleware/security")
+const {emailService} = require("../services")
 
 router.post("/login", async (req, res, next) => {
     try {
@@ -35,6 +36,39 @@ router.get("/me", security.requireAuthenticatedUser, async (req, res, next) => {
         next(error)
     }
 })
+
+router.post("/recover", async (req,res,next) =>{
+    try{
+        const {email} = req.body
+        const token = generatePasswordResetToken()
+        const user = awaitUser.savePasswordResetToken(email, token)
+        if (user){
+            await emailService.sendPasswordResetEmail(user, token)
+        }
+        return res.status(200).json({ message: `If your account exsits in our system you should recieve an email shortly.`})
+    } catch(error){
+        next(error)
+    }
+}
+
+)
+
+router.post("/password-reset", async (req,res,next) =>{
+    try{
+        const {token} = req.query
+        const {newPassword} = req.body
+        
+        const user = awaitUser.savePasswordResetToken(token, newPassword)
+        if (user){
+            await emailService.sendPasswordResetConfirmationEmail(user)
+        }
+        return res.status(200).json({ message: `password successfully reset!`})
+    } catch(error){
+        next(error)
+    }
+}
+
+)
 
 
 module.exports = router
