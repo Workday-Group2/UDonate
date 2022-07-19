@@ -15,7 +15,7 @@ name        TEXT NOT NULL,
 category    TEXT NOT NULL,
 quantity    INTEGER NOT NULL DEFAULT 1,
 image_url   TEXT NOT NULL,
-expiration_date TIMESTAMP NOT NULL,
+expiration_date DATE NOT NULL,
 user_id     INTEGER NOT NULL,
 created_at  TIMESTAMP NOT NULL DEFAULT NOW(),
 FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
