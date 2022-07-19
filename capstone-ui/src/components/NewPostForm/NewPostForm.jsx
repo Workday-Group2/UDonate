@@ -1,30 +1,36 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import apiClient from "../../services/apiClient"
 import AccessForbidden from "../AccessForbidden/AccessForbidden"
 import "./NewPostForm.css"
 import {useNavigate} from 'react-router-dom';
 
+
 export default function NewPostForm({user, addPost}) {
+  
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState(null)
+    const [date,setDate] = useState("")
     const navigate = useNavigate()
     const [form, setForm] = useState({
       name: "",
       category: "",
       imageUrl: "",
       quantity:1,
+      expiration_date: ""
     })
   
     const handleOnInputChange = (event) => {
+      console.log("event",event)
       setForm((f) => ({ ...f, [event.target.name]: event.target.value }))
+      console.log(700,form)
     }
-  
+    
     const handleOnSubmit = async (e) => {
       // e.preventDefault()
       setIsLoading(true)
-  
+      
       const { data, error } = await apiClient.createDonation( { name : form.name, 
-        category : form.category, image_url: form.imageUrl, quantity : form.quantity})
+        category : form.category, image_url: form.imageUrl, quantity : form.quantity, expiration_date: date})
         if (error) {
           setError(error)
         }
@@ -34,9 +40,12 @@ export default function NewPostForm({user, addPost}) {
            name: "", 
            category: "",
            imageUrl: "",
-           quantity: 1
+           quantity: 1,
+           expiration_date: ""      
           })
+          setDate("") 
         }
+        console.log(999,form)
         setIsLoading(false)
         navigate("/browse");
     }
@@ -87,6 +96,17 @@ export default function NewPostForm({user, addPost}) {
               value={form.quantity}
               onChange={handleOnInputChange}
               step="1"
+            />
+          </div>
+          <div className="input-field">
+            <label htmlFor="expiration">Expiration Date</label>
+            <input
+              type="date"
+              // name="expiration date"
+              placeholder="MM-DD-YYYY"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+             
             />
           </div>
           <button className="btn" disabled={isLoading} onClick={handleOnSubmit}>

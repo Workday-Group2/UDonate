@@ -14,9 +14,9 @@ export default function BrowseFeed(props) {
       console.log(29,data)
       if(err) setError(err)
       if(data){
-        setDonation(data.posts)
+        setDonation(data.donations)
       }
-      console.log(12,setDonation)
+      console.log(12,donation)
       }
       useEffect(() => {
         getDonation()
