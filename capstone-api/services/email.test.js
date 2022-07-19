@@ -20,7 +20,7 @@ const emailService = new EmailService({
     isActive: EMAIL_SERVICE_ACTIVE,
     apiKey : SENDGRID_API_KEY,
     clientUrl: CLIENT_URL,
-    emailFromAdress: EMAIL_FROM_ADDRESS,
+    emailFromAddress: EMAIL_FROM_ADDRESS,
     applicationName: APPLICATION_NAME,
 })
 
@@ -42,7 +42,7 @@ describe("Test EmailService", () => {
                 isActive: true,
                 apiKey : SENDGRID_API_KEY,
                 clientUrl: CLIENT_URL,
-                emailFromAdress: EMAIL_FROM_ADDRESS,
+                emailFromAddress: EMAIL_FROM_ADDRESS,
                 applicationName: APPLICATION_NAME,
             })
             const email = {
@@ -61,7 +61,7 @@ describe("Test EmailService", () => {
                 isActive: true,
                 apiKey : SENDGRID_API_KEY,
                 clientUrl: CLIENT_URL,
-                emailFromAdress: EMAIL_FROM_ADDRESS,
+                emailFromAddress: EMAIL_FROM_ADDRESS,
                 applicationName: APPLICATION_NAME,
             })
                 const email = {}
@@ -83,7 +83,7 @@ describe("Test EmailService", () => {
                     isActive: true,
                     apiKey : SENDGRID_API_KEY,
                     clientUrl: CLIENT_URL,
-                    emailFromAdress: EMAIL_FROM_ADDRESS,
+                    emailFromAddress: EMAIL_FROM_ADDRESS,
                     applicationName: APPLICATION_NAME,
                 })
                 const user  = { email:`test@test.io`}
@@ -92,7 +92,7 @@ describe("Test EmailService", () => {
                 const email ={
                     to:user.email,
                         from: `esteban.ayala.site@codepath.org`,
-                        subject:"Reset Password",
+                        subject:"Reset your password for Capstone",
                         html: expect.any(String)
                 }
                 expect(res).toEqual({
@@ -107,15 +107,15 @@ describe("Test EmailService", () => {
                 isActive: true,
                 apiKey : SENDGRID_API_KEY,
                 clientUrl: CLIENT_URL,
-                emailFromAdress: EMAIL_FROM_ADDRESS,
+                emailFromAddress: EMAIL_FROM_ADDRESS,
                 applicationName: APPLICATION_NAME,
             })
             const user  = { email:`test@test.io`}
-            const res = await emailService.sendPasswordResetEmail(user)
+            const res = await emailService.sendPasswordResetConfirmationEmail(user)
             const email ={
                 to:user.email,
                     from: `esteban.ayala.site@codepath.org`,
-                    subject:"your password has been updated successfully",
+                    subject:"Your Capstone password has been reset successfully",
                     html: expect.any(String)
             }
             expect(res).toEqual({
