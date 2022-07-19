@@ -22,11 +22,14 @@ export default function BrowseFeed(props) {
         getDonation()
       }, []);
     return (
-        <div className="Browse-Feed">
-            <div>
+        <div className="browse-feed">
+            <div className="search">
+                <input type="search" placeholder="Search a donation" />
+            </div>
+            <div className="donation-items">
                 {donation.map((item) => {return(
                     <Link to={`id/`+item.id}>
-                        <DonationCard key={item.name} quantity={item.quantity} name={item.name} calories={item.calories} imageUrl={item.imageUrl} category={item.category} id={item.id}/>
+                        <DonationCard key={item.name} quantity={item.quantity} name={item.name} imageUrl={item.imageUrl} createdAt={donation.createdAt} category={item.category} id={item.id} avgRating={item.avgRating} totalRatings={item.totalRatings}/>
                     </Link>
                 )})}
             </div>

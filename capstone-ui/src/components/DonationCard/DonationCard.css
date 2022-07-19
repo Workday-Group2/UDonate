@@ -1,0 +1,22 @@
+.DonationCard {
+    height: 220px;
+    width: 265px;
+    /* border: 2px solid rgb(8, 8, 8); */
+    margin: 90px 90px 20px 0;
+}
+.donation-image {
+    width: 265px;
+}
+
+.donation-name {
+    /* font-weight: bold;
+    color: rgb(38, 38, 38);
+    line-height: 1.5;  */
+    color: #0f0f0f;
+    font-weight: 600;
+    margin: 0.25rem 0;
+}
+.donation-title {
+    padding: 15px;
+    background-color: #faf9f5;
+}
