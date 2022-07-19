@@ -4,7 +4,7 @@ const User = require("../models/user")
 
 class Donation {
     static async createDonation({user, post}) {
-        const requireFields = ["name", "category", "quantity", "image_url"]
+        const requireFields = ["name", "category", "quantity", "image_url", "expiration_date"]
         requireFields.forEach(field => {
             if (!post.hasOwnProperty(field)) {
                 throw new BadRequestError(`Required field - ${field} - missing from request body.`)
@@ -13,17 +13,18 @@ class Donation {
             
         const result = await db.query(
             `
-            INSERT INTO donation (user_id, name, category, quantity, image_url)
-            VALUES ((SELECT id FROM users WHERE email = $1), $2, $3, $4, $5)
+            INSERT INTO donation (user_id, name, category, quantity, image_url, expiration_date)
+            VALUES ((SELECT id FROM users WHERE email = $1), $2, $3, $4, $5, $6)
             RETURNING id,
                     user_id AS "userId",
                     name,
                     category,
                     quantity,
                     image_url AS "imageUrl",
+                    expiration_date AS "expirationDate",
                     created_at AS "createdAt"
             `, 
-            [user.email, post.name, post.category, post.quantity, post.image_url]
+            [user.email, post.name, post.category, post.quantity, post.image_url, post.expiration_date]
         )
         return result.rows[0]
     }
