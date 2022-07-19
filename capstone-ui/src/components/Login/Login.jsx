@@ -52,11 +52,7 @@ export default function Login() {
             </div>
            <button className="submit-login" onClick={handleOnSubmit} >Login</button>
            <div className="footer-login">
-<<<<<<< HEAD
-            <p>
-=======
             <p className="footer-login">
->>>>>>> login
               Don't have an account? Sign up <Link to="/register">here</Link>
             </p>
           </div>
