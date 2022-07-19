@@ -11,7 +11,10 @@ export default function Login() {
         <div className="login">
                <div className="left">
                    <div className="overlay">
-                    <h1>Welcome Back</h1>
+                    <h1>Welcome Back.</h1>
+                    <div className="illustration-wrapper">
+                        <img src="https://i.ibb.co/4ppSWYF/imageedit-1-7522402154.png" alt="Login"/>
+                    </div>
                    </div>
                     
                </div>
@@ -21,7 +24,7 @@ export default function Login() {
            
             <div className="loginForm" >
             <p className="form-title">Login</p>
-            <p> Login to the Dashboard</p>
+            
             <div className="form">
             <div className="input-field">
                     <label htmlFor="email"></label>
