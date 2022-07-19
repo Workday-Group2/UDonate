@@ -28,11 +28,11 @@ router.get("/id/:donationId", security.requireAuthenticatedUser, async(req, res,
 })
 
 //router to list all of the donations
-router.get("/", security.requireAuthenticatedUser,async (req, res, next) => {
+router.get("/", security.requireAuthenticatedUser, async (req, res, next) => {
     try {
         const {user} = res.locals;
-        const posts = await Donation.listDonationForUser({user})
-        return res.status(200).json({posts})
+        const donations = await Donation.listDonationForUser({user})
+        return res.status(200).json({donations})
     } catch(err) {
         next(err)
     }

@@ -9,6 +9,7 @@ import About from "../About/About"
 import Contact from "../Contact/Contact"
 import Browse from "../Browse/Browse"
 import NotFound from "../NotFound/NotFound"
+import BrowseNew from "../BrowseNew/BrowseNew"
 import AccessForbidden from "../AccessForbidden/AccessForbidden"
 import { useAuthContext, AuthContextProvider } from "../../contexts/auth"
 import apiClient from "../../services/apiClient"
@@ -60,6 +61,7 @@ function App() {
             <Route path="/about" element={<About  user={user} setUser={setUser}/>}/>
             <Route path="/contact" element={<Contact user={user} setUser={setUser}/>}/>
             <Route path="/browse/*" element={user?.email ? (<Browse user={user} addPost={addPost} posts = {posts}/>) : (<AccessForbidden/>)}/>
+            <Route path="/upload/*" element={user?.email ? (<BrowseNew user={user} addPost={addPost} posts = {posts}/>) : (<AccessForbidden/>)}/>
             <Route path="*" element={<NotFound/>}/>
           </Routes>
       </BrowserRouter>

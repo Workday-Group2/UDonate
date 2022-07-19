@@ -12,7 +12,7 @@ export default function Browse(props) {
             <h1>Browse</h1>
             <Routes>
                 <Route path="/" element={<BrowseOverview user={props.user} post={props.post}/>}/>
-                <Route path="/create" element={<BrowseNew user={props.user} fruit={props.post} setFruit={props.setPost} addPost={props.addPost} />}/>
+                <Route path="/upload" element={<BrowseNew user={props.user} post={props.post} setPost={props.setPost} addPost={props.addPost} />}/>
                 <Route path="/id/:donationId" element={<BrowseDetail user={props.user} />}/>
                 <Route path="/*" element={<AccessForbidden/>}/>
             </Routes>
