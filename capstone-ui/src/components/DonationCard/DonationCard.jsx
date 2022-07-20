@@ -33,9 +33,9 @@ export default function DonationCard({quantity,name,imageUrl,category,
                 {/* <img className="donation-image" src={props.imageUrl} alt="" /> */}
                 <div className="info-card">
                     <div className="donation-title">
-                        <p className="donation-name">{name}</p>
-                        <p className="donation-description">{donation_desc}</p>
-                        <p className="donation-location">{location}</p>
+                        <p className="donation-name">Title: {name}</p>
+                        <p className="donation-description">Description: {donation_desc}</p>
+                        <p className="donation-location">Location: {location}</p>
                     </div>
                     {/* <div>
                         <p className="donation-description">{donation_desc}</p>
