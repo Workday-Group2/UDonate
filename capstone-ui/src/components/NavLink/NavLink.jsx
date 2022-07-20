@@ -8,6 +8,8 @@ export default function NavLink(props) {
         <div className="navlink">
                 <Link to="/profile"><h1 className={props.user.email ? "btn userEmail" : "ghost"}>{props.user.email}</h1></Link>
 
+        
+
                 <Link to="/" label="Home" className="btn home">Home</Link>
                 <Link to="/about" label="About" className="btn about">About</Link>
                 <Link to="/contact" label="Contact" className="btn contact">Contact</Link>

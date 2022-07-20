@@ -1,5 +1,6 @@
 import * as React from "react";
 import "./About.css";
+import Footer from "../Footer/Footer";
 
 export default function About() {
   return (

@@ -52,5 +52,13 @@ ul{
 }
 
 .userEmail {
+<<<<<<< Updated upstream
     background-color: #110d0d;
+=======
+    background-color: purple;
+}
+
+.browse {
+    text-decoration: underline;
+>>>>>>> Stashed changes
 }
