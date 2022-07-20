@@ -36,7 +36,7 @@ export default function DonationCard({quantity,name,imageUrl,donation_desc,locat
                         <p className="donation-name">Title: {name}</p>
                         <p className="donation-quantity">Quantity: {quantity}</p>
                         <p className="donation-description">Description: {donation_desc}</p>
-                        <p className="donation-location">Location1: {location}</p>
+                        <p className="donation-location">Location: {location}</p>
                     </div>
                     {/* <div>
                         <p className="donation-description">{donation_desc}</p>
