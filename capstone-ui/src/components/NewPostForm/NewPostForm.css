@@ -8,7 +8,7 @@
     flex: 1 1 100%;
     align-items: stretch;
     /* justify-content: space-between; */
-    box-shadow: 0 0 20px 6px #dd940d85;
+    box-shadow: 0 0 20px 6px #9196e6;
 }
 /* .form-inputs {
     margin: auto;
@@ -49,6 +49,7 @@
     color:rgb(131, 52, 52);
 }
 .post-button{
+    cursor: pointer;
     /* float: right; */
     color: #fff;
     font-size: 16px;
