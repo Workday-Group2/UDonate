@@ -55,63 +55,73 @@ export default function NewPostForm({user, addPost}) {
         return <AccessForbidden />
       }
       return (
-        <div className="form">
-          <div className="input-field">
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              value={form.name}
-              onChange={handleOnInputChange}
-            />
+        <div className="newPost">
+          <div className="left-donation"> 
+          <div className="overlay-donation">
+              <h1>Let's start saving food.</h1>   
           </div>
-          <div className="input-field">
-            <label htmlFor="category">Category</label>
-            <input
-              type="text"
-              name="category"
-              placeholder="category"
-              value={form.category}
-              onChange={handleOnInputChange}
-            />
           </div>
-          
-          <div className="input-field">
-            <label htmlFor="imageUrl">Image URL</label>
-            <input
-              type="text"
-              name="imageUrl"
-              placeholder="The image URL for your donation"
-              value={form.imageUrl}
-              onChange={handleOnInputChange}
-            />
+          <div className="form">
+            <div className="form">
+            <div className="form-input-donation">
+              <label htmlFor="title">Title: </label>
+              <input
+                type="text"
+                name="title"
+                placeholder="Title"
+                value={form.name}
+                onChange={handleOnInputChange}
+              />
+            </div>
+            <div className="form-input-donation">
+              <label htmlFor="category">Category: </label>
+              <input
+                type="text"
+                name="category"
+                placeholder="category"
+                value={form.category}
+                onChange={handleOnInputChange}
+              />
+            </div>
+            
+            <div className="form-input-donation">
+              <label htmlFor="imageUrl">Image URL: </label>
+              <input
+                type="text"
+                name="imageUrl"
+                placeholder="The image URL for your donation"
+                value={form.imageUrl}
+                onChange={handleOnInputChange}
+              />
+            </div>
+            <div className="form-input-donation">
+              <label htmlFor="quantity">Quantity: </label>
+              <input
+                type="number"
+                name="quantity"
+                placeholder="quantity"
+                value={form.quantity}
+                onChange={handleOnInputChange}
+                step="1"
+              />
+            </div>
+            <div className="form-input-donation">
+              <label htmlFor="expiration">Expiration Date: </label>
+              <input
+                type="date"
+                // name="expiration date"
+                placeholder="MM-DD-YYYY"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+              
+              />
+            </div>
+            <button className="post-button" disabled={isLoading} onClick={handleOnSubmit}>
+              {isLoading ? "Loading..." : "Submit"}
+            </button>
+            </div>
+            
           </div>
-          <div className="input-field">
-            <label htmlFor="quantity">Quantity</label>
-            <input
-              type="number"
-              name="quantity"
-              placeholder="quantity"
-              value={form.quantity}
-              onChange={handleOnInputChange}
-              step="1"
-            />
-          </div>
-          <div className="input-field">
-            <label htmlFor="expiration">Expiration Date</label>
-            <input
-              type="date"
-              // name="expiration date"
-              placeholder="MM-DD-YYYY"
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-             
-            />
-          </div>
-          <button className="btn" disabled={isLoading} onClick={handleOnSubmit}>
-            {isLoading ? "Loading..." : "Submit"}
-          </button>
         </div>
       )
     }
@@ -119,7 +129,7 @@ export default function NewPostForm({user, addPost}) {
     return (
         <div className="NewPostForm">
         <div className="card">
-            <h2>Create a new Donation Post</h2>
+            <h2 className="title-donation" >Post a Donation</h2>
 
             {Boolean(error) && <span className="error">{error}</span>}
 
