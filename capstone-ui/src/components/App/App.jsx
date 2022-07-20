@@ -14,6 +14,7 @@ import AccessForbidden from "../AccessForbidden/AccessForbidden"
 import { useAuthContext, AuthContextProvider } from "../../contexts/auth"
 import apiClient from "../../services/apiClient"
 import './App.css';
+import Resource from "../Resource/Resource"
 
 export default function AppContainter() {
   return (
@@ -56,6 +57,7 @@ function App() {
         <Navbar user={user} setUser={setUser} handleLogout={handleLogout}/>
           <Routes>
             <Route path="/" element={<Home/>}/>
+            <Route path="resource" element={<Resource />}/>
             <Route path="/login" element={<Login user={user} setUser={setUser} />}/>
             <Route path="/register" element={<Register  user={user} setUser={setUser} />}/>
             <Route path="/about" element={<About  user={user} setUser={setUser}/>}/>

@@ -11,6 +11,7 @@ export default function NavLink(props) {
         
 
                 <Link to="/" label="Home" className="btn home">Home</Link>
+                <Link to="/resource" label="Resource" className="btn resource">Resource</Link>
                 <Link to="/about" label="About" className="btn about">About</Link>
                 <Link to="/contact" label="Contact" className="btn contact">Contact</Link>
                 <Link to="/browse" label="Browse" className="btn browse">Browse</Link>
