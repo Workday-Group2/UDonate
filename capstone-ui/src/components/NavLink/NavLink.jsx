@@ -16,7 +16,7 @@ export default function NavLink(props) {
                 <Link to="/" label="login" className={props.user.email ? "btn" : "ghost"} onClick={props.handleLogout}>Logout</Link>
                 <Link to="/login" label="Login" className={props.user.email ? "ghost" : "btn"}>Login</Link>
                 <Link to="/register" label="Sign Up" className={props.user.email ? "ghost" : "btn primary"}>Sign Up</Link>
-                <Link className = "btn logo"  to="/"> <img alt="website" src="https://www.fbd.org/wp-content/uploads/2021/08/Donate-page-button-1-480x480.png"/></Link> 
+                <Link className = "btn logo"  to="/"> <img alt="website" src="https://i.ibb.co/GdwHzNZ/imageedit-4-3163864271.png"/></Link> 
             
          </div> 
     )

@@ -1,5 +1,5 @@
 .navlink {
-    background-color: #8ec357;
+    background-color: #53A2DF;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -52,5 +52,5 @@ ul{
 }
 
 .userEmail {
-    background-color: purple;
+    background-color: #110d0d;
 }
