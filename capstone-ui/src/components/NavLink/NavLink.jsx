@@ -18,7 +18,7 @@ export default function NavLink(props) {
                 <Link to="/register" label="Sign Up" className={props.user.email ? "ghost" : "btn primary"}>Sign Up</Link>
                 <Link className = "btn logo"  to="/"> <img alt="website" src="https://www.fbd.org/wp-content/uploads/2021/08/Donate-page-button-1-480x480.png"/></Link> 
             
-        </div>
+         </div> 
     )
 }
 
