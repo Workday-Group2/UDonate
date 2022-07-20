@@ -5,7 +5,7 @@ export default function Contact() {
   return (
     <div className="contact">
       <div className="contact-content">
-        <h3 className="contact-title">Contact Us</h3>
+        {/* <h3 className="contact-title">Contact Us</h3> */}
         <div className="contact-summary">
           <ul>
             <li>

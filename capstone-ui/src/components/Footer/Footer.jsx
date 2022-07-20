@@ -5,6 +5,7 @@ import "./Footer.css"
 export default function Footer() {
   return (
 <div className="footer">
+        <div className="container">
         <div className="company col">
           <h3>Company</h3>
           <p>About Us</p>
@@ -36,6 +37,7 @@ export default function Footer() {
           <p>LinkedIn</p>
           <p>Instagram</p>
           <p>Youtube</p>
+        </div>
         </div>
       </div>
     )}
