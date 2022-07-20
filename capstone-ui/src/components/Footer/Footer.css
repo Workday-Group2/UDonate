@@ -1,15 +1,18 @@
 .footer{
-    display: grid;
+    display: flex;
     grid-template-columns: 15vw 15vw 15vw 15vw 15vw 15vw;
-    justify-content: center;
+    justify-content: space-evenly;
     justify-items: center;
-    background-color: #4c956c;
-    position:absolute;
+    background-color: #8ec357;
     bottom:0;
     width:100%;
     height:60px;
-    margin: auto;
-
+    margin-top: 60px;
   }
   
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
   

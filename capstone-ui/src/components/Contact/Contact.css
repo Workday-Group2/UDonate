@@ -1,20 +1,29 @@
-/* .contact{
-    width: 90%;
-    max-width:100vw;
-    min-height:350px;
-    margin-left: 100px;
-} */
-.contact-content{
-    max-width:var(--content-width);
-    width:100%;
-    margin:0 auto;
-    display:flex;
-    flex-direction:column;
-    min-height:350px
-    
+.contact-wrapper {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
 }
+
+.contact-content{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    width: 1000px;
+    height: 300px;
+    align-items: center;
+    border-radius: 20px;
+    background-color: #8ec357;
+}
+
+.contact-summary {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 270px;
+
+}
+
 .contact-title{
-    margin:10px 0 30px;
     font-size:24px;
     font-weight:600;
 }
@@ -44,4 +53,10 @@ li{
     align-items:center;
     justify-content:space-between;
     width:150px;
+}
+
+.contact-media {
+    width: auto;
+    height: 270px;
+    border-radius: 20px;
 }
