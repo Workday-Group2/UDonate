@@ -45,7 +45,7 @@ class ApiClient {
     }
 
     async fetchDonationById(donationId) {
-      return await this.request({ endpoint: `donation/id/${donationId}`, method: `GET` })
+      return await this.request({ endpoint: `donation/${donationId}`, method: `GET` })
     }
 
     async fetchUserFromToken() {
