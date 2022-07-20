@@ -8,7 +8,7 @@
     flex: 1 1 100%;
     align-items: stretch;
     /* justify-content: space-between; */
-    box-shadow: 0 0 20px 6px #67b86b85;
+    box-shadow: 0 0 20px 6px #dd940d85;
 }
 /* .form-inputs {
     margin: auto;
@@ -57,8 +57,8 @@
     display: inline-block;
     border: 0;
     outline: 0;
-    box-shadow: 0px 4px 20px 0px #49c628a6;
-    background-image: linear-gradient(135deg, #1bb31b 10%, #3cd811 100%);
+    box-shadow: 0px 4px 20px 0px #adf;
+    background-image: linear-gradient(135deg, #57aac3 10%, #408caa 100%);
 }
 .title-donation{
     font-size: 3vmax;
