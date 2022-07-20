@@ -23,14 +23,21 @@ export default function BrowseFeed(props) {
       }, []);
     return (
         <div className="browse-feed">
-            <div className="search">
+            {/* <div className="search">
                 
                 <input type="search" placeholder="Search a donation" />
-            </div>
+            </div> */}
+           
             <div className="donation-items">
                 {donation.map((item) => {return(
+                
                     <Link to={`id/`+item.id}>
-                        <DonationCard key={item.name} quantity={item.quantity} name={item.name} imageUrl={item.imageUrl} createdAt={donation.createdAt} category={item.category} id={item.id} avgRating={item.avgRating} totalRatings={item.totalRatings}/>
+                         {console.log(552,item.donation_desc)}
+                        <DonationCard key={item.name} quantity={item.quantity} name={item.name} 
+                        imageUrl={item.imageUrl} category={item.category}
+                         id={item.id} avgRating={item.avgRating} totalRatings={item.totalRatings}
+                         donation_desc={item.donation_desc} location={item.location} createdAt={item.createdAt}
+                         />
                     </Link>
                 )})}
             </div>

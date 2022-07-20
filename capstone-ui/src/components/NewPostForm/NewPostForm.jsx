@@ -10,13 +10,17 @@ export default function NewPostForm({user, addPost}) {
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState(null)
     const [date,setDate] = useState("")
+    const [location,setLocation] = useState("")
+    const [desc,setDesc] = useState("")
     const navigate = useNavigate()
     const [form, setForm] = useState({
       name: "",
       category: "",
       imageUrl: "",
       quantity:1,
-      expiration_date: ""
+      expiration_date: "",
+      donation_desc: "",
+      location: ""
     })
   
     const handleOnInputChange = (event) => {
@@ -30,7 +34,8 @@ export default function NewPostForm({user, addPost}) {
       setIsLoading(true)
       
       const { data, error } = await apiClient.createDonation( { name : form.name, 
-        category : form.category, image_url: form.imageUrl, quantity : form.quantity, expiration_date: date})
+        category : form.category, image_url: form.imageUrl, quantity : form.quantity,
+         expiration_date: date, donation_desc: desc, location: location})
         if (error) {
           setError(error)
         }
@@ -41,9 +46,13 @@ export default function NewPostForm({user, addPost}) {
            category: "",
            imageUrl: "",
            quantity: 1,
-           expiration_date: ""      
+           expiration_date: "",   
+           donation_desc: "",
+           location: ""  
           })
           setDate("") 
+          setLocation("")
+          setDesc("")
         }
         console.log(999,form)
         setIsLoading(false)
@@ -113,7 +122,26 @@ export default function NewPostForm({user, addPost}) {
                 placeholder="MM-DD-YYYY"
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
-              
+              />
+            </div>
+            <div className="form-input-donation">
+              <label htmlFor="donation_desc">Description: </label>
+              <input
+                type="text"
+                // name="expiration date"
+                placeholder="Description"
+                value={desc}
+                onChange={(e) => setDesc(e.target.value)}
+              />
+            </div>
+            <div className="form-input-donation">
+              <label htmlFor="location">Location: </label>
+              <input
+                type="text"
+                // name="expiration date"
+                placeholder="Location"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
               />
             </div>
             <button className="post-button" disabled={isLoading} onClick={handleOnSubmit}>

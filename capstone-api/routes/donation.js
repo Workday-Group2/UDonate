@@ -17,7 +17,7 @@ router.post("/", security.requireAuthenticatedUser, async (req, res, next) => {
 })
 
 //router to list a donation by it's ID
-router.get("/id/:donationId", security.requireAuthenticatedUser, async(req, res, next) => {
+router.get("/:donationId", security.requireAuthenticatedUser, async(req, res, next) => {
     try{
         const {donationId} = req.params
         const donation = await Donation.fetchDonationById(donationId)
@@ -38,7 +38,7 @@ router.get("/", security.requireAuthenticatedUser, async (req, res, next) => {
     }
 })
 
-router.post("/id/:donationId/rating", security.requireAuthenticatedUser, async (req, res, next) => {
+router.post("/:donationId/rating", security.requireAuthenticatedUser, async (req, res, next) => {
     try {
         const {donationId} = req.params
         const {user} = res.locals

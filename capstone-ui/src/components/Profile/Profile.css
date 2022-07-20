@@ -1,0 +1,70 @@
+.Profile {
+    min-height: 100vh;
+    padding-top: var(--navbar-height);
+  }
+
+.Profile .avatar {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-50px);
+}
+.Profile .avatar img {
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    background: white;
+    padding: 5px;
+}
+h2.full-name {
+    font-weight: 600;
+    font-size: 36px;
+}
+.Profile .content {
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.Profile .content h4{
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    margin: 0 auto;
+    gap: 0px;
+}
+.Profile .profile-details,
+.Profile .actions {
+    margin-left: 400px;
+   margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  gap: 50px;
+  border: solid 10px #fafafa;
+  padding: 16px 88px;
+}
+.Profile .profile-details h4,
+.Profile .actions h4 {
+  color: #160531;
+}
+
+.Profile .info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 18px;
+}
+.Profile .label {
+    width: 120px;
+    font-weight: 600;
+}
+
+.Profile .buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
