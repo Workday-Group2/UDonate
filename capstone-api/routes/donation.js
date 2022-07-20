@@ -38,7 +38,7 @@ router.get("/", security.requireAuthenticatedUser, async (req, res, next) => {
     }
 })
 
-router.post("/id/:donationId/rating", security.requireAuthenticatedUser, async (req, res, next) => {
+router.post("/:donationId/rating", security.requireAuthenticatedUser, async (req, res, next) => {
     try {
         const {donationId} = req.params
         const {user} = res.locals
