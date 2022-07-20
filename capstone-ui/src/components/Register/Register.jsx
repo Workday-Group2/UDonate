@@ -35,7 +35,7 @@ export default function Register() {
                 <input
                     type="text"
                     name="username"
-                    placeholder="your_username"
+                    placeholder="Username"
                     value={form.username}
                     onChange={handleOnInputChange}
                 />
@@ -68,7 +68,7 @@ export default function Register() {
                 <input
                     type="password"
                     name="password"
-                    placeholder="password"
+                    placeholder="Password"
                     value={form.password}
                     onChange={handleOnInputChange}
                 />
@@ -79,7 +79,7 @@ export default function Register() {
                 <input
                     type="password"
                     name="passwordConfirm"
-                    placeholder="Confirm your password"
+                    placeholder="Confirm Password"
                     value={form.confirmPass}
                     onChange={handleOnInputChange}
                 />
