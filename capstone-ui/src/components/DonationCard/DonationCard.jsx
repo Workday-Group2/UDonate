@@ -19,15 +19,18 @@ export default function DonationCard(props) {
     } else {
     return (
         <div className="DonationCard">
-            <br></br>
-            {props.imageUrl ?  <img className="donation-image" src={props.imageUrl} alt="" />  : 
-                (
-                    <img className="donation-image" src="https://www.freeiconspng.com/thumbs/no-image-icon/no-image-icon-15.png"/>
-                )}
-            {/* <img className="donation-image" src={props.imageUrl} alt="" /> */}
-            <div className="donation-title">
-                <p className="donation-name">{props.name}</p>
+            <div className="container">
+                <br></br>
+                {props.imageUrl ?  <img className="donation-image" src={props.imageUrl} alt="" />  : 
+                    (
+                        <img className="donation-image" src="https://www.freeiconspng.com/thumbs/no-image-icon/no-image-icon-15.png"/>
+                    )}
+                {/* <img className="donation-image" src={props.imageUrl} alt="" /> */}
+                <div className="donation-title">
+                    <p className="donation-name">{props.name}</p>
+                </div>
             </div>
+            
             
             {
             /* <div className="nutrition-text">

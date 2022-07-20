@@ -24,6 +24,7 @@ export default function BrowseFeed(props) {
     return (
         <div className="browse-feed">
             <div className="search">
+                
                 <input type="search" placeholder="Search a donation" />
             </div>
             <div className="donation-items">
