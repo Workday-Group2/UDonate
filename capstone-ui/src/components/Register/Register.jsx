@@ -1,26 +1,37 @@
 import "./Register.css"
 import { useRegistrationForm } from "../../hooks/useRegistrationForm"
+import { Link } from "react-router-dom"
 
 export default function Register() {
   const {form, errors, handleOnInputChange, handleOnSubmit} = useRegistrationForm()
 
       
     return (
-        <nav className="register">
-           <h1>Register</h1>
+        <div className="register">
+            <div className="left">
+                <div className="overlay">
+                    <h1>Create an account.</h1>
+                    <div className="illustration-wrapper">
+                        <img src="https://i.ibb.co/d2N0ZSC/imageedit-4-7027504588.png" alt="register"/>
+                    </div>
+                </div>
+            </div>
+           <div className="registerForm">
+                <p className="form-title">Register</p>
+                <div className="form">
+                <div className="form-input">
+                    <label htmlFor="email"></label>
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Enter a valid email"
+                        value={form.email}
+                        onChange={handleOnInputChange}
+                    />
+                    {errors.email && <span className="error">{errors.email}</span>}
+                </div>
            <div className="form-input">
-            <label htmlFor="email">Email</label>
-            <input
-                type="email"
-                name="email"
-                placeholder="Enter a valid email"
-                value={form.email}
-                onChange={handleOnInputChange}
-                />
-                {errors.email && <span className="error">{errors.email}</span>}
-           </div>
-           <div className="form-input">
-                <label htmlFor="username">Username</label>
+                <label htmlFor="username"></label>
                 <input
                     type="text"
                     name="username"
@@ -31,7 +42,7 @@ export default function Register() {
                 {errors.username && <span className="error">{errors.username}</span>}
            </div>
            <div className="form-input">
-                <label htmlFor="name">First Name</label>
+                <label htmlFor="name"></label>
                 <input
                     type="text"
                     name="firstname"
@@ -42,7 +53,7 @@ export default function Register() {
                 {errors.firstname && <span className="error">{errors.firstname}</span>}
            </div>
            <div className="form-input">
-                <label htmlFor="name">Last Name</label>
+                <label htmlFor="name"></label>
                 <input
                     type="text"
                     name="lastname"
@@ -53,7 +64,7 @@ export default function Register() {
                 {errors.lastname && <span className="error">{errors.lastname}</span>}
            </div>
            <div className="form-input">
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password"></label>
                 <input
                     type="password"
                     name="password"
@@ -64,7 +75,7 @@ export default function Register() {
                 {errors.password && <span className="error">{errors.password}</span>}
            </div>
            <div className="form-input">
-                <label htmlFor="name">Confirm Password</label>
+                <label htmlFor="name"></label>
                 <input
                     type="password"
                     name="passwordConfirm"
@@ -75,6 +86,15 @@ export default function Register() {
                 {errors.password && <span className="error">{errors.password}</span>}
            </div>
             <button className="submit-registration" onClick={handleOnSubmit} >Create Account</button>
-        </nav>
+            <div className="footer-register">
+                <p className="footer-register">
+                Have an account? Log in <Link to="/login">here</Link>
+                </p>
+          </div>
+                </div>
+                
+           </div>
+           
+        </div>
     )
 }

@@ -1,0 +1,15 @@
+.footer{
+    display: grid;
+    grid-template-columns: 15vw 15vw 15vw 15vw 15vw 15vw;
+    justify-content: center;
+    justify-items: center;
+    background-color: #4c956c;
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:60px;
+    margin: auto;
+
+  }
+  
+  
