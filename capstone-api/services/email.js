@@ -36,12 +36,51 @@ class EmailService{
             return {status:400, email, error: errors || [err]}
         }
     }
-    async sendPasswordResetEmail(){
-
+    constructPasswordResetUrl(token){
+        return `${this.clientUrl}/password-reset?token=${token}`
+    }
+    async sendPasswordResetEmail(user,token){
+        const resetPasswordUrl = this.constructPasswordResetUrl(token)
+        const email = {
+            to: user.email,
+            from: this.emailFromAddress,
+            subject: `Reset your password for ${this.applicationName}`,
+            html:`
+            <html>
+            <body>
+            <h1>Password Reset Notification</h1>
+            <br />
+            <p>You are receiving this email because you made a request to reset the password for your account.</p>
+            <br />
+            <p>Click on the link below to finish the password reset process</p>
+            <a href="${resetPasswordUrl}">${resetPasswordUrl}</a>
+            <br />
+            <p>If you did not make this request contact support immediatly</p>
+            </body>
+            </html>
+            `
+        }
+        return await this.sendEmail(email)
     }
 
-    async sendPasswordResetConfirmationEmail(){
-        
+    async sendPasswordResetConfirmationEmail(user){
+        const email = {
+            to: user.email,
+            from: this.emailFromAddress,
+            subject: `Your ${this.applicationName} password has been reset successfully`,
+            html:`
+            <html>
+            <body>
+            <h1>Password Reset Notification</h1>
+            <br />
+            <p>This is a confirmation of a successful password reset for your account.</p>
+            <br />
+            <p>If you did not reset your password contact support immediately</p>
+            </body>
+            </html>
+            `
+        }
+        return await this.sendEmail(email)
     }
 }
 
