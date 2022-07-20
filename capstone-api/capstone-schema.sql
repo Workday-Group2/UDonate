@@ -20,6 +20,8 @@ image_url   TEXT NOT NULL,
 expiration_date DATE NOT NULL,
 user_id     INTEGER NOT NULL,
 created_at  TIMESTAMP NOT NULL DEFAULT NOW(),
+donation_desc    TEXT NOT NULL,
+location    TEXT NOT NULL,
 FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
