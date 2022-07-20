@@ -119,7 +119,7 @@ export default function NewPostForm({user, addPost}) {
     return (
         <div className="NewPostForm">
         <div className="card">
-            <h2>Create a new Donation Post</h2>
+            <h2>List a Donation Post</h2>
 
             {Boolean(error) && <span className="error">{error}</span>}
 
