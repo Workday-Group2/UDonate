@@ -59,6 +59,7 @@
 }
 .submit-registration{
     /* float: right; */
+    cursor: pointer;
     margin-top: 20px;
     color: #fff;
     font-size: 16px;
