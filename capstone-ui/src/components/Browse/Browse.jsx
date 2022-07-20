@@ -9,7 +9,6 @@ import "./Browse.css"
 export default function Browse(props) {
     return (
         <div className="browse">
-            <h1>Browse</h1>
             <Routes>
                 <Route path="/" element={<BrowseOverview user={props.user} post={props.post}/>}/>
                 <Route path="/upload" element={<BrowseNew user={props.user} post={props.post} setPost={props.setPost} addPost={props.addPost} />}/>

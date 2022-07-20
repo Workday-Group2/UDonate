@@ -67,7 +67,7 @@ export default function NewPostForm({user, addPost}) {
               <label htmlFor="title">Title: </label>
               <input
                 type="text"
-                name="title"
+                name="name"
                 placeholder="Title"
                 value={form.name}
                 onChange={handleOnInputChange}
