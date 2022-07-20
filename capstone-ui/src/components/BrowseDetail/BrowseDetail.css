@@ -1,0 +1,9 @@
+.donation-image{
+    object-fit: contain;
+
+}
+
+.DonationCard .container {
+    margin-left: 20vw;
+    max-width: 50vw;
+}

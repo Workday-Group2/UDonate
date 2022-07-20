@@ -3,14 +3,14 @@ import { Link } from "react-router-dom"
 import DonationDetailPage from "../DonationDetailPage/DonationDetailPage"
 import "./DonationCard.css"
 
-export default function DonationCard({quantity,name,imageUrl,category,
-    id,avgRating,totalRatings,donation_desc,location,createdAt}) {
-    console.log("desc:!",donation_desc)
-    const url = window.location.pathname //url of web
-    const last = url.split("/") 
-    console.log("last",last)
-    const lastSegment = last[last.length-1] //id
-    console.log("last segment",lastSegment)
+export default function DonationCard({quantity,name,imageUrl,donation_desc,location}) {
+    console.log("desc:!", donation_desc,quantity,name,imageUrl,location)
+    // const url = window.location.pathname //url of web
+    // const last = url.split("/") 
+    // console.log("last",last)
+    // const lastSegment = last[last.length-1] //id
+    // console.log("last segment",lastSegment)
+
     // if (lastSegment) {
     //     return (
     //         <div>
@@ -34,8 +34,9 @@ export default function DonationCard({quantity,name,imageUrl,category,
                 <div className="info-card">
                     <div className="donation-title">
                         <p className="donation-name">Title: {name}</p>
+                        <p className="donation-quantity">Quantity: {quantity}</p>
                         <p className="donation-description">Description: {donation_desc}</p>
-                        <p className="donation-location">Location: {location}</p>
+                        <p className="donation-location">Location1: {location}</p>
                     </div>
                     {/* <div>
                         <p className="donation-description">{donation_desc}</p>

@@ -32,12 +32,11 @@ export default function BrowseFeed(props) {
                 {donation.map((item) => {return(
                 
                     <Link to={`id/`+item.id}>
-                         {console.log(552,item.donation_desc)}
-                        <DonationCard key={item.name} quantity={item.quantity} name={item.name} 
-                        imageUrl={item.imageUrl} category={item.category}
-                         id={item.id} avgRating={item.avgRating} totalRatings={item.totalRatings}
-                         donation_desc={item.donation_desc} location={item.location} createdAt={item.createdAt}
+                         
+                        <DonationCard key={item.id} quantity={item.quantity} name={item.name} 
+                        imageUrl={item.imageUrl} donation_desc={item.donation_desc} location={item.location}
                          />
+                         {console.log(552, item.name, item.donation_desc, item.location)}
                     </Link>
                 )})}
             </div>

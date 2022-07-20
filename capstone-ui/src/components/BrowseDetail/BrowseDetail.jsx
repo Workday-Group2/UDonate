@@ -19,12 +19,13 @@ export default function BrowseDetail(props) {
         }
         }
   
+        console.log("description",)
     React.useEffect(() => {
       getDonation()
     }, []);
     return (
         <div className="Browse-Detail">
-            {notFound ? (<NotFound/>) : <DonationDetailPage quantity={donation.quantity} id={donation.id} name={donation.name} imageUrl={donation.imageUrl} category={donation.category} createdAt={donation.createdAt} createdAt={donation.createdAt}/>}
+            {notFound ? (<NotFound/>) : <DonationDetailPage quantity={donation.quantity} id={donation.id} name={donation.name} imageUrl={donation.image_url} donation_desc={donation.donation_desc} location={donation.location}/>}
         </div>
         )
     }
