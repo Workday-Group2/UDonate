@@ -1,10 +1,40 @@
-import * as React from "react"
-import "./Contact.css"
+import React from "react";
+import "./Contact.css";
 
 export default function Contact() {
-    return (
-        <div className="contact">
-            <h1>Contact</h1>
+  return (
+    <div className="contact">
+      <div className="contact-content">
+        <h3 className="contact-title">Contact Us</h3>
+        <div className="contact-summary">
+          <ul>
+            <li>
+              <span className="contact-label">Email:</span>
+              <span className="contact-label">code@path.org</span>
+            </li>
+            <li>
+              <span className="contact-label">Phone:</span>
+              <span className="contact-label">1-800-CODEPATH</span>
+            </li>
+            <li>
+              <span className="contact-label">Address:</span>
+              <span className="contact-label">
+                123 Fake Street, San Francisco, CA
+              </span>
+            </li>
+            <li>
+              <span className="contact-label">Socials: </span>
+              <span className="contact-socials"></span>
+            </li>
+          </ul>
+          <div className="contact-photo">
+            <img
+              className="contact-media"
+              src="https://images.unsplash.com/photo-1504805572947-34fad45aed93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+            />
+          </div>
         </div>
-    )
+      </div>
+    </div>
+  );
 }
