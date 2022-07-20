@@ -1,0 +1,76 @@
+.newPost{
+    margin: 0 auto;
+    width: 80%;
+    background: #fffffe;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex: 1 1 100%;
+    align-items: stretch;
+    /* justify-content: space-between; */
+    box-shadow: 0 0 20px 6px #67b86b85;
+}
+/* .form-inputs {
+    margin: auto;
+  width: 50%;
+} */
+.form-input-donation {
+    width: 100%;
+    padding: 10px;
+    margin-top: 25px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    /* border-bottom: 2px solid #6d737e; */
+}
+.left-donation {
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(https://i.pinimg.com/736x/5d/73/ea/5d73eaa…--tumblr-backgrounds-iphone-phone-wallpapers-iphone-wallaper-tumblr.jpg);
+    overflow: hidden;
+}
+.overlay-donation{
+    padding: 30px;
+    width: 100%;
+    height: 100%;
+    /* background-image: linear-gradient(135deg, #96dd8f 10%, #b1d1a9 50%); */
+    background-image: url("https://media.istockphoto.com/photos/volunteer-hands-holding-food-donations-box-with-grocery-products-on-picture-id1299146413?b=1&k=20&m=1299146413&s=170667a&w=0&h=hE7LMkALsNW7tMzXlwmV2RFLEHmutiJYCEpApCzaWEM=");
+    overflow: hidden;
+    box-sizing: border-box;
+    background-size: cover;
+}
+.left-donation h1 {
+    font-size: 4vmax;
+    line-height: 1;
+    font-weight: 500;
+    margin-top: 300px;
+    margin-bottom: 20px;
+    color:rgb(131, 52, 52);
+}
+.post-button{
+    /* float: right; */
+    color: #fff;
+    font-size: 16px;
+    padding: 12px 35px;
+    border-radius: 50px;
+    display: inline-block;
+    border: 0;
+    outline: 0;
+    box-shadow: 0px 4px 20px 0px #49c628a6;
+    background-image: linear-gradient(135deg, #1bb31b 10%, #3cd811 100%);
+}
+.title-donation{
+    font-size: 3vmax;
+    line-height: 0;
+    color: rgb(56, 55, 55);
+}
+.donation-input{
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    /* border: none; */
+    outline: none;
+    border-bottom: 2px solid #0d360c;
+}
