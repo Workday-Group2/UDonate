@@ -73,17 +73,24 @@ export default function NewPostForm({user, addPost}) {
           <div className="form">
             <div className="form">
             <div className="form-input-donation">
-              <label htmlFor="title">Title: </label>
-              <input
-                type="text"
-                name="name"
-                placeholder="Title"
-                value={form.name}
-                onChange={handleOnInputChange}
-              />
+                <label className= "title-name" htmlFor="title">Title: </label>
+             
+              <div className="title-form">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Title"
+                  value={form.name}
+                  onChange={handleOnInputChange}
+                />
+              </div>
+              
+
             </div>
             <div className="form-input-donation">
-              <label htmlFor="category">Category: </label>
+              <div className="title-form">
+                <label htmlFor="category">Category: </label>
+              </div>
               <input
                 type="text"
                 name="category"
@@ -94,7 +101,10 @@ export default function NewPostForm({user, addPost}) {
             </div>
             
             <div className="form-input-donation">
-              <label htmlFor="imageUrl">Image URL: </label>
+              <div className="title-form">
+                <label htmlFor="imageUrl">Image URL: </label>
+              </div>
+              
               <input
                 type="text"
                 name="imageUrl"
@@ -104,7 +114,10 @@ export default function NewPostForm({user, addPost}) {
               />
             </div>
             <div className="form-input-donation">
-              <label htmlFor="quantity">Quantity: </label>
+              <div className="title-form">
+                <label htmlFor="quantity">Quantity: </label>
+              </div>
+              
               <input
                 type="number"
                 name="quantity"
@@ -115,7 +128,10 @@ export default function NewPostForm({user, addPost}) {
               />
             </div>
             <div className="form-input-donation">
-              <label htmlFor="expiration">Expiration Date: </label>
+              <div className="title-form">
+                <label htmlFor="expiration">Expiration Date: </label>
+              </div>
+              
               <input
                 type="date"
                 // name="expiration date"
@@ -125,7 +141,9 @@ export default function NewPostForm({user, addPost}) {
               />
             </div>
             <div className="form-input-donation">
-              <label htmlFor="donation_desc">Description: </label>
+              <div className="title-form">
+                <label htmlFor="donation_desc">Description: </label>
+              </div>
               <input
                 type="text"
                 // name="expiration date"
@@ -135,7 +153,10 @@ export default function NewPostForm({user, addPost}) {
               />
             </div>
             <div className="form-input-donation">
-              <label htmlFor="location">Location: </label>
+              <div className="title-form">
+                <label htmlFor="location">Location: </label>
+              </div>
+              
               <input
                 type="text"
                 // name="expiration date"

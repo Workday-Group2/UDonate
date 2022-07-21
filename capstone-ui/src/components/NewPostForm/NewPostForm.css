@@ -1,6 +1,7 @@
 .newPost{
     margin: 0 auto;
     width: 80%;
+    /* height: 50vw; */
     background: #fffffe;
     border-radius: 10px;
     overflow: hidden;
@@ -14,6 +15,9 @@
     margin: auto;
   width: 50%;
 } */
+.newPost .form {
+    margin-left: 40px;
+}
 .form-input-donation {
     width: 100%;
     padding: 10px;
@@ -48,6 +52,11 @@
     margin-bottom: 20px;
     color:rgb(131, 52, 52);
 }
+
+
+/* .title-name{
+    margin-left : 200px;
+} */
 .post-button{
     cursor: pointer;
     /* float: right; */
