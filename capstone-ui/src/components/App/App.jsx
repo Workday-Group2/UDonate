@@ -44,6 +44,7 @@ function App() {
       fetchUser()
     }
   }, [])
+  console.log("user!!",user)
   const addPost = (newPost) => {
     setPosts((oldPosts) => [newPost, ...oldPosts])
   }
