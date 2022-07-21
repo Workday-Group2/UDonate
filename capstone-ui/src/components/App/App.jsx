@@ -10,12 +10,14 @@ import Contact from "../Contact/Contact"
 import Browse from "../Browse/Browse"
 import NotFound from "../NotFound/NotFound"
 import BrowseNew from "../BrowseNew/BrowseNew"
+import Footer from "../Footer/Footer"
 import Profile from "../Profile/Profile"
 import AccessForbidden from "../AccessForbidden/AccessForbidden"
 import { useAuthContext, AuthContextProvider } from "../../contexts/auth"
 import apiClient from "../../services/apiClient"
 import './App.css';
 import Resource from "../Resource/Resource"
+
 
 export default function AppContainter() {
   return (
@@ -69,6 +71,7 @@ function App() {
             <Route path="/profile" element={user?.email ? (<Profile user={user} />) : (<AccessForbidden/>)}/>
             <Route path="*" element={<NotFound/>}/>
           </Routes>
+          <Footer/>
       </BrowserRouter>
     </div>
   );

@@ -4,6 +4,16 @@ import "./Footer.css";
 export default function Footer() {
   return (
     <div className="footer">
+     <div className="footer-column">
+        <h3>Developers</h3>
+        <div className="company col">
+          <p>Ada Pici</p>
+          <p>Nasradin Kewden</p>
+          <p>Esteban Ayala</p>
+          
+        </div>
+      </div>
+
       <div className="footer-column">
         <h3>Company</h3>
         <div className="company col">
@@ -36,17 +46,6 @@ export default function Footer() {
           <p>My Booking</p>
         </div>
       </div>
-
-      <div className="footer-column">
-      <h3>Socials</h3>
-        <div className="socials col">
-          <p>Facebook</p>
-          <p>Twitter</p>
-          <p>LinkedIn</p>
-          <p>Instagram</p>
-          <p>Youtube</p>
-        </div>
-        </div>
       </div>
    
   );
