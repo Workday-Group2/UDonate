@@ -35,6 +35,7 @@ CREATE TABLE rating (
 
 CREATE TABLE booking (
   id             SERIAL PRIMARY KEY,  
+  start_date     DATE,
   donation_id    INTEGER NOT NULL REFERENCES donation(id) ON DELETE CASCADE,
   user_id        INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
   created_at     TIMESTAMP NOT NULL DEFAULT NOW()

@@ -10,7 +10,7 @@ export default function BrowseFeed(props) {
     const [error, setError] = useState() 
 
     async function getDonation(){
-      const {data, err} = await apiClient.fetchDonation()
+      const {data, err} = await apiClient.listAllDonation()
       console.log(29,data)
       if(err) setError(err)
       if(data){
