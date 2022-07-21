@@ -42,7 +42,7 @@ router.post("/:donationId/rating", security.requireAuthenticatedUser, async (req
     try {
         const {donationId} = req.params
         const {user} = res.locals
-        const rating = await Rating.createRatingForDonation({rating: req.body.rating, user, donationId})
+        const rating = await Rating.createRatingForDonation({ rating: req.body.rating, user, donationId })
         return res.status(201).json({ rating })
     } catch(err) {
         next(err)
