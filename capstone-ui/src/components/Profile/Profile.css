@@ -40,8 +40,18 @@ body {
 }
 
 .Profile .row {
+    /* margin-left: 20px; */
+    align-items:center;
+    grid-gap: 15px;
+    gap: 15px;
+    font-size: 18px;
+}
+.password-resets{
+    margin-top: 10px;
+}
 
-    align-items: center;
+.password-tab {
+    align-items:center;
     grid-gap: 15px;
     gap: 15px;
     font-size: 18px;
