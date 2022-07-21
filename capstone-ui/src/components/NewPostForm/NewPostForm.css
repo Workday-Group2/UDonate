@@ -1,23 +1,23 @@
 .newPost{
     margin: 0 auto;
     width: 80%;
-    /* height: 50vw; */
+    height: 50vw;
     background: #fffffe;
     border-radius: 10px;
     overflow: hidden;
     display: flex;
     flex: 1 1 100%;
     align-items: stretch;
-    /* justify-content: space-between; */
+   
     box-shadow: 0 0 20px 6px #9196e6;
+    width: 750px;
+    padding: 24px 36px;
 }
 /* .form-inputs {
     margin: auto;
   width: 50%;
 } */
-.newPost .form {
-    margin-left: 40px;
-}
+
 .form-input-donation {
     width: 100%;
     padding: 10px;
