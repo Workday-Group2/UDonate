@@ -1,70 +1,52 @@
-.Profile {
-    min-height: 100vh;
-    padding-top: var(--navbar-height);
-  }
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+body {
 
-.Profile .avatar {
-    margin-top: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transform: translateY(-50px);
-}
-.Profile .avatar img {
-    height: 130px;
-    width: 130px;
-    border-radius: 50%;
-    background: white;
-    padding: 5px;
-}
-h2.full-name {
-    font-weight: 600;
-    font-size: 36px;
-}
-.Profile .content {
-    display: flex;
-    flex-direction: column;
-    max-width: 900px;
-    margin: 0 auto;
-    gap: 20px;
+	font-family: "Roboto", sans-serif;
 }
 
-.Profile .content h4{
-    display: flex;
-    flex-direction: column;
-    max-width: 900px;
-    margin: 0 auto;
-    gap: 0px;
-}
-.Profile .profile-details,
-.Profile .actions {
-    margin-left: 400px;
-   margin-top: 80px;
-  display: flex;
-  flex-direction: column;
-  width: 30%;
-  gap: 50px;
-  border: solid 10px #fafafa;
-  padding: 16px 88px;
-}
-.Profile .profile-details h4,
-.Profile .actions h4 {
-  color: #160531;
+.shadow {
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
 }
 
-.Profile .info {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    font-size: 18px;
-}
-.Profile .label {
-    width: 120px;
-    font-weight: 600;
+.profile-tab-nav {
+	min-width: 250px;
 }
 
-.Profile .buttons {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.tab-content {
+	flex: 1;
+}
+
+.form-group {
+	margin-bottom: 1.5rem;
+}
+
+.button-press .btn {
+    cursor: pointer;
+    margin-top: 20px;
+    color: #fff;
+    font-size: 16px;
+    padding: 12px 35px;
+    border-radius: 50px;
+    display: inline-block;
+    border: 0;
+    outline: 0;
+    box-shadow: 0px 4px 20px 0px #2066a8a6;
+    background-image: linear-gradient(135deg, #1c54ce 10%, #4f36dd 100%);
+}
+
+.nav-pills a.nav-link {
+	padding: 15px 20px;
+	border-bottom: 1px solid rgb(19, 0, 0);
+	border-radius: 0;
+	color: #333;
+}
+.nav-pills a.nav-link i {
+	width: 20px;
+}
+
+.img-circle img {
+	height: 100px;
+	width: 100px;
+	border-radius: 100%;
+	border: 5px solid rgb(255, 255, 255);
 }
