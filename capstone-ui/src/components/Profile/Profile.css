@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+@import "@fontsource/rubik"; 
 body {
-
-	font-family: "Roboto", sans-serif;
+	font-family: "Rubik", sans-serif;
 }
 
 .shadow {
@@ -13,14 +13,79 @@ body {
 }
 
 .tab-content {
+    
 	flex: 1;
 }
+.mb-4 {
+    color:rgb(14, 122, 223);
+    font-size: 22px;
+}
+.Profile .account-details {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 10px;
+    gap: 10px;
+    border: 1px solid #fff;
+    padding: 16px 28px;
+    /* background: rgb(240, 245, 248); */
+    padding: 8px 16px;
+   
+    flex-direction: column;
+    border-radius: 4px;
+    flex-direction: column;
+    max-width: 900px;
+    margin: 0 auto;
+    grid-gap: 20px;
+    gap: 20px;
+}
 
+.Profile .row {
+
+    align-items: center;
+    grid-gap: 15px;
+    gap: 15px;
+    font-size: 18px;
+}
 .form-group {
+
+    /* display: flex; */
+    align-items: center;
+    grid-gap: 15px;
+    gap: 15px;
+    font-size: 20px;
+}
+.label {
+    
+    width: 120px;
+    font-weight: 600;
+}
+.form-group {
+    
 	margin-bottom: 1.5rem;
 }
 
-.button-press .btn {
+.acc-title {
+    margin-bottom: 1.5rem;
+}
+a.nav-link {
+	padding: 15px 20px;
+	border-bottom: 1px solid rgb(0, 0, 0);
+	border-radius: 0;
+	color: rgb(0, 0, 0);
+}
+
+.nav-pills a.nav-link i {
+	width: 20px;
+}
+
+.img-circle img {
+	height: 100px;
+	width: 100px;
+	border-radius: 100%;
+	border: 5px solid #fff;
+}
+.acc-btn{
+    /* float: right; */
     cursor: pointer;
     margin-top: 20px;
     color: #fff;
@@ -31,22 +96,5 @@ body {
     border: 0;
     outline: 0;
     box-shadow: 0px 4px 20px 0px #2066a8a6;
-    background-image: linear-gradient(135deg, #1c54ce 10%, #4f36dd 100%);
-}
-
-.nav-pills a.nav-link {
-	padding: 15px 20px;
-	border-bottom: 1px solid rgb(19, 0, 0);
-	border-radius: 0;
-	color: #333;
-}
-.nav-pills a.nav-link i {
-	width: 20px;
-}
-
-.img-circle img {
-	height: 100px;
-	width: 100px;
-	border-radius: 100%;
-	border: 5px solid rgb(255, 255, 255);
+    background-image: linear-gradient(135deg, #119ddd 10%, #364fdb 100%);
 }
