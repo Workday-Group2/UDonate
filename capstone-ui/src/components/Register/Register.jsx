@@ -28,7 +28,7 @@ export default function Register() {
                         value={form.email}
                         onChange={handleOnInputChange}
                     />
-                    {errors.email && <span className="error">{errors.email}</span>}
+                    {errors.email && <div className="error">{errors.email}</div>}
                 </div>
            <div className="form-input">
                 <label htmlFor="username"></label>

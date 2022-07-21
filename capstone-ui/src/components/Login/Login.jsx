@@ -6,7 +6,7 @@ import "./Login.css"
 
 export default function Login() {
     const { form, errors, isLoading, handleOnInputChange, handleOnSubmit } = useLoginForm()
-  
+
     return (
         <div className="login">
                <div className="left">
@@ -28,15 +28,21 @@ export default function Login() {
             <div className="form">
             <div className="input-field">
                     <label htmlFor="email"></label>
-                    <input
-                        className="form-input"
-                        type="email"
-                        name="email"
-                        placeholder="user@gmail.com"
-                        value={form.email}
-                        onChange={handleOnInputChange}
-                    />
-                    {errors.email && <span className="error">{errors.email}</span>}
+                    <div>
+                        <input
+                            className="form-input"
+                            type="email"
+                            name="email"
+                            placeholder="user@gmail.com"
+                            value={form.email}
+                            onChange={handleOnInputChange}
+                        />
+                        
+                    </div>
+                    <div>
+                        {errors.email}
+                    </div>
+                    
             </div>
             <div className="input-field">
                     <label htmlFor="password"></label>

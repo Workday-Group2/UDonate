@@ -28,6 +28,8 @@ export const useRegistrationForm = () => {
       if (data?.user) {
         setUser(data.user)
         apiClient.setToken(data.token)
+      } else {
+        setErrors((e) => ({ ...e, email: "A user already exists with that email" }))
       }
       setIsLoading(false)
     }
