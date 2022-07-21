@@ -20,7 +20,7 @@ export default function Profile(props) {
                         <div className="img-circle text-center mb-3">
                             <img src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png"/>
                         </div>
-                        <span>{` `}</span>
+                        
                         <h4 className="text-center">{props.user.first_name}</h4>
                     </div>
                     <div className="acc-title" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -42,34 +42,34 @@ export default function Profile(props) {
 						<div className="row">
                             <div className="col-md-6">
 								<div className="form-group">
-                                    <label className="label">First Name</label>
+                                    <label className="label">First Name: </label>
                                     <span className="form-control">{props.user.first_name}</span> 
                                 </div>
 							</div>
                             <div className="col-md-6">
 								<div className="form-group">
-                                    <label className="label">Last Name</label>
+                                    <label className="label">Last Name: </label>
                                     <span className="form-control">{props.user.last_name}</span> 
                                 </div>
 							</div>
                             <div className="col-md-6">
 								<div className="form-group">
-                                    <label className="label">Username</label>
+                                    <label className="label">Username: </label>
                                     <span className="form-control">{props.user.username}</span> 
                                 </div>
 							</div>
                             <div className="col-md-6">
 								<div className="form-group">
-								  	<label className="label">Email</label>
+								  	<label className="label">Email: </label>
                                     <span className="form-control"  >{props.user.email}</span> 
 								</div>
 							</div>
-                            <div className="col-md-6">
+                            {/* <div className="col-md-6">
 								<div className="form-group">
-								  	<label className="label">Phone number</label>
+								  	<label className="label">Phone number: </label>
 								  	<span className="form-control"  >+91 9876543215</span> 
 								</div>
-							</div>
+							</div> */}
                            
                             {/* <div className="col-md-12">
 								<div className="form-group">
