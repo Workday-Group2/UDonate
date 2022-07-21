@@ -36,6 +36,7 @@ export default function BrowseFeed(props) {
                          
                         <DonationDetailPage key={item.id} quantity={item.quantity} name={item.name} 
                         imageUrl={item.imageUrl} donation_desc={item.donation_desc} location={item.location}
+                        category={item.category}
                          />
                          {console.log(552, item.name, item.donation_desc, item.location)}
                     </Link>
