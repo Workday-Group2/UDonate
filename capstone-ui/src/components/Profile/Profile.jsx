@@ -38,10 +38,7 @@ export default function Profile(props) {
 							<i className="fa fa-tv text-center mr-1"></i> 
 							Application
 						</a>
-                        <a className="nav-link" id="notification-tab" data-toggle="pill" href="#notification" role="tab" aria-controls="notification" aria-selected="false">
-							<i className="fa fa-bell text-center mr-1"></i> 
-							Notification
-						</a>
+                       
                     </div>
                 </div>
                 <div className="tab-content">
@@ -57,7 +54,7 @@ export default function Profile(props) {
                             <div className="col-md-6">
 								<div className="form-group">
 								  	<label>Email</label>
-								  	<input type="text" className="form-control" value="kiranacharya287@gmail.com"/>
+								  	<input type="text" className="form-control" value={props.user.email}/>
 								</div>
 							</div>
                             <div className="col-md-6">
@@ -66,18 +63,7 @@ export default function Profile(props) {
 								  	<input type="text" className="form-control" value="+91 9876543215"/>
 								</div>
 							</div>
-                            <div className="col-md-6">
-								<div className="form-group">
-								  	<label>Company</label>
-								  	<input type="text" className="form-control" value="Kiran Workspace"/>
-								</div>
-							</div>
-                            <div className="col-md-6">
-								<div className="form-group">
-								  	<label>Designation</label>
-								  	<input type="text" className="form-control" value="UI Developer"/>
-								</div>
-							</div>
+                           
                             <div className="col-md-12">
 								<div className="form-group">
 								  	<label>Bio</label>
@@ -85,7 +71,7 @@ export default function Profile(props) {
 								</div>
 							</div>
                         </div>
-                        <div>
+                        <div className="button-press">
 							<button className="btn btn-primary">Update</button>
 							<button className="btn btn-light">Cancel</button>
 						</div>
@@ -114,82 +100,14 @@ export default function Profile(props) {
 								</div>
 							</div>
 						</div>
-                        <div>
-							<button className="btn btn-primary">Update</button>
-							<button className="btn btn-light">Cancel</button>
-						</div>
                     </div>
-                    <div className="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab">
-                        <h3 className="mb-4">Security Settings</h3>
-                        <div className="row">
-                            <div className="col-md-6">
-								<div className="form-group">
-								  	<label>Login</label>
-								  	<input type="text" className="form-control"/>
-								</div>
-							</div>
-                            <div className="col-md-6">
-								<div className="form-group">
-								  	<label>Two-factor auth</label>
-								  	<input type="text" class="form-control"/>
-								</div>
-							</div>
-                            <div className="col-md-6">
-								<div className="form-group">
-									<div className="form-check">
-										<input className="form-check-input" type="checkbox" value="" id="recovery"/>
-										<label className="form-check-label" for="recovery">
-										Recovery
-										</label>
-									</div>
-								</div>
-							</div>
-                        </div>
-                    </div>
-                    <div>
+                    
+                    <div className="button-press">
 						<button className="btn btn-primary">Update</button>
 						<button className="btn btn-light">Cancel</button>
 					</div>
                 </div>
-                <div className="tab-pane fade" id="notification" role="tabpanel" aria-labelledby="notification-tab">
-                    <h3 className="mb-4">Notification Settings</h3>
-                    <div className="form-group">
-							<div className="form-check">
-								<input className="form-check-input" type="checkbox" value="" id="notification1"/>
-								<label className="form-check-label" for="notification1">
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum accusantium accusamus, neque cupiditate quis
-								</label>
-							</div>
-					</div>
-                    <div className="form-group">
-							<div className="form-check">
-								<input className="form-check-input" type="checkbox" value="" id="notification2"/>
-								<label className="form-check-label" for="notification2">
-									hic nesciunt repellat perferendis voluptatum totam porro eligendi.
-								</label>
-							</div>
-					</div>
-                    <div className="form-group">
-							<div className="form-check">
-								<input className="form-check-input" type="checkbox" value="" id="notification3"/>
-								<label className="form-check-label" for="notification3">
-									commodi fugiat molestiae tempora corporis. Sed dignissimos suscipit
-								</label>
-							</div>
-					</div>
-                    <div className="form-group">
-							<div className="form-check">
-								<input className="form-check-input" type="checkbox" value="" id="notification3"/>
-								<label className="form-check-label" for="notification3">
-									commodi fugiat molestiae tempora corporis. Sed dignissimos suscipit
-								</label>
-							</div>
-						</div>
-                        <div>
-							<button className="btn btn-primary">Update</button>
-							<button className="btn btn-light">Cancel</button>
-						</div>
-                </div>
+                
             </div>
             
         </div>

@@ -20,6 +20,20 @@ body {
 	margin-bottom: 1.5rem;
 }
 
+.button-press .btn {
+    cursor: pointer;
+    margin-top: 20px;
+    color: #fff;
+    font-size: 16px;
+    padding: 12px 35px;
+    border-radius: 50px;
+    display: inline-block;
+    border: 0;
+    outline: 0;
+    box-shadow: 0px 4px 20px 0px #2066a8a6;
+    background-image: linear-gradient(135deg, #1c54ce 10%, #4f36dd 100%);
+}
+
 .nav-pills a.nav-link {
 	padding: 15px 20px;
 	border-bottom: 1px solid rgb(19, 0, 0);
