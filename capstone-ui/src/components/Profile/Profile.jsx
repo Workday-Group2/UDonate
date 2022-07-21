@@ -78,9 +78,6 @@ export default function Profile(props) {
 								</div>
 							</div> */}
                         </div>
-                        <div className="button-press">
-							<button className="acc-btn btn-primary">Update</button>
-						</div>
                     </div>
                     <div className="password-tab" id="password" role="tabpanel" aria-labelledby="password-tab">
                         <h3 className="mb-4">Password Settings</h3>

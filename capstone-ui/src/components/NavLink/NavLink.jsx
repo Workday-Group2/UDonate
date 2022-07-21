@@ -1,12 +1,14 @@
 import * as React from "react"
 import { Link } from "react-router-dom"
+import { FaUserAlt,FaUserCircle,FaRegUser } from "react-icons/fa";
+import { CgProfile} from "react-icons/cg";
 import "./NavLink.css"
 
 export default function NavLink(props) {
     
     return (
         <div className="navlink">
-                <Link to="/profile"><h1 className={props.user.email ? "btn userEmail" : "ghost"}>{props.user.email}</h1></Link>
+                <Link to="/profile"><h1 className={props.user.email ? "btn userEmail" : "ghost"}> <CgProfile/> {props.user.email}</h1></Link>
                 <Link to="/" label="Home" className="btn home">Home</Link>
                 <Link to="/resource" label="Resource" className="btn resource">Resource</Link>
                 <Link to="/about" label="About" className="btn about">About</Link>

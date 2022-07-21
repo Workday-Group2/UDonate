@@ -51,6 +51,10 @@ ul{
 
 }
 
-.userEmail {
-    background-color: #110d0d;
+.navlink .userEmail {
+    font-size: 25px;
+    color:#000000 ;
+    /* font-weight: 900; */
+
+    /* background-color: #7382b3; */
 }
