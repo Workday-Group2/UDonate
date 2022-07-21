@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import apiClient from "../../services/apiClient"
 import DonationCard from "../DonationCard/DonationCard"
+import DonationDetailPage from "../DonationDetailPage/DonationDetailPage"
 
 export default function BrowseFeed(props) {
     const [donation, setDonation] = useState([])
@@ -33,7 +34,7 @@ export default function BrowseFeed(props) {
                 
                     <Link to={`id/`+item.id}>
                          
-                        <DonationCard key={item.id} quantity={item.quantity} name={item.name} 
+                        <DonationDetailPage key={item.id} quantity={item.quantity} name={item.name} 
                         imageUrl={item.imageUrl} donation_desc={item.donation_desc} location={item.location}
                          />
                          {console.log(552, item.name, item.donation_desc, item.location)}
