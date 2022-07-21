@@ -2,6 +2,7 @@ import * as React from "react"
 import "./Profile.css"
 import { FaUserCircle, FaKey } from "react-icons/fa";
 
+
 const defaultAvatar =
   "https://i.pinimg.com/550x/1c/c5/35/1cc535901e32f18db87fa5e340a18aff.jpg"
   
@@ -28,7 +29,7 @@ export default function Profile(props) {
 						</a>
                         <a className="nav-link" id="password-tab" data-toggle="pill" href="#password" role="tab" aria-controls="password" aria-selected="false">
 							<i className="fa fa-key text-center mr-1"></i> 
-							Password <FaKey/>
+						    Password <FaKey/>
 						</a>
                         
                        
@@ -40,19 +41,31 @@ export default function Profile(props) {
 						<div className="row">
                             <div className="col-md-6">
 								<div className="form-group">
-                                    <label>Last Name</label>
+                                    <label className="label">First Name</label>
+								  	<input type="text" className="form-control" value={props.user.first_name}/>
+                                </div>
+							</div>
+                            <div className="col-md-6">
+								<div className="form-group">
+                                    <label className="label">Last Name</label>
 								  	<input type="text" className="form-control" value={props.user.last_name}/>
                                 </div>
 							</div>
                             <div className="col-md-6">
 								<div className="form-group">
-								  	<label>Email</label>
+                                    <label className="label">Username</label>
+								  	<input type="text" className="form-control" value={props.user.username}/>
+                                </div>
+							</div>
+                            <div className="col-md-6">
+								<div className="form-group">
+								  	<label className="label">Email</label>
 								  	<input type="text" className="form-control" value={props.user.email}/>
 								</div>
 							</div>
                             <div className="col-md-6">
 								<div className="form-group">
-								  	<label>Phone number</label>
+								  	<label className="label">Phone number</label>
 								  	<input type="text" className="form-control" value="+91 9876543215"/>
 								</div>
 							</div>
