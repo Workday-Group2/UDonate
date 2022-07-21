@@ -30,7 +30,7 @@ router.get("/me", security.requireAuthenticatedUser, async (req, res, next) => {
     try {
         const {email} = res.locals.user
         const user = await User.fetchUserByEmail(email)
-        const publicUser = {id: user.id, email: user.email, first_name: user.first_name, last_name: user.last_name}
+        const publicUser = {id: user.id, email: user.email, first_name: user.first_name, last_name: user.last_name, username:user.username}
         return res.status(200).json({user: publicUser})
     }catch(error){
         next(error)
