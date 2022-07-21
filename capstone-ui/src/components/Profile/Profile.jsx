@@ -1,17 +1,17 @@
 import * as React from "react"
 import "./Profile.css"
-import { Link } from "react-router-dom"
+import { FaUserCircle, FaKey } from "react-icons/fa";
 
 const defaultAvatar =
   "https://i.pinimg.com/550x/1c/c5/35/1cc535901e32f18db87fa5e340a18aff.jpg"
-
+  
 const avatarUrl = defaultAvatar
 export default function Profile(props) {
     console.log("user",props)
     return (
         <div className="py-5 my-5">
             <div className="container">
-                <h1 className="title">Account Settings</h1>
+                <h1 className="title">Account Details</h1>
             </div>
             <div className="bg-white shadow rounded-lg d-block d-sm-flex">
                 <div className="profile-tab-nav border-right">
@@ -24,28 +24,21 @@ export default function Profile(props) {
                     <div className="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <a className="nav-link active" id="account-tab" data-toggle="pill" href="#account" role="tab" aria-controls="account" aria-selected="true">
 							<i className="fa fa-home text-center mr-1"></i> 
-							Account
+							Account <FaUserCircle/>
 						</a>
                         <a className="nav-link" id="password-tab" data-toggle="pill" href="#password" role="tab" aria-controls="password" aria-selected="false">
 							<i className="fa fa-key text-center mr-1"></i> 
-							Password
+							Password <FaKey/>
 						</a>
-                        <a className="nav-link" id="security-tab" data-toggle="pill" href="#security" role="tab" aria-controls="security" aria-selected="false">
-							<i className="fa fa-user text-center mr-1"></i> 
-							Security
-						</a>
-                        <a className="nav-link" id="application-tab" data-toggle="pill" href="#application" role="tab" aria-controls="application" aria-selected="false">
-							<i className="fa fa-tv text-center mr-1"></i> 
-							Application
-						</a>
+                        
                        
                     </div>
                 </div>
                 <div className="tab-content">
                     <div className="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
-                        <h3 className="mb-4">Account Settings</h3>
+                        <h3 className="mb-4">Account Details  </h3>
 						<div className="row">
-                            <div clasclassNames="col-md-6">
+                            <div className="col-md-6">
 								<div className="form-group">
                                     <label>Last Name</label>
 								  	<input type="text" className="form-control" value={props.user.last_name}/>
@@ -67,7 +60,7 @@ export default function Profile(props) {
                             <div className="col-md-12">
 								<div className="form-group">
 								  	<label>Bio</label>
-									<textarea className="form-control" rows="4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore vero enim error similique quia numquam ullam corporis officia odio repellendus aperiam consequatur laudantium porro voluptatibus, itaque laboriosam veritatis voluptatum distinctio!</textarea>
+									<div className="form-control" rows="4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore vero enim error similique quia numquam ullam corporis officia odio repellendus aperiam consequatur laudantium porro voluptatibus, itaque laboriosam veritatis voluptatum distinctio!</div>
 								</div>
 							</div>
                         </div>
