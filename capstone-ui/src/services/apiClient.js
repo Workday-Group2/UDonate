@@ -36,8 +36,8 @@ class ApiClient {
       return await this.request({ endpoint: `donation/`, method: `GET` })
     }
 
-    async listDonation() {
-      return await this.request({ endpoint: `donation`, method: `GET` })
+    async listAllDonation() {
+      return await this.request({ endpoint: `allDonation`, method: `GET` })
     }
 
     async createDonation(newDonation) {
