@@ -5,6 +5,7 @@ const { NotFoundError, BadRequestError} = require("./utils/errors")
 const authRoutes = require("./routes/auth")
 const security = require("./middleware/security")
 const donationRoutes = require("./routes/donation")
+const bookingRoutes = require("./routes/booking")
 
 const app = express()
 
@@ -18,6 +19,7 @@ app.use(security.extractUserFromJwt)
 
 app.use("/auth", authRoutes)
 app.use("/donation", donationRoutes)
+app.use("/booking", bookingRoutes)
 
 // app.get("/", async(req, res, next) => {
 //     res.status(200).json({ ping: "pong"})
