@@ -28,7 +28,7 @@ export default function BrowseFeed(props) {
                 
                 <input type="search" placeholder="Search a donation" />
             </div> */}
-           
+           <h1>Browse</h1>
             <div className="donation-items">
                 {donation.map((item) => {return(
                 

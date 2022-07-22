@@ -89,7 +89,7 @@ export default function NewPostForm({user, addPost}) {
             </div>
             <div className="form-input-donation">
               <div className="title-form">
-                <label htmlFor="category">Category: </label>
+                <label className= "title-name"  htmlFor="category">Category: </label>
               </div>
               <input
                 type="text"
@@ -102,7 +102,7 @@ export default function NewPostForm({user, addPost}) {
             
             <div className="form-input-donation">
               <div className="title-form">
-                <label htmlFor="imageUrl">Image URL: </label>
+                <label className= "title-name"  htmlFor="imageUrl">Image URL: </label>
               </div>
               
               <input
@@ -115,7 +115,7 @@ export default function NewPostForm({user, addPost}) {
             </div>
             <div className="form-input-donation">
               <div className="title-form">
-                <label htmlFor="quantity">Quantity: </label>
+                <label className= "title-name"  htmlFor="quantity">Quantity: </label>
               </div>
               
               <input
@@ -129,7 +129,7 @@ export default function NewPostForm({user, addPost}) {
             </div>
             <div className="form-input-donation">
               <div className="title-form">
-                <label htmlFor="expiration">Expiration Date: </label>
+                <label className= "title-name"  htmlFor="expiration">Expiration Date: </label>
               </div>
               
               <input
@@ -142,7 +142,7 @@ export default function NewPostForm({user, addPost}) {
             </div>
             <div className="form-input-donation">
               <div className="title-form">
-                <label htmlFor="donation_desc">Description: </label>
+                <label className= "title-name" htmlFor="donation_desc">Description: </label>
               </div>
               <input
                 type="text"
@@ -154,7 +154,7 @@ export default function NewPostForm({user, addPost}) {
             </div>
             <div className="form-input-donation">
               <div className="title-form">
-                <label htmlFor="location">Location: </label>
+                <label className= "title-name" htmlFor="location">Location: </label>
               </div>
               
               <input

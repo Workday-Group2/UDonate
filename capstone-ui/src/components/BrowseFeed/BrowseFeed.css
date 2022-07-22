@@ -2,28 +2,29 @@
     margin: auto;
 }
 
-.search {
+/* .search {
     position: absolute;
     top: 155px;
     left: 20px;
     right: 20px;
-    
-  }
-input {
+  }  */
+
+/* input {
     width: 265px;
     border: 1px solid #ccc;
     padding: 8px;
     font-size: 15px;
     transition: width 0.2s;
-}
+}  */
 
 .donation-items {
-    /* display: grid;
-    padding: 0px;
-    flex-wrap: wrap;  */
+   
+    display: grid;
+    padding: 20px;
+    flex-wrap: wrap;  
     display: flex;
     flex-wrap: wrap; 
     gap: 10px;
-    margin: auto;
-    justify-content: center;
+    /* margin: auto; */
+    justify-content: center; 
 }

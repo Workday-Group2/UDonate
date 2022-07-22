@@ -1,0 +1,9 @@
+.donation-detail .details {
+    padding: 10px 10px;
+    /* position: relative; */
+    flex: 1 1;
+    width: 500px;
+    height: 500px;
+    background-color: #ffffff;
+    border-color: rgb(34, 31, 28);
+}
