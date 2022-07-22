@@ -48,6 +48,10 @@ class ApiClient {
       return await this.request({ endpoint: `donation/id/${donationId}`, method: `GET` })
     }
 
+    async recoverAccount(email){
+      return await this.request({ endpoint: `auth/recover`,method: `POST`, data: email})
+    }
+
     async fetchUserFromToken() {
       return await this.request({ endpoint: `auth/me`, method: `GET` })
     }
