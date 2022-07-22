@@ -5,7 +5,7 @@ export default function DonationDetailPage({quantity,name,imageUrl,category,
     id,avgRating,totalRatings,donation_desc,location,createdAt, email}) {
     console.log("image",imageUrl)
     return (
-        <div className="donation-detail">
+        <div className="donation-details">
             <div className="details">
                 <div className="nutrition-text">
                     <img className="donation-image2" src={imageUrl} alt="" />
