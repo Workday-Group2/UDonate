@@ -17,6 +17,8 @@ import { useAuthContext, AuthContextProvider } from "../../contexts/auth"
 import apiClient from "../../services/apiClient"
 import './App.css';
 import Resource from "../Resource/Resource"
+import Donations from "../Donations/Donations"
+import Bookings from "../Bookings/Bookings"
 
 
 export default function AppContainter() {
@@ -69,6 +71,8 @@ function App() {
             <Route path="/browse/*" element={user?.email ? (<Browse user={user} addPost={addPost} posts = {posts}/>) : (<AccessForbidden/>)}/>
             <Route path="/upload/*" element={user?.email ? (<BrowseNew user={user} addPost={addPost} posts = {posts}/>) : (<AccessForbidden/>)}/>
             <Route path="/profile" element={user?.email ? (<Profile user={user} />) : (<AccessForbidden/>)}/>
+            <Route path="/donations" element={user?.email ? (<Donations user={user} />) : (<AccessForbidden/>)}/>
+            <Route path="/bookings" element={user?.email ? (<Bookings user={user} />) : (<AccessForbidden/>)}/>
             <Route path="*" element={<NotFound/>}/>
           </Routes>
           <Footer/>

@@ -2,6 +2,7 @@ import * as React from "react"
 import "./Profile.css"
 import { FaUserCircle, FaKey } from "react-icons/fa";
 import { Link } from "react-router-dom"
+import { FiSettings } from "react-icons/fi";
 
 const defaultAvatar =
   "https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png"
@@ -30,7 +31,7 @@ export default function Profile(props) {
 						</a>
                         <a className="nav-link" id="manage-tab" data-toggle="pill" href="#manage" role="tab" aria-controls="manage" aria-selected="false">
 							<i className="fa fa-key text-center mr-1"></i> 
-						    Manage <FaKey/>
+						    Manage <FiSettings/>
 						</a>
                         <a className="nav-link" id="password-tab" data-toggle="pill" href="#password" role="tab" aria-controls="password" aria-selected="false">
 							<i className="fa fa-key text-center mr-1"></i> 
