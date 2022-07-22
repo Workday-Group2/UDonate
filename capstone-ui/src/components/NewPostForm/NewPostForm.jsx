@@ -71,12 +71,13 @@ export default function NewPostForm({user, addPost}) {
           </div>
           </div>
           <div className="form">
-            <div className="form">
-            <div className="form-input-donation">
+            <div className="form1">
+            <div className="input-field">
                 <label className= "title-name" htmlFor="title">Title: </label>
              
               <div className="title-form">
                 <input
+                  className="form-input"
                   type="text"
                   name="name"
                   placeholder="Title"
@@ -87,38 +88,41 @@ export default function NewPostForm({user, addPost}) {
               
 
             </div>
-            <div className="form-input-donation">
+            <div className="input-field">
               <div className="title-form">
                 <label className= "title-name"  htmlFor="category">Category: </label>
               </div>
               <input
+              className="form-input"
                 type="text"
                 name="category"
-                placeholder="category"
+                placeholder="Category"
                 value={form.category}
                 onChange={handleOnInputChange}
               />
             </div>
             
-            <div className="form-input-donation">
+            <div className="input-field">
               <div className="title-form">
                 <label className= "title-name"  htmlFor="imageUrl">Image URL: </label>
               </div>
               
               <input
+              className="form-input"
                 type="text"
                 name="imageUrl"
-                placeholder="The image URL for your donation"
+                placeholder="The image URL"
                 value={form.imageUrl}
                 onChange={handleOnInputChange}
               />
             </div>
-            <div className="form-input-donation">
+            <div className="input-field">
               <div className="title-form">
                 <label className= "title-name"  htmlFor="quantity">Quantity: </label>
               </div>
               
               <input
+              className="form-input"
                 type="number"
                 name="quantity"
                 placeholder="quantity"
@@ -127,12 +131,13 @@ export default function NewPostForm({user, addPost}) {
                 step="1"
               />
             </div>
-            <div className="form-input-donation">
+            <div className="input-field">
               <div className="title-form">
                 <label className= "title-name"  htmlFor="expiration">Expiration Date: </label>
               </div>
               
               <input
+              className="form-input"
                 type="date"
                 // name="expiration date"
                 placeholder="MM-DD-YYYY"
@@ -140,11 +145,12 @@ export default function NewPostForm({user, addPost}) {
                 onChange={(e) => setDate(e.target.value)}
               />
             </div>
-            <div className="form-input-donation">
+            <div className="input-field">
               <div className="title-form">
                 <label className= "title-name" htmlFor="donation_desc">Description: </label>
               </div>
               <input
+              className="form-input"
                 type="text"
                 // name="expiration date"
                 placeholder="Description"
@@ -152,12 +158,13 @@ export default function NewPostForm({user, addPost}) {
                 onChange={(e) => setDesc(e.target.value)}
               />
             </div>
-            <div className="form-input-donation">
+            <div className="input-field">
               <div className="title-form">
                 <label className= "title-name" htmlFor="location">Location: </label>
               </div>
               
               <input
+              className="form-input"
                 type="text"
                 // name="expiration date"
                 placeholder="Location"

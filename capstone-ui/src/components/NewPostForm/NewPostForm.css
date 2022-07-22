@@ -1,6 +1,5 @@
 .newPost{
     margin: 0 auto;
-    width: 80%;
     height: 40vw;
     background: #ffffff;
     border-radius: 10px;
@@ -8,9 +7,8 @@
     display: flex;
     flex: 1 1 100%;
     align-items: stretch;
-   
     box-shadow: 0 0 20px 6px #9196e6;
-    width: 750px;
+    width: 1100px;
     padding: 24px 36px;
 }
 /* .form-inputs {
@@ -18,8 +16,13 @@
   width: 50%;
 } */
 
+.form1 {
+    margin-left: 75px;
+    margin-top: 35px;
+}
+
 .form-input-donation {
-    width: 100%;
+    width: 190%;
     padding: 10px;
     /* margin-top: 25px; */
     font-size: 16px;
@@ -28,7 +31,8 @@
     /* border-bottom: 2px solid #6d737e; */
 }
 .left-donation {
-    
+    margin-right: 25px;
+    margin-top: 30px;
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url(https://i.pinimg.com/736x/5d/73/ea/5d73eaa…--tumblr-backgrounds-iphone-phone-wallpapers-iphone-wallaper-tumblr.jpg);
@@ -45,6 +49,7 @@
     background-size: cover;
     margin-left:-30px;
     margin-top: 30px;
+    width: 40vw;
 }
 
 .left-donation h1 {
