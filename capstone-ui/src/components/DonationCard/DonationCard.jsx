@@ -32,15 +32,9 @@ export default function DonationCard({
   return (
     <div className="DonationCard">
       <div className="container">
-        <br></br>
-        {imageUrl ? (
+     
           <img className="donation-image" src={imageUrl} alt="" />
-        ) : (
-          <img
-            className="donation-image"
-            src="https://www.freeiconspng.com/thumbs/no-image-icon/no-image-icon-15.png"
-          />
-        )}
+        
         {/* <img className="donation-image" src={props.imageUrl} alt="" /> */}
         <div className="info-card">
           <div className="donation-title">
