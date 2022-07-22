@@ -56,6 +56,12 @@ body {
     grid-gap: 15px;
     gap: 15px;
     font-size: 18px;
+    background: rgb(240, 245, 248);
+    border: 5px solid rgb(14, 122, 223);
+    max-width: 580px;
+    margin-bottom: 100px;
+    margin: 0 auto;
+    margin-top: 60px;
 }
 .form-group {
 

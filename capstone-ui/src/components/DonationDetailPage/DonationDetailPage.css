@@ -1,9 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap");
+
+.donation-detail {
+    display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 16rem));
+  gap: 2rem;
+  justify-content: center;
+  font-family: Oxygen, sans-serif;
+}
+
 .donation-detail .details {
-    padding: 10px 10px;
+    /* padding: 10px 10px; */
     /* position: relative; */
-    flex: 1 1;
-    width: 500px;
-    height: 500px;
-    background-color: #ffffff;
-    border-color: rgb(34, 31, 28);
+    /* flex: 1 1;
+    width: 300px;
+    height: 300px;
+    background: #ffffff;
+    border: rgb(2, 1, 1);
+    border-radius: 10px; */
+    overflow: hidden;
+    box-shadow: 0 2px 20px #334970;
+    border-radius: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform 200ms ease-in;
+}
+.nutrition-name{
+    padding: 1rem;
+    font-weight:bold;
+}
+.card__description{
+    padding: 0 1rem;
+}
+.donation-btn {
+    padding: 1rem;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 1rem;
+    border: 2px solid rgb(14, 122, 223);
+    background: transparent;
+    color:  rgb(0, 7, 110);;
+    border-radius: 0.2rem;
+    transition: background 200ms ease-in, color 200ms ease-in;
+}
+.donation-detail:hover{
+    transform: scale(1.02);
+}
+.donation-btn:hover {
+    transform: scale(1.02);
+    background:   rgb(14, 122, 223);
+    color: #ffffff;
+}
+.donation-image2 {
+    /* float: center;
+    width:  150px;
+    height: 150px;
+    object-fit: cover; */
+    height: 12rem;
+    width: 100%;
+    object-fit: cover;
+}
+.nutrition-text {
+        font-size: 0.875em;
+    font-weight: 400;
+    line-height: 1.0625rem;
+    color:rgb(12, 12, 12)
 }

@@ -6,16 +6,16 @@ export default function DonationDetailPage({quantity,name,imageUrl,category,
     console.log("image",imageUrl)
     return (
         <div className="donation-detail">
-    
             <div className="details">
-                <img className="donation-image" src={imageUrl} alt="" />
                 <div className="nutrition-text">
-                    <p className="nutrition-name">Location: {location}</p>
-                    <p className="nutrition-name">Title: {name}</p>
-                    <p className="nutrition-category not-name">Category: {category}</p>
-                    <p className="nutrition-quantity not-name">Quantity: {quantity}</p>
+                    <img className="donation-image2" src={imageUrl} alt="" />
+                    {/* <p className="nutrition-name">Location: {location}</p> */}
+                    <p className="nutrition-name">{name}</p>
+                    <p className="card__description">{donation_desc}</p>
+                    {/* <p className="nutrition-category not-name">Category: {category}</p>
+                    <p className="nutrition-quantity not-name">Quantity: {quantity}</p> */}
                 </div>
-            
+                <button className="donation-btn">View Donation</button>
             </div> 
         </div>
     )
