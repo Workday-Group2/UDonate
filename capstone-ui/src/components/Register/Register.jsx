@@ -19,9 +19,10 @@ export default function Register() {
            <div className="registerForm">
                 <p className="form-title">Register</p>
                 <div className="form">
-                <div className="form-input">
+                <div className="input-field">
                     <label htmlFor="email"></label>
                     <input
+                        className="form-input"
                         type="email"
                         name="email"
                         placeholder="Enter a valid email"
@@ -30,9 +31,10 @@ export default function Register() {
                     />
                     {errors.email && <div className="error">{errors.email}</div>}
                 </div>
-           <div className="form-input">
+           <div className="input-field">
                 <label htmlFor="username"></label>
                 <input
+                    className="form-input"
                     type="text"
                     name="username"
                     placeholder="Username"
@@ -41,9 +43,10 @@ export default function Register() {
                 />
                 {errors.username && <span className="error">{errors.username}</span>}
            </div>
-           <div className="form-input">
+           <div className="input-field">
                 <label htmlFor="name"></label>
                 <input
+                    className="form-input"
                     type="text"
                     name="firstname"
                     placeholder="First Name"
@@ -52,9 +55,10 @@ export default function Register() {
                 />
                 {errors.firstname && <span className="error">{errors.firstname}</span>}
            </div>
-           <div className="form-input">
+           <div className="input-field">
                 <label htmlFor="name"></label>
                 <input
+                    className="form-input"
                     type="text"
                     name="lastname"
                     placeholder="Last Name"
@@ -63,9 +67,10 @@ export default function Register() {
                 />
                 {errors.lastname && <span className="error">{errors.lastname}</span>}
            </div>
-           <div className="form-input">
+           <div className="input-field">
                 <label htmlFor="password"></label>
                 <input
+                    className="form-input"
                     type="password"
                     name="password"
                     placeholder="Password"
@@ -74,9 +79,10 @@ export default function Register() {
                 />
                 {errors.password && <span className="error">{errors.password}</span>}
            </div>
-           <div className="form-input">
+           <div className="input-field">
                 <label htmlFor="name"></label>
                 <input
+                    className="form-input"
                     type="password"
                     name="passwordConfirm"
                     placeholder="Confirm Password"
