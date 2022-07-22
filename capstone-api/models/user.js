@@ -1,9 +1,8 @@
 const { UnauthorizedError, BadRequestError } = require("../utils/errors")
 const db = require("../db")
-const { c } = require("tar")
 const bcrypt = require("bcrypt")
 const { BCRYPT_WORK_FACTOR } = require("../config")
-const tokens = require("../utils/tokens")
+
 
 class User {
 

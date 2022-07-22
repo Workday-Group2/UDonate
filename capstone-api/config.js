@@ -6,12 +6,12 @@ const APPLICATION_NAME = "Capstone"
 const PORT = process.env.PORT ? Number(process.env.PORT) : 3001
 const SECRET_KEY = process.env.SECRET_KEY || "secret_dev"
 const IS_TESTING = process.env.NODE_ENV === "test"
-const CLIENT_URL = process.env.CLIENT_URL || "http://localhost:3000"
+const CLIENT_URL = process.env.CLIENT_URL || "https://localhost:3000"
 const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY
 const EMAIL_SERVICE_ACTIVE = IS_TESTING ? false : process.env.EMAIL_SERVICE_ACTIVE === "active"
 const EMAIL_FROM_ADDRESS = process.env.EMAIL_FROM_ADDRESS
 function getDatabaseUri() {
-    const dbUser = process.env.DATABASE_USER || "nasradin"
+    const dbUser = process.env.DATABASE_USER || "postgres"
     const dbPass = process.env.DATABASE_PASS ? encodeURI(process.env.DATABASE_PASS) : "postgres"
     const dbHost = process.env.DATABASE_HOST || "localhost"
     const dbPort = process.env.DATABASE_PORT || 5432
