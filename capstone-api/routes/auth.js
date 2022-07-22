@@ -40,10 +40,10 @@ router.get("/me", security.requireAuthenticatedUser, async (req, res, next) => {
 router.post("/recover", async (req,res,next) =>{
     try{
         const {email} = req.body
-        const token = generatePasswordResetToken()
-        const user = awaitUser.savePasswordResetToken(email, token)
+        const resetToken = generatePasswordResetToken()
+        const user = awaitUser.savePasswordResetToken(email, resetToken)
         if (user){
-            await emailService.sendPasswordResetEmail(user, token)
+            await emailService.sendPasswordResetEmail(user, resetToken.token)
         }
         return res.status(200).json({ message: `If your account exsits in our system you should recieve an email shortly.`})
     } catch(error){

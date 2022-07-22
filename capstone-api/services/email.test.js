@@ -76,7 +76,7 @@ describe("Test EmailService", () => {
             test("constructPasswordResetUrl craetes the correct password reset url",() =>{
                 const token ="abc123"
                 const url = emailService.constructPasswordResetUrl(token)
-                expect(url).toEqual(`http://localhost:3000/password-reset?token=${token}`)
+                expect(url).toEqual(`https://localhost:3000/password-reset?token=${token}`)
             })
             test("sendPasswordResetEmail sends an email to provided user", async () =>{
                 const emailService = new EmailService({

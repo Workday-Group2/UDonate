@@ -6,7 +6,7 @@ const APPLICATION_NAME = "Capstone"
 const PORT = process.env.PORT ? Number(process.env.PORT) : 3001
 const SECRET_KEY = process.env.SECRET_KEY || "secret_dev"
 const IS_TESTING = process.env.NODE_ENV === "test"
-const CLIENT_URL = process.env.CLIENT_URL || "http://localhost:3000"
+const CLIENT_URL = process.env.CLIENT_URL || "https://localhost:3000"
 const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY
 const EMAIL_SERVICE_ACTIVE = IS_TESTING ? false : process.env.EMAIL_SERVICE_ACTIVE === "active"
 const EMAIL_FROM_ADDRESS = process.env.EMAIL_FROM_ADDRESS
