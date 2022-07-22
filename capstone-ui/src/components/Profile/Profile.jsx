@@ -1,7 +1,7 @@
 import * as React from "react"
 import "./Profile.css"
 import { FaUserCircle, FaKey } from "react-icons/fa";
-
+import { Link } from "react-router-dom"
 
 const defaultAvatar =
   "https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png"
@@ -28,11 +28,14 @@ export default function Profile(props) {
 							<i className="fa fa-home text-center mr-1"></i> 
 							Account <FaUserCircle/>
 						</a>
+                        <a className="nav-link" id="manage-tab" data-toggle="pill" href="#manage" role="tab" aria-controls="manage" aria-selected="false">
+							<i className="fa fa-key text-center mr-1"></i> 
+						    Manage <FaKey/>
+						</a>
                         <a className="nav-link" id="password-tab" data-toggle="pill" href="#password" role="tab" aria-controls="password" aria-selected="false">
 							<i className="fa fa-key text-center mr-1"></i> 
 						    Password <FaKey/>
 						</a>
-                        
                        
                     </div>
                 </div>
@@ -64,20 +67,26 @@ export default function Profile(props) {
                                     <span className="form-control"  >{props.user.email}</span> 
 								</div>
 							</div>
-                            {/* <div className="col-md-6">
-								<div className="form-group">
-								  	<label className="label">Phone number: </label>
-								  	<span className="form-control"  >+91 9876543215</span> 
-								</div>
-							</div> */}
-                           
-                            {/* <div className="col-md-12">
-								<div className="form-group">
-								  	<label>Bio</label>
-									<div className="form-control" rows="4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore vero enim error similique quia numquam ullam corporis officia odio repellendus aperiam consequatur laudantium porro voluptatibus, itaque laboriosam veritatis voluptatum distinctio!</div>
-								</div>
-							</div> */}
                         </div>
+                    </div>
+                    
+                    <div className="manage-tab" id="manage" role="tabpanel" aria-labelledby="manage-tab">
+                        <h3 className="mb-4">Manage</h3>
+                        <div className="row">
+							<div className="col-md-6">
+								<div className="form-group">
+                                    <Link to="/donations">
+                                        <button className = "button-manage" buttonType="primary">Your Donations</button>
+                                    </Link>
+								</div>
+                                <div className="form-group">
+                                    <Link to="/bookings">
+                                        <button  className = "button-manage" buttonType="primary">Your Bookings</button>
+                                    </Link>
+								</div>
+							</div>
+						</div>
+                        
                     </div>
                     <div className="password-tab" id="password" role="tabpanel" aria-labelledby="password-tab">
                         <h3 className="mb-4">Password Settings</h3>
@@ -110,9 +119,10 @@ export default function Profile(props) {
 							</div>
 						</div>
                     </div>
-                    
                     <div className="button-press">
-						<button className="acc-btn btn-primary">Update</button>
+                        <Link to="/browse">
+                            <button className="acc-btn btn-primary">Update</button>
+                        </Link>
 					</div>
                 </div>
                 
