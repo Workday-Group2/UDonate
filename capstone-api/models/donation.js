@@ -3,6 +3,7 @@ const { BadRequestError} = require("../utils/errors");
 const User = require("../models/user")
 
 class Donation {
+    //creating a donation
     static async createDonation({user, post}) {
         const requireFields = ["name", "category", "quantity", "image_url", "expiration_date", "donation_desc", "location"]
         requireFields.forEach(field => {
@@ -31,6 +32,7 @@ class Donation {
         return result.rows[0]
     }
 
+    //fetching a specific donation by it's ID
     static async fetchDonationById(id){
         if(!id) {
             throw new BadRequestError("Please provide ID")
