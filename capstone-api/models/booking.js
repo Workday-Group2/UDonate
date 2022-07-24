@@ -15,6 +15,18 @@ class Booking {
 
     return results.rows[0]
   }
+
+  static async listUniqueDonation({donationId}) {
+    const results = await db.query(
+      `
+      SELECT * FROM booking 
+      WHERE donation_id = $1 
+      `,
+      [donationId]
+    )
+    return results.rows[0]
+  }
+
 }
 
 module.exports = Booking

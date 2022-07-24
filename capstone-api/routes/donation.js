@@ -62,4 +62,14 @@ router.post("/:donationId/newBooking", security.requireAuthenticatedUser, async 
     }
 })
 
+router.get("/:donationId/uniqueDonation", security.requireAuthenticatedUser, async (req, res, next) => {
+    try {
+        const {donationId} = req.params
+        const uniqueDonation = await Booking.listUniqueDonation({ donationId })
+        return res.status(201).json({ uniqueDonation })
+    } catch(err) {
+        next(err)
+    }
+})
+
 module.exports = router
