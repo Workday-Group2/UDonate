@@ -111,6 +111,7 @@ class Donation {
             FROM donation AS d
                 LEFT JOIN users AS u ON u.id = d.user_id
                 LEFT JOIN rating AS r ON r.donation_id = d.id
+            WHERE d.booked = false
             GROUP BY d.id, u.email
             `
         )
