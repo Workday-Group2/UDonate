@@ -30,7 +30,8 @@ CREATE TABLE rating (
   donation_id INTEGER NOT NULL REFERENCES donation(id) ON DELETE CASCADE,
   user_id     INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
   created_at  TIMESTAMP NOT NULL DEFAULT NOW(),  
-  PRIMARY KEY (donation_id, user_id)
+  PRIMARY KEY (donation_id, user_id),
+  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
 CREATE TABLE booking (
