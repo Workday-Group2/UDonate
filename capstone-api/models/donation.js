@@ -105,6 +105,7 @@ class Donation {
                    d.created_at AS "createdAt",
                    d.donation_desc,
                    d.location,
+                   d.booked,
                    CAST(AVG(r.rating) AS DECIMAL(10,1)) AS "avgRating",
                    COUNT(r.rating) AS "totalRatings"
             FROM donation AS d

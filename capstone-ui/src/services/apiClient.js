@@ -65,11 +65,14 @@ class ApiClient {
     async loginUser(credentials) {
       return await this.request({ endpoint: `auth/login`, method: `POST`, data: credentials })
     }
-    
   
     async logoutUser() {
       this.setToken(null)
       localStorage.setItem(this.tokenName, "")
+    }
+
+    async newBooking(donationId) {
+      return await this.request({ endpoint: `donation/${donationId}/newBooking`, method: `POST`})
     }
   }
   

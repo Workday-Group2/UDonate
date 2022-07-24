@@ -22,6 +22,7 @@ user_id     INTEGER NOT NULL,
 created_at  TIMESTAMP NOT NULL DEFAULT NOW(),
 donation_desc    TEXT NOT NULL,
 location    TEXT NOT NULL,
+booked      BOOLEAN DEFAULT FALSE,
 FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
@@ -41,3 +42,5 @@ CREATE TABLE booking (
   user_id        INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
   created_at     TIMESTAMP NOT NULL DEFAULT NOW()
 );
+
+

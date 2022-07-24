@@ -55,21 +55,15 @@ router.post("/:donationId/newBooking", security.requireAuthenticatedUser, async 
     try {
         const {donationId} = req.params
         const {user} = res.locals
+        
         const newBooking = await Booking.createBooking({ newBooking: req.body.newBooking, user, donationId })
-        return res.status(201).json({ newBooking })
+        const updateDonation = await Booking.setBookedDonation( donationId )
+        console.log("hello")
+        return res.status(201).json({ newBooking, updateDonation })
     } catch(err) {
         next(err)
     }
 })
 
-router.get("/:donationId/uniqueDonation", security.requireAuthenticatedUser, async (req, res, next) => {
-    try {
-        const {donationId} = req.params
-        const uniqueDonation = await Booking.listUniqueDonation({ donationId })
-        return res.status(201).json({ uniqueDonation })
-    } catch(err) {
-        next(err)
-    }
-})
 
 module.exports = router

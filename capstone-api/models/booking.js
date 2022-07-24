@@ -16,16 +16,20 @@ class Booking {
     return results.rows[0]
   }
 
-  static async listUniqueDonation({donationId}) {
+
+  static async setBookedDonation(donationId) {
+
     const results = await db.query(
-      `
-      SELECT * FROM booking 
-      WHERE donation_id = $1 
-      `,
-      [donationId]
+    `
+    UPDATE donation
+    SET booked = TRUE
+    WHERE id = $1
+    `,
+    [donationId]
     )
+
     return results.rows[0]
-  }
+}
 
 }
 
