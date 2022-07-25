@@ -21,7 +21,6 @@ export default function BrowseDetail(props) {
         }
       
     const makeBooking = async () => {
-      console.log(2983,donation.id)
       const request = async () => {
 
          await apiClient.newBooking(donationId)

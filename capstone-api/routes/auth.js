@@ -40,7 +40,6 @@ router.post("/recover", async (req,res,next) =>{
     try{
         const {email} = req.body
         const resetToken = tokens.generatePasswordResetToken()
-        console.log(999,resetToken)
         const user = await User.savePasswordResetToken(email, resetToken)
         if (user){
             await emailService.sendPasswordResetEmail(user, resetToken.token)

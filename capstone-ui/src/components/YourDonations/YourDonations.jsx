@@ -2,7 +2,6 @@ import React from 'react'
 import "./YourDonations.css"
 
 export default function YourDonations(props) {
-  console.log("your donations",props)
   return (
     <div className="yourdonation">
       <div className="donation-details">
