@@ -13,7 +13,7 @@ export default function Bookings() {
       console.log(13, data)
       if(err) setError(err)
       if(data){
-        setBooking(data.donations)
+        setBooking(data.userBooking)
       }
 
       }
