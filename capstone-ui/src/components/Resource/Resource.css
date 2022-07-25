@@ -1,0 +1,45 @@
+.resource-container {
+    margin-top: 10px;
+}
+
+.safety {
+    height: 200px;
+    width: 800px;
+    background-color: #97bbe7;
+    border-radius: 20px;
+    line-height: 1.7;
+}
+
+.donation-safety {
+    height: 200px;
+    width: 800px;
+    background-color: #97bbe7;
+    border-radius: 20px;
+    line-height: 1.7;
+}
+
+.donation-guidelines {
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.donators {
+    margin-right: 24vw;
+    height: 400px;
+    width: 800px;
+    background-color: #97bbe7;
+    border-radius: 20px;
+    line-height: 1.7;
+}
+
+.safety-wrapper{
+    margin-left: 28vw;
+}
+
+.emergency{
+    font-weight: bold;
+}
+
+.donator-image2{
+    width: 100px;
+}

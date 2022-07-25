@@ -17,10 +17,15 @@ export const useLoginForm = () => {
       if (data?.user) {
         setUser(data.user)
         apiClient.setToken(data.token)
+      } else {
+        setErrors((e) => ({ ...e, email: "Invalid email/password." }))
       }
       if (error) {
+
         setErrors((e) => ({ ...e, input: error }))
+        console.log("error",error)
       }
+      
       setIsLoading(false)
     }
       return {

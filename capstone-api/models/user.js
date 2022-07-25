@@ -1,9 +1,8 @@
 const { UnauthorizedError, BadRequestError } = require("../utils/errors")
 const db = require("../db")
-const { c } = require("tar")
 const bcrypt = require("bcrypt")
 const { BCRYPT_WORK_FACTOR } = require("../config")
-const tokens = require("../utils/tokens")
+
 
 class User {
 
@@ -57,15 +56,16 @@ class User {
         const result = await db.query(`
             INSERT INTO users (
                 email,
-                password,
+                username,               
                 first_name,
                 last_name,
-                username
+                password
+
                 
             )
             VALUES ($1, $2, $3, $4, $5)
             RETURNING id, email, username, first_name, last_name, updated_at, created_at;
-        `, [lowercasedEmail, hashedPassword, credentials.userName, credentials.firstName, credentials.lastName])
+        `, [lowercasedEmail, credentials.userName, credentials.firstName, credentials.lastName, hashedPassword])
 
         const user = result.rows[0]
 
@@ -79,11 +79,16 @@ class User {
 
         const query =  `SELECT * FROM users WHERE email = $1`
 
+        
+
         const result = await db.query(query, [email.toLowerCase()])
 
         const user = result.rows[0]
+        
 
         return user
+
+        
 
     }
     static async savePasswordResetToken(email,resetToken){

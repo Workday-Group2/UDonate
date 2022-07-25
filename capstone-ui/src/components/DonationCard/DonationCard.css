@@ -1,11 +1,18 @@
+.DonationCard .container {
+    padding: 0px 10px;
+    position: relative;
+    flex: 1;
+    max-width: 100%;
+    
+}
 .DonationCard {
-    height: 220px;
-    width: 265px;
+    
     /* border: 2px solid rgb(8, 8, 8); */
     margin: 90px 90px 20px 0;
 }
 .donation-image {
-    width: 265px;
+  height:50%;
+  width:50%;
 }
 
 .donation-name {
@@ -13,10 +20,15 @@
     color: rgb(38, 38, 38);
     line-height: 1.5;  */
     color: #0f0f0f;
-    font-weight: 600;
-    margin: 0.25rem 0;
+    /* font-weight: 600; */
+    margin: 10px 0 0;
 }
 .donation-title {
     padding: 15px;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-top: 20px;
+    margin-bottom: 20px;
     background-color: #faf9f5;
 }

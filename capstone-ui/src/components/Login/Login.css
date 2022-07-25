@@ -1,0 +1,103 @@
+.html {
+    background-color: #d3ddd3;
+}
+
+body {
+    /* background-image: linear-gradient(135deg, #96dd8f 10%, #284621 50%); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: "Open Sans", sans-serif;
+    color: #333333;
+    
+}
+.left {
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(https://i.pinimg.com/736x/5d/73/ea/5d73eaa…--tumblr-backgrounds-iphone-phone-wallpapers-iphone-wallaper-tumblr.jpg);
+    overflow: hidden;
+}
+.left h1 {
+    font-size: 5vmax;
+    line-height: 1;
+    font-weight: 200;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color:rgb(56, 55, 55);
+}
+
+
+.overlay {
+    padding: 30px;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(135deg, #b6bdd1 10%, #8f9ffb 50%);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.login {
+    margin-top: 50px;
+    margin-left: 200px;
+    
+    /* margin: ; */
+    width: 70%;
+    background: #fdfdfd;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex: 1 1 100%;
+    align-items: stretch;
+    /* justify-content: space-between; */
+    box-shadow: 0 0 20px 6px #2e0ee285;
+}
+.loginForm{
+    padding: 40px;
+    overflow: hidden;
+}
+.form-title{
+    font-size: 4vmax;
+    line-height: 0;
+    color: rgb(56, 55, 55);
+}
+.footer-login {
+    font-size: 14px;
+    color: #080808;
+}
+.illustration-wrapper {
+    width: 200px;
+    height: 220px;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.illustration-wrapper img{
+    width: 100%;
+    height: auto;
+        
+    
+}
+.form-input {
+    width: 150%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #6d737e;
+}
+
+.submit-login{
+    /* float: right; */
+    cursor: pointer;
+    margin-top: 20px;
+    color: #fff;
+    font-size: 16px;
+    padding: 12px 35px;
+    border-radius: 50px;
+    display: inline-block;
+    border: 0;
+    outline: 0;
+    box-shadow: 0px 4px 20px 0px #2066a8a6;
+    background-image: linear-gradient(135deg, #1c54ce 10%, #4f36dd 100%);
+}

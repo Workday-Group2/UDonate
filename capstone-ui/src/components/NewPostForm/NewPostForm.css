@@ -1,0 +1,110 @@
+.newPost{
+    margin: 0 auto;
+    height: 5 0vw;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex: 1 1 100%;
+    align-items: stretch;
+    box-shadow: 0 0 20px 6px #9196e6;
+    width: 1100px;
+    padding: 24px 36px;
+}
+ .qtyMinus, .qtyPlus {
+    width: 34px;
+    height: 34px;
+    background: #317bdb;
+    border-color:  #317bdb;
+    border-radius: 2px;
+    text-align: center;
+    font-size: 19px;
+    line-height: 36px;
+    color: #fff;
+    cursor: pointer;
+}
+.qty {
+    margin-top:20px;
+    width: 60px;
+    height:34px;
+    text-align: center;
+}
+
+.form1 {
+    margin-left: 75px;
+    margin-top: 35px;
+}
+
+.form-input-donation {
+    width: 190%;
+    padding: 10px;
+    /* margin-top: 25px; */
+    font-size: 16px;
+    border: none;
+    outline: none;
+    /* border-bottom: 2px solid #6d737e; */
+}
+.left-donation {
+    margin-right: 25px;
+    margin-top: 30px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(https://i.pinimg.com/736x/5d/73/ea/5d73eaa…--tumblr-backgrounds-iphone-phone-wallpapers-iphone-wallaper-tumblr.jpg);
+    overflow: hidden;
+}
+.overlay-donation{
+    padding: 30px;
+    /* width: 100%;
+    height: 100%; */
+    /* background-image: linear-gradient(135deg, #96dd8f 10%, #b1d1a9 50%); */
+    background-image: url("https://www.quicklly.com/images/organic-indian-grocery-box.jpg");
+    overflow: hidden;
+    box-sizing: border-box;
+    background-size: cover;
+    margin-left:-30px;
+    margin-top: 30px;
+    width: 40vw;
+}
+
+.left-donation h1 {
+    font-size: 4vmax;
+    line-height: 1;
+    font-weight: 500;
+    margin-top: 300px;
+    margin-bottom: 20px;
+    color:rgb(0, 0, 0);
+}
+
+
+.title-name{
+    font-size: 20px;
+}
+.post-button{
+    cursor: pointer;
+    /* float: right; */
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 16px;
+    padding: 12px 35px;
+    border-radius: 50px;
+    display: inline-block;
+    border: 0;
+    outline: 0;
+    box-shadow: 0px 4px 20px 0px #adf;
+    background: #317bdb;
+    /* background-image: linear-gradient(135deg, #57aac3 10%, #408caa 100%); */
+}
+.title-donation{
+    font-size: 3vmax;
+    line-height: 0;
+    color: rgb(56, 55, 55);
+}
+.donation-input{
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    /* border: none; */
+    outline: none;
+    border-bottom: 2px solid #0d360c;
+}
