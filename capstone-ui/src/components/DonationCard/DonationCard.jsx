@@ -12,7 +12,6 @@ export default function DonationCard({
   email,
   created_at,
 }) {
-
   return (
     <div className="DonationCard">
       <div className="container">

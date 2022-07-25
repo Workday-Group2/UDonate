@@ -12,12 +12,10 @@ export default function BrowseFeed(props) {
 
     async function getDonation(){
       const {data, err} = await apiClient.listAllDonation()
-      console.log(29,data)
       if(err) setError(err)
       if(data){
         setDonation(data.donations)
       }
-      console.log(12,donation)
       }
       useEffect(() => {
         getDonation()
@@ -35,7 +33,6 @@ export default function BrowseFeed(props) {
                         imageUrl={item.imageUrl} donation_desc={item.donation_desc} location={item.location}
                         category={item.category}
                          />
-                         {console.log(552, item.name, item.donation_desc, item.location)}
                     </Link>
                 )})}
             </div>

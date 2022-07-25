@@ -11,7 +11,6 @@ export default function Donations() {
 
     async function getDonation(){
       const {data, err} = await apiClient.fetchDonation()
-      console.log(34, data.donations)
       if(err) setError(err)
       if(data){
         setDonation(data.donations)

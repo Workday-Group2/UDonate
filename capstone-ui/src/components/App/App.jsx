@@ -39,7 +39,6 @@ function App() {
   useEffect(() => {
     const fetchUser = async () => {
       const { data, err } = await apiClient.fetchUserFromToken()
-      console.log(76,data)
       if (data) setUser(data.user)
       if(error) setError(err)
 
@@ -51,7 +50,6 @@ function App() {
       fetchUser()
     }
   }, [])
-  console.log("user!!",user)
   const addPost = (newPost) => {
     setPosts((oldPosts) => [newPost, ...oldPosts])
   }

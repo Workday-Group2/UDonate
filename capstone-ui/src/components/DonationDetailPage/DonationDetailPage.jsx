@@ -3,7 +3,6 @@ import "./DonationDetailPage.css"
 
 export default function DonationDetailPage({quantity,name,imageUrl,category,
     id,avgRating,totalRatings,donation_desc,location,createdAt, email}) {
-    console.log("image",imageUrl)
     return (
         <div className="donation-details">
             <div className="details">

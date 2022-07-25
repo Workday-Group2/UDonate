@@ -6,6 +6,7 @@ const authRoutes = require("./routes/auth")
 const security = require("./middleware/security")
 const donationRoutes = require("./routes/donation")
 const allRoutes = require("./routes/allDonation")
+const bookedRoutes = require("./routes/userBooking")
 
 const app = express()
 
@@ -20,6 +21,7 @@ app.use(security.extractUserFromJwt)
 app.use("/auth", authRoutes)
 app.use("/donation", donationRoutes)
 app.use("/allDonation", allRoutes)
+app.use("/booking", bookedRoutes)
 
 // app.get("/", async(req, res, next) => {
 //     res.status(200).json({ ping: "pong"})

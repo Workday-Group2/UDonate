@@ -23,7 +23,6 @@ export const useLoginForm = () => {
       if (error) {
 
         setErrors((e) => ({ ...e, input: error }))
-        console.log("error",error)
       }
       
       setIsLoading(false)
