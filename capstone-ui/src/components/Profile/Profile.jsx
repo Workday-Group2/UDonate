@@ -9,7 +9,6 @@ const defaultAvatar =
   
 const avatarUrl = defaultAvatar
 export default function Profile(props) {
-    console.log("user",props)
     return (
         <div className="Profile">
             <div className="container">

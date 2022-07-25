@@ -14,14 +14,14 @@ export default function DonationCard({
 }) {
   // const url = window.location.pathname //url of web
   // const last = url.split("/")
-  // console.log("last",last)
+
   // const lastSegment = last[last.length-1] //id
-  // console.log("last segment",lastSegment)
+
 
   // if (lastSegment) {
   //     return (
   //         <div>
-  //             <h1>{console.log("image",imageUrl)}</h1>
+
   //             <DonationDetailPage category={category} id = {id} imageUrl={imageUrl} name={name}
   //              quantity={quantity} createdAt={createdAt} avgRating={avgRating}
   //              totalRatings={totalRatings} donation_desc={donation_desc} location={location} createdAt={createdAt}/>

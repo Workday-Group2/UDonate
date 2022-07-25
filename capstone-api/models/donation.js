@@ -139,7 +139,7 @@ class Donation {
                 LEFT JOIN rating AS r ON r.donation_id = d.id
             WHERE d.booked = true
             GROUP BY d.id, u.email
-            `
+            `,[user.email]
         )
         return results.rows
     }

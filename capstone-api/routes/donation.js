@@ -54,7 +54,6 @@ router.post("/:donationId/newBooking", security.requireAuthenticatedUser, async 
     try {
         const {donationId} = req.params
         const {user} = res.locals
-        
         const newBooking = await Booking.createBooking({ newBooking: req.body.newBooking, user, donationId })
         const updateDonation = await Booking.setBookedDonation( donationId )
         return res.status(201).json({ newBooking, updateDonation })
@@ -63,11 +62,11 @@ router.post("/:donationId/newBooking", security.requireAuthenticatedUser, async 
     }
 })
 
-router.get("/UserBookedDonation", security.requireAuthenticatedUser, async (req, res, next) => {
+router.get("/userBookedDonation", async (req, res, next) => {
     try {
         const {user} = res.locals;
-        const UserBookedDonation = await Donation.listBookingForUser({user})
-        return res.status(200).json({UserBookedDonation})
+        const userBookedDonation = await Donation.listBookingForUser({user})
+        return res.status(200).json({userBookedDonation})
     } catch(err) {
         next(err)
     }

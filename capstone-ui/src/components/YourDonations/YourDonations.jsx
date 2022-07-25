@@ -1,4 +1,5 @@
 import React from 'react'
+import "./YourDonations.css"
 
 export default function YourDonations(props) {
   return (
@@ -12,7 +13,3 @@ export default function YourDonations(props) {
     </div>
   )
 }
-
-// key={item.id} quantity={item.quantity} name={item.name} 
-// imageUrl={item.imageUrl} donation_desc={item.donation_desc} location={item.location}
-// category={item.category}

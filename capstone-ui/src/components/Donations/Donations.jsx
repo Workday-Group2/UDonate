@@ -3,7 +3,7 @@ import "./Donations.css"
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import apiClient from "../../services/apiClient"
-import YourDonations from "../../YourDonations/YourDonations"
+import YourDonations from "../YourDonations/YourDonations"
 
 export default function Donations() {
     const [donation, setDonation] = useState([])
@@ -11,7 +11,6 @@ export default function Donations() {
 
     async function getDonation(){
       const {data, err} = await apiClient.fetchDonation()
-      console.log(34, data.donations)
       if(err) setError(err)
       if(data){
         setDonation(data.donations)
@@ -25,7 +24,7 @@ export default function Donations() {
     return (
         <div className="your-donation">
 
-            <div className="you-donation-items">
+            <div className="your-donation-items">
             {donation.map((item) => {return(
                     <YourDonations key={item.id} quantity={item.quantity} name={item.name} 
                     imageUrl={item.imageUrl} donation_desc={item.donation_desc} location={item.location}
