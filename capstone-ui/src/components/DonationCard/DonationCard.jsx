@@ -26,13 +26,13 @@ export default function DonationCard({
             <div className="_product-detail-content">
                 <div className="info-card">
                     <p className="donation-name">Title: {name}</p>
-                    <div class="_p-features">
+                    <div className="_p-features">
                         <span> Description About this product: </span>
                         {donation_desc}
                         <p className="donation-location">Location: {location}</p>
-                        <p className="nutrition-email">Donator Email: {email}</p>
+                        <p className="donation-email">Donator Email: {email}</p>
                         <p className="donation-quantity">Quantity: {quantity}</p>
-                        <p className="nutrition-create">Posted on: {created_at}</p>
+                        <p className="donation-create">Posted on: {created_at}</p>
                     </div>
                
                 </div>

@@ -23,5 +23,7 @@
     flex-direction: column;
     justify-content: space-between;
    font-weight: bold;
+   cursor:auto;
     /* transition: transform 200ms ease-in; */
 }
+

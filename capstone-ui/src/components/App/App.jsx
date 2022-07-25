@@ -76,7 +76,7 @@ function App() {
             <Route path="/profile" element={user?.email ? (<Profile user={user} />) : (<AccessForbidden/>)}/>
             <Route path="/donations" element={user?.email ? (<Donations user={user} />) : (<AccessForbidden/>)}/>
             <Route path="/bookings" element={user?.email ? (<Bookings user={user} />) : (<AccessForbidden/>)}/>
-            <Route path="/id/:donationId/newBooking" element={<BookingConfirmation user={user} />}/>
+            {/* <Route path="/:donationId/newBooking" element={<BookingConfirmation user={user} />}/> */}
             <Route path="*" element={<NotFound/>}/>
           </Routes>
           <Footer/>
