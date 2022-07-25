@@ -23,8 +23,8 @@ export default function Donations() {
 
     return (
         <div className="your-donation">
-
-            <div className="your-donation-items">
+            <h1>Your Donations</h1>
+            <div className="you-donation-items">
             {donation.map((item) => {return(
                     <YourDonations key={item.id} quantity={item.quantity} name={item.name} 
                     imageUrl={item.imageUrl} donation_desc={item.donation_desc} location={item.location}

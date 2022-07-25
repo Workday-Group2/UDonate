@@ -12,23 +12,6 @@ export default function DonationCard({
   email,
   created_at,
 }) {
-  // const url = window.location.pathname //url of web
-  // const last = url.split("/")
-
-  // const lastSegment = last[last.length-1] //id
-
-
-  // if (lastSegment) {
-  //     return (
-  //         <div>
-
-  //             <DonationDetailPage category={category} id = {id} imageUrl={imageUrl} name={name}
-  //              quantity={quantity} createdAt={createdAt} avgRating={avgRating}
-  //              totalRatings={totalRatings} donation_desc={donation_desc} location={location} createdAt={createdAt}/>
-  //         </div>
-
-  //     )
-  // } else {
   return (
     <div className="DonationCard">
       <div className="container">
@@ -42,13 +25,13 @@ export default function DonationCard({
             <div className="_product-detail-content">
                 <div className="info-card">
                     <p className="donation-name">Title: {name}</p>
-                    <div class="_p-features">
+                    <div className="_p-features">
                         <span> Description About this product: </span>
                         {donation_desc}
                         <p className="donation-location">Location: {location}</p>
-                        <p className="nutrition-email">Donator Email: {email}</p>
+                        <p className="donation-email">Donator Email: {email}</p>
                         <p className="donation-quantity">Quantity: {quantity}</p>
-                        <p className="nutrition-create">Posted on: {created_at}</p>
+                        <p className="donation-create">Posted on: {created_at}</p>
                     </div>
                
                 </div>
@@ -58,11 +41,6 @@ export default function DonationCard({
         
       </div>
 
-      {/* <div className="nutrition-text">
-            <p className="nutrition-name">{props.name}</p>
-            <p className="nutrition-category not-name">Category: {props.category}</p>
-            <p className="nutrition-quantity not-name">Quantity: {props.quantity}</p>
-            </div> */}
     </div>
   );
 }

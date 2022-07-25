@@ -48,6 +48,7 @@ class Donation {
             u.email,
             d.donation_desc,
             d.location,
+            d.booked,
             CAST(AVG(r.rating) AS DECIMAL(10,1)) AS "avgRating",
             COUNT(r.rating) AS "totalRatings"
             FROM donation AS d
@@ -80,6 +81,7 @@ class Donation {
                    d.created_at AS "createdAt",
                    d.donation_desc,
                    d.location,
+                   d.booked,
                    CAST(AVG(r.rating) AS DECIMAL(10,1)) AS "avgRating",
                    COUNT(r.rating) AS "totalRatings"
             FROM donation AS d
@@ -137,7 +139,7 @@ class Donation {
             FROM donation AS d
                 LEFT JOIN users AS u ON u.id = d.user_id
                 LEFT JOIN rating AS r ON r.donation_id = d.id
-            WHERE d.booked = true
+            WHERE d.user_id = (SELECT users.id FROM users WHERE email = $1) AND booked = true
             GROUP BY d.id, u.email
             `,[user.email]
         )

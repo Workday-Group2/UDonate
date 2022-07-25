@@ -76,7 +76,7 @@ class ApiClient {
     }
 
     async listBookingForUser() {
-      return await this.request({ endpoint: `donation/userBookedDonation`, method: `GET` })
+      return await this.request({ endpoint: `/userBooking`, method: `GET` })
     }
   }
   

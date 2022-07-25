@@ -10,6 +10,7 @@ export default function Bookings() {
 
     async function getBooking(){
       const {data, err} = await apiClient.listBookingForUser()
+      console.log(13, data)
       if(err) setError(err)
       if(data){
         setBooking(data.donations)

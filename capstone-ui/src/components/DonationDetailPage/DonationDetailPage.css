@@ -10,7 +10,7 @@
 
 .donation-details .details {
     /* padding: 10px 10px; */
-    /* position: relative; */
+    position: relative;
     /* flex: 1 1;
     width: 300px;
     height: 300px;
@@ -26,11 +26,11 @@
     cursor: pointer;
     transition: transform 200ms ease-in;
 }
-.donation-details .details .nutrition-text .nutrition-name{
+.donation-details .details .donation-text .donation-name{
     padding: 1rem;
     font-weight:bold;
 }
-.donation-details .details .nutrition-text .card__description{
+.donation-details .details .donation-text .card__description{
     padding: 0 1rem;
 }
 .donation-details .details .donation-btn {
@@ -53,7 +53,7 @@
     background:   rgb(14, 122, 223);
     color: #ffffff;
 }
-.donation-details .details .nutrition-text .donation-image2 {
+.donation-details .details .donation-text .donation-image2 {
     /* float: center;
     width:  150px;
     height: 150px;
@@ -62,7 +62,7 @@
     width: 100%;
     object-fit: cover;
 }
-.donation-details .details .nutrition-text {
+.donation-details .details .donation-text {
         font-size: 0.875em;
     font-weight: 400;
     line-height: 1.0625rem;
