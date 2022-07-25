@@ -19,7 +19,7 @@ class EmailService{
 
     async sendEmail(email){
         if(!this.isActive){
-            if (!email.to) return {status:400 , email, error: [{field: `to`, message: `Missing to field`}]}
+            if (!email.to) return {status:400 , email, error: [{field: "to", message: "Missing to field"}]}
             
             console.log(`Sending fake email to: ${email.to} from : ${email.from} `)
             return { status: 202, email, error:null}
@@ -45,7 +45,7 @@ class EmailService{
             to: user.email,
             from: this.emailFromAddress,
             subject: `Reset your password for ${this.applicationName}`,
-            html:`
+            html: `
             <html>
             <body>
             <h1>Password Reset Notification</h1>
@@ -58,7 +58,7 @@ class EmailService{
             <p>If you did not make this request contact support immediatly</p>
             </body>
             </html>
-            `
+            `,
         }
         return await this.sendEmail(email)
     }
@@ -67,8 +67,8 @@ class EmailService{
         const email = {
             to: user.email,
             from: this.emailFromAddress,
-            subject: `Your ${this.applicationName} password has been reset successfully`,
-            html:`
+            subject: "Reset your password for " + this.applicationName,
+            html: `
             <html>
             <body>
             <h1>Password Reset Notification</h1>
@@ -78,7 +78,7 @@ class EmailService{
             <p>If you did not reset your password contact support immediately</p>
             </body>
             </html>
-            `
+            `,
         }
         return await this.sendEmail(email)
     }

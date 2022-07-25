@@ -2,7 +2,7 @@ const { UnauthorizedError, BadRequestError } = require("../utils/errors")
 const db = require("../db")
 const bcrypt = require("bcrypt")
 const { BCRYPT_WORK_FACTOR } = require("../config")
-
+const { generatePasswordResetToken } = require("../utils/tokens")
 
 class User {
 
@@ -91,17 +91,18 @@ class User {
         
 
     }
-    static async savePasswordResetToken(email,resetToken){
+
+    static async savePasswordResetToken(email, resetToken){
         
         const result = await db.query(
             `
             UPDATE users
             SET pw_reset_token  =$1,
-                pw_reset_token_exp  =$2,
+                pw_reset_token_exp  =$2
             WHERE email = $3
             RETURNING id,email,username,created_at;
             `,
-            [resetToken.token,resetToken.expiresAt, email]
+            [resetToken.token, resetToken.expiresAt, email]
         )
         const user = result.rows[0]
         if (user) return User.makePublicUser(user)
@@ -115,8 +116,8 @@ class User {
             UPDATE users
             SET password =  $1,
                 pw_reset_token = NULL,
-                pw_reset_token_exp = NULL,
-            WHERE pw_reset_token = $2,
+                pw_reset_token_exp = NULL
+            WHERE pw_reset_token = $2
             AND pw_reset_token_exp > NOW()
             RETURNING id, email, username, created_at;
             `,
