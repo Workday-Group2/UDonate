@@ -3,7 +3,7 @@ const router = express.Router();
 const Donation = require("../models/donation")
 const security = require("../middleware/security")
 
-router.get("/", async (req, res, next) => {
+router.get("/userHistory",security.requireAuthenticatedUser, async (req, res, next) => {
     try {
         const {user} = res.locals;
         const userBooking = await Donation.listBookingForUser({user})
