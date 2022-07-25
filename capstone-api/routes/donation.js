@@ -9,7 +9,6 @@ const Booking = require("../models/booking")
 router.post("/", security.requireAuthenticatedUser, async (req, res, next) => {
     try {
         const { user } = res.locals
-        console.log(user)
         const post = await Donation.createDonation({ user, post: req.body})
         return res.status(201).json({post})
     } catch(err) {
@@ -60,6 +59,16 @@ router.post("/:donationId/newBooking", security.requireAuthenticatedUser, async 
         const updateDonation = await Booking.setBookedDonation( donationId )
         console.log("hello")
         return res.status(201).json({ newBooking, updateDonation })
+    } catch(err) {
+        next(err)
+    }
+})
+
+router.get("/UserBookedDonation", security.requireAuthenticatedUser, async (req, res, next) => {
+    try {
+        const {user} = res.locals;
+        const UserBookedDonation = await Donation.listBookingForUser({user})
+        return res.status(200).json({UserBookedDonation})
     } catch(err) {
         next(err)
     }
