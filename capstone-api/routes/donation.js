@@ -9,6 +9,7 @@ const Booking = require("../models/booking")
 router.post("/", security.requireAuthenticatedUser, async (req, res, next) => {
     try {
         const { user } = res.locals
+        console.log(13, user)
         const post = await Donation.createDonation({ user, post: req.body})
         return res.status(201).json({post})
     } catch(err) {

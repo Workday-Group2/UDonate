@@ -8,9 +8,9 @@ class Donation {
         const requireFields = ["name", "category", "quantity", "image_url", "expiration_date", "donation_desc", "location"]
         requireFields.forEach((field) => {
             if (!post.hasOwnProperty(field)) {
-                throw new BadRequestError(`Missing ${field} in request body`)
-            }
-        }) 
+                throw new BadRequestError(`Required field - ${field} - missing from request body.`)
+              }
+            }) 
             
         const result = await db.query(
             `
