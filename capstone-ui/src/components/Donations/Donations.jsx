@@ -3,7 +3,7 @@ import "./Donations.css"
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import apiClient from "../../services/apiClient"
-import YourDonations from "../../YourDonations/YourDonations"
+import YourDonations from "../YourDonations/YourDonations"
 
 export default function Donations() {
     const [donation, setDonation] = useState([])
@@ -24,7 +24,7 @@ export default function Donations() {
 
     return (
         <div className="your-donation">
-
+            <h1>Your Donations</h1>
             <div className="you-donation-items">
             {donation.map((item) => {return(
                     <YourDonations key={item.id} quantity={item.quantity} name={item.name} 

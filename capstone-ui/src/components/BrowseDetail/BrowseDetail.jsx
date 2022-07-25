@@ -3,7 +3,7 @@ import DonationDetailPage from "../DonationCard/DonationCard"
 import NotFound from "../NotFound/NotFound"
 import apiClient from "../../services/apiClient"
 import "./BrowseDetail.css"
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 
 export default function BrowseDetail(props) {
     const [donation, setDonation] = React.useState({})
@@ -21,6 +21,7 @@ export default function BrowseDetail(props) {
         }
       
     const makeBooking = async () => {
+      console.log(2983,donation.id)
       const request = async () => {
 
          await apiClient.newBooking(donationId)
@@ -37,8 +38,10 @@ export default function BrowseDetail(props) {
         <div className="Browse-Detail">
             {notFound ? (<NotFound/>) : <DonationDetailPage quantity={donation.quantity} id={donation.id} name={donation.name} imageUrl={donation.image_url} donation_desc={donation.donation_desc} location={donation.location}
             avgRating={donation.avgRating} category={donation.category} created_at={donation.created_at} email={donation.email} />}
-
-            <button className="bookingButton" onClick={makeBooking} >Book</button>
+            <Link to={`id/`+donation.id+ `/newBooking`}> 
+              <button className="bookingButton" onClick={makeBooking} >Book</button>
+            </Link>
+           
         </div>
         )
     }

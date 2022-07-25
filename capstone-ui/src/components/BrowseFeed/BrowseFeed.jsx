@@ -24,10 +24,6 @@ export default function BrowseFeed(props) {
       }, []);
     return (
         <div className="browse-feed">
-            {/* <div className="search">
-                
-                <input type="search" placeholder="Search a donation" />
-            </div> */}
            <h1>Browse Donations</h1>
            
             <div className="donation-items">
