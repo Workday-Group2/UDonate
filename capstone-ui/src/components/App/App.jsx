@@ -13,6 +13,7 @@ import BrowseNew from "../BrowseNew/BrowseNew"
 import Footer from "../Footer/Footer"
 import Profile from "../Profile/Profile"
 import AccessForbidden from "../AccessForbidden/AccessForbidden"
+import BookingConfirmation from "../BookingConfirmation/BookingConfirmation"
 import { useAuthContext, AuthContextProvider } from "../../contexts/auth"
 import apiClient from "../../services/apiClient"
 import Recover from "../Recover/Recover"
@@ -75,6 +76,7 @@ function App() {
             <Route path="/profile" element={user?.email ? (<Profile user={user} />) : (<AccessForbidden/>)}/>
             <Route path="/donations" element={user?.email ? (<Donations user={user} />) : (<AccessForbidden/>)}/>
             <Route path="/bookings" element={user?.email ? (<Bookings user={user} />) : (<AccessForbidden/>)}/>
+            <Route path="/id/:donationId/newBooking" element={<BookingConfirmation user={user} />}/>
             <Route path="*" element={<NotFound/>}/>
           </Routes>
           <Footer/>
