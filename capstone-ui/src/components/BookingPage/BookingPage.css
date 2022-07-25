@@ -1,13 +1,17 @@
 .BookingModal {
     background: white;
     padding-top: 16px;
-  }
-  .BookingModal .close-button {
+}
+.BookingModal .icon{
+    color: rgb(53, 216, 107);
+  
+}
+.BookingModal .close-button {
     position: absolute;
     top: 25px;
     right: 25px;
     cursor: pointer;
-  }
+}
   .BookingModal img {
     margin-bottom: 25px;
     height: 44px;

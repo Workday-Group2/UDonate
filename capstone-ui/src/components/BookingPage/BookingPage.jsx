@@ -3,7 +3,7 @@ import Modal from "react-modal"
 import "./BookingPage.css"
 import { useParams, Link } from "react-router-dom"
 import apiClient from "../../services/apiClient"
-
+import { BsCheckCircle } from "react-icons/bs";
 
 const modalStyles = {
     content: {
@@ -53,6 +53,10 @@ export default function BookingPage(props) {
                 {booking ? (
                     <div className="completed">
                         <h1>Confirmed!</h1>
+                        <div className="icon">
+                            <BsCheckCircle  size={40}/>
+                        </div>
+                        
                     </div>
                 ) : (
                     <div className="content">
