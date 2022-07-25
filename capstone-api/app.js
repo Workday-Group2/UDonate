@@ -21,7 +21,7 @@ app.use(security.extractUserFromJwt)
 app.use("/auth", authRoutes)
 app.use("/donation", donationRoutes)
 app.use("/allDonation", allRoutes)
-app.use("/userBooking", bookedRoutes)
+app.use("/userBookingHistory", bookedRoutes)
 
 // app.get("/", async(req, res, next) => {
 //     res.status(200).json({ ping: "pong"})
