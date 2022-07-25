@@ -57,7 +57,6 @@ router.post("/:donationId/newBooking", security.requireAuthenticatedUser, async 
         
         const newBooking = await Booking.createBooking({ newBooking: req.body.newBooking, user, donationId })
         const updateDonation = await Booking.setBookedDonation( donationId )
-        console.log("hello")
         return res.status(201).json({ newBooking, updateDonation })
     } catch(err) {
         next(err)
