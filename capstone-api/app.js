@@ -6,7 +6,7 @@ const authRoutes = require("./routes/auth")
 const security = require("./middleware/security")
 const donationRoutes = require("./routes/donation")
 const allRoutes = require("./routes/allDonation")
-const bookedRoutes = require("./routes/userBooking")
+const bookedRoutes = require("./routes/userBookingHistory")
 
 const app = express()
 
