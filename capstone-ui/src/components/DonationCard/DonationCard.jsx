@@ -32,23 +32,30 @@ export default function DonationCard({
   return (
     <div className="DonationCard">
       <div className="container">
-     
-          <img className="donation-image" src={imageUrl} alt="" />
-        
-        {/* <img className="donation-image" src={props.imageUrl} alt="" /> */}
-        <div className="info-card">
-          <div className="donation-title">
-            <p className="donation-location">Location: {location}</p>
-            <p className="nutrition-email">Donator Email: {email}</p>
-            <p className="donation-name">Title: {name}</p>
-            <p className="donation-quantity">Quantity: {quantity}</p>
-            <p className="donation-description">Description: {donation_desc}</p>
-            <p className="nutrition-create">Posted on: {created_at}</p>
-          </div>
-          {/* <div>
-                        <p className="donation-description">{donation_desc}</p>
-                    </div> */}
+        <div className="title">
+            <h1>Donation Detail</h1>
+        </div>   
+        <div className="picZommer">   
+            <img className="donation-image" src={imageUrl} alt="" />
         </div>
+        <div className="cold-md-6">
+            <div className="_product-detail-content">
+                <div className="info-card">
+                    <p className="donation-name">Title: {name}</p>
+                    <div class="_p-features">
+                        <span> Description About this product: </span>
+                        {donation_desc}
+                        <p className="donation-location">Location: {location}</p>
+                        <p className="nutrition-email">Donator Email: {email}</p>
+                        <p className="donation-quantity">Quantity: {quantity}</p>
+                        <p className="nutrition-create">Posted on: {created_at}</p>
+                    </div>
+               
+                </div>
+            </div>
+            
+        </div>
+        
       </div>
 
       {/* <div className="nutrition-text">

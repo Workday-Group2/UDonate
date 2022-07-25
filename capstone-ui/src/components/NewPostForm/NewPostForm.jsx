@@ -5,6 +5,7 @@ import "./NewPostForm.css"
 import {useNavigate} from 'react-router-dom';
 
 
+
 export default function NewPostForm({user, addPost}) {
   
     const [isLoading, setIsLoading] = useState(false)
@@ -22,7 +23,18 @@ export default function NewPostForm({user, addPost}) {
       donation_desc: "",
       location: ""
     })
-  
+
+    const incrementQuantity = (event) => {
+      // setForm(form.quantity+1);
+      setForm(form.quantity+1)
+      console.log("form",form)
+    }
+    const decreaseQuantity = (event) => {
+      // setForm((f) => ({ ...f, [event.target.name]: event.target.value - 1}))
+      setForm(form.quantity-1)
+      console.log("form",form)
+    }
+
     const handleOnInputChange = (event) => {
       console.log("event",event)
       setForm((f) => ({ ...f, [event.target.name]: event.target.value }))
@@ -120,16 +132,18 @@ export default function NewPostForm({user, addPost}) {
               <div className="title-form">
                 <label className= "title-name"  htmlFor="quantity">Quantity: </label>
               </div>
-              
+              <button className="qtyMinus" onClick={decreaseQuantity} >-</button>
               <input
-              className="form-input"
+              className="qty"
                 type="number"
                 name="quantity"
                 placeholder="quantity"
                 value={form.quantity}
                 onChange={handleOnInputChange}
-                step="1"
+                // step="1"
+                min="0"
               />
+              <button className="qtyMinus" onClick={incrementQuantity}>+</button>
             </div>
             <div className="input-field">
               <div className="title-form">
