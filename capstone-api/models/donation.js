@@ -48,7 +48,7 @@ class Donation {
             u.email,
             d.donation_desc,
             d.location,
-            d.booked,
+            d.bookee_user_id,
             CAST(AVG(r.rating) AS DECIMAL(10,1)) AS "avgRating",
             COUNT(r.rating) AS "totalRatings"
             FROM donation AS d
@@ -81,7 +81,7 @@ class Donation {
                    d.created_at AS "createdAt",
                    d.donation_desc,
                    d.location,
-                   d.booked,
+                   d.bookee_user_id,
                    CAST(AVG(r.rating) AS DECIMAL(10,1)) AS "avgRating",
                    COUNT(r.rating) AS "totalRatings"
             FROM donation AS d
@@ -107,13 +107,13 @@ class Donation {
                    d.created_at AS "createdAt",
                    d.donation_desc,
                    d.location,
-                   d.booked,
+                   d.bookee_user_id,
                    CAST(AVG(r.rating) AS DECIMAL(10,1)) AS "avgRating",
                    COUNT(r.rating) AS "totalRatings"
             FROM donation AS d
                 LEFT JOIN users AS u ON u.id = d.user_id
                 LEFT JOIN rating AS r ON r.donation_id = d.id
-            WHERE d.booked = false
+            WHERE d.bookee_user_id IS NULL
             GROUP BY d.id, u.email
             `
         )
@@ -134,15 +134,16 @@ class Donation {
                    d.created_at AS "createdAt",
                    d.donation_desc,
                    d.location,
-                   d.booked,
+                   d.bookee_user_id,
                    CAST(AVG(r.rating) AS DECIMAL(10,1)) AS "avgRating",
                    COUNT(r.rating) AS "totalRatings"
             FROM donation AS d
                 LEFT JOIN users AS u ON u.id = d.user_id
                 LEFT JOIN rating AS r ON r.donation_id = d.id
-            WHERE d.user_id = (SELECT users.id FROM users WHERE email = $1) AND booked = true
+                LEFT JOIN booking AS b ON b.user_id = d.bookee_user_id
+            WHERE d.bookee_user_id = $1
             GROUP BY d.id, u.email
-            `,[user.email]
+            `,[user.id]
         )
         return results.rows
     }

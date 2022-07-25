@@ -17,18 +17,32 @@ class Booking {
   }
 
 
-  static async setBookedDonation(donationId) {
+  static async setBookedDonationInDonation(donationId) {
 
     const results = await db.query(
     `
     UPDATE donation
-    SET booked = TRUE
+    SET bookee_user_id = user_id
     WHERE id = $1
     `,
     [donationId]
     )
 
     return results.rows[0]
+}
+
+static async setBookedDonationInBooking(donationId) {
+
+  const results = await db.query(
+  `
+  UPDATE booking
+  SET bookee_user_id = user_id
+  WHERE id = $1
+  `,
+  [donationId]
+  )
+
+  return results.rows[0]
 }
 
 }

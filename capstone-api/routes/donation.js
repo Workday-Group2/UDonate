@@ -55,8 +55,9 @@ router.post("/:donationId/newBooking", security.requireAuthenticatedUser, async 
         const {donationId} = req.params
         const {user} = res.locals
         const newBooking = await Booking.createBooking({ newBooking: req.body.newBooking, user, donationId })
-        const updateDonation = await Booking.setBookedDonation( donationId )
-        return res.status(201).json({ newBooking, updateDonation })
+        const updateDonationInDonation = await Booking.setBookedDonationInDonation( donationId )
+        const updateDonationInBooking = await Booking.setBookedDonationInBooking( donationId )
+        return res.status(201).json({ newBooking, updateDonationInDonation, updateDonationInBooking })
     } catch(err) {
         next(err)
     }
