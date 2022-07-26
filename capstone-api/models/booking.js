@@ -57,11 +57,13 @@ static async listBookingForUser({user}) {
             d.image_url AS "imageUrl",
             d.donation_desc,
             d.location,
+            d.user_id AS "donaterId",
             u.email AS "userEmail"
       FROM booking AS b
         LEFT JOIN users AS u ON u.id = b.user_id
         LEFT JOIN donation AS d ON d.id = b.donation_id
       WHERE u.email = $1
+      ORDER BY d.created_at DESC
       `,[user.email]
   )
   return results.rows

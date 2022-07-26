@@ -25,19 +25,7 @@ export default function NewPostForm({user, addPost}) {
       donation_desc: "",
       location: ""
     })
-    // function that increments quantity
-    const incrementQuantity = (event) => {
-      // setForm(form.quantity+1);
-      setForm(form.quantity+1)
-      console.log("form",form)
-    }
     
-    const decreaseQuantity = (event) => {
-      // setForm((f) => ({ ...f, [event.target.name]: event.target.value - 1}))
-      setForm(form.quantity-1)
-      console.log("form",form)
-    }
-
     const handleOnInputChange = (event) => {
       console.log("event",event)
       setForm((f) => ({ ...f, [event.target.name]: event.target.value }))
@@ -45,7 +33,6 @@ export default function NewPostForm({user, addPost}) {
     }
     
     const handleOnSubmit = async (e) => {
-      // e.preventDefault()
       setIsLoading(true)
       
       const { data, error } = await apiClient.createDonation( { name : form.name, 
@@ -87,8 +74,8 @@ export default function NewPostForm({user, addPost}) {
           </div>
           <div className="form">
             <div className="form1">
-            <div className="input-field">
-                <label className= "title-name" htmlFor="title">Title: </label>
+            <div className="input-field" id="title">
+                <label className= "title-name" htmlFor="title" >Title: </label>
              
               <div className="title-form">
                 <input
@@ -107,14 +94,22 @@ export default function NewPostForm({user, addPost}) {
               <div className="title-form">
                 <label className= "title-name"  htmlFor="category">Category: </label>
               </div>
-              <input
-              className="form-input"
-                type="text"
+              <select
+                className="form-input"
                 name="category"
-                placeholder="Category"
                 value={form.category}
                 onChange={handleOnInputChange}
-              />
+              >
+              <option value=" "></option>
+              <option value="Fruits and Vegetables">Fruits and vegetables</option>
+              <option value="Dairy and Eggs">Dairy and Eggs</option>
+              <option value="Protein">Protein</option>
+              <option value="Pantry Essentials">Pantry Essentials</option>
+              <option value="Bread">Bread</option>
+              <option value="Desserts">Desserts</option>
+              <option value="Snacks">Snacks</option>
+              <option value="Beverages">Beverages</option>
+              </select>
             </div>
             
             <div className="input-field">
@@ -135,18 +130,14 @@ export default function NewPostForm({user, addPost}) {
               <div className="title-form">
                 <label className= "title-name"  htmlFor="quantity">Quantity: </label>
               </div>
-              <button className="qtyMinus" onClick={decreaseQuantity} >-</button>
               <input
               className="qty"
                 type="number"
                 name="quantity"
-                placeholder="quantity"
                 value={form.quantity}
                 onChange={handleOnInputChange}
-                // step="1"
                 min="0"
               />
-              <button className="qtyMinus" onClick={incrementQuantity}>+</button>
             </div>
             <div className="input-field">
               <div className="title-form">
@@ -156,7 +147,6 @@ export default function NewPostForm({user, addPost}) {
               <input
               className="form-input"
                 type="date"
-                // name="expiration date"
                 placeholder="MM-DD-YYYY"
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
@@ -169,7 +159,6 @@ export default function NewPostForm({user, addPost}) {
               <input
               className="form-input"
                 type="text"
-                // name="expiration date"
                 placeholder="Description"
                 value={desc}
                 onChange={(e) => setDesc(e.target.value)}
@@ -183,7 +172,6 @@ export default function NewPostForm({user, addPost}) {
               <input
               className="form-input"
                 type="text"
-                // name="expiration date"
                 autoComplete="address-line1"
                 placeholder="Location"
                 value={location}
