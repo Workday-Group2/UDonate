@@ -1,9 +1,8 @@
 const { UnauthorizedError, BadRequestError } = require("../utils/errors")
 const db = require("../db")
-const { c } = require("tar")
 const bcrypt = require("bcrypt")
 const { BCRYPT_WORK_FACTOR } = require("../config")
-const tokens = require("../utils/tokens")
+const { generatePasswordResetToken } = require("../utils/tokens")
 
 class User {
 
@@ -57,15 +56,16 @@ class User {
         const result = await db.query(`
             INSERT INTO users (
                 email,
-                password,
+                username,               
                 first_name,
                 last_name,
-                username
+                password
+
                 
             )
             VALUES ($1, $2, $3, $4, $5)
             RETURNING id, email, username, first_name, last_name, updated_at, created_at;
-        `, [lowercasedEmail, hashedPassword, credentials.userName, credentials.firstName, credentials.lastName])
+        `, [lowercasedEmail, credentials.userName, credentials.firstName, credentials.lastName, hashedPassword])
 
         const user = result.rows[0]
 
@@ -79,24 +79,30 @@ class User {
 
         const query =  `SELECT * FROM users WHERE email = $1`
 
+        
+
         const result = await db.query(query, [email.toLowerCase()])
 
         const user = result.rows[0]
+        
 
         return user
 
+        
+
     }
-    static async savePasswordResetToken(email,resetToken){
+
+    static async savePasswordResetToken(email, resetToken){
         
         const result = await db.query(
             `
             UPDATE users
             SET pw_reset_token  =$1,
-                pw_reset_token_exp  =$2,
+                pw_reset_token_exp  =$2
             WHERE email = $3
             RETURNING id,email,username,created_at;
             `,
-            [resetToken.token,resetToken.expiresAt, email]
+            [resetToken.token, resetToken.expiresAt, email]
         )
         const user = result.rows[0]
         if (user) return User.makePublicUser(user)
@@ -110,8 +116,8 @@ class User {
             UPDATE users
             SET password =  $1,
                 pw_reset_token = NULL,
-                pw_reset_token_exp = NULL,
-            WHERE pw_reset_token = $2,
+                pw_reset_token_exp = NULL
+            WHERE pw_reset_token = $2
             AND pw_reset_token_exp > NOW()
             RETURNING id, email, username, created_at;
             `,

@@ -1,7 +1,11 @@
 .navlink {
-    background-color: #8ec357;
-    padding: 0 4rem;
-    height: 73px;
+    background-color: #53A2DF;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    list-style-type: none;
+    margin-left: auto;
 }
 a {
     text-decoration: none;
@@ -24,13 +28,19 @@ a {
     color: #fff;
     
 }
-.logo {
+.btn .logo {
     width: 100px;
     height: 90px;
     display: block;
     margin-left: auto; 
     margin-right: auto;
+    
 }
+
+.ghost {
+    display: none;
+}
+
 img {
     width: 50px;
     height: 50px;
@@ -39,4 +49,12 @@ img {
 ul{
     list-style-type: none;
 
+}
+
+.navlink .userEmail {
+    font-size: 25px;
+    color:#000000 ;
+    /* font-weight: 900; */
+
+    /* background-color: #7382b3; */
 }

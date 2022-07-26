@@ -24,10 +24,11 @@ export const useRegistrationForm = () => {
       const { data, error } = await apiClient.signupUser( { email : form.email, 
         password: form.password, userName: form.username, firstName: form.firstname, lastName: form.lastname})
       if (error) setErrors((e) => ({ ...e, form: error }))
-      console.log("user data",data)
       if (data?.user) {
         setUser(data.user)
         apiClient.setToken(data.token)
+      } else {
+        setErrors((e) => ({ ...e, email: "A user already exists with that email" }))
       }
       setIsLoading(false)
     }

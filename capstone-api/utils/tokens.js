@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken")
 const crypto = require("crypto")
 const { SECRET_KEY } = require("../config")
-const tokens = require("../utils/tokens")
+
 const generateToken = (data) => jwt.sign(data, SECRET_KEY, { expiresIn: "24h" })
 
 const createUserJwt = (user) => {

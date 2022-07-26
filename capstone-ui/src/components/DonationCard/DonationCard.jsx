@@ -1,41 +1,46 @@
-import * as React from "react"
-import { Link } from "react-router-dom"
-import DonationDetailPage from "../DonationDetailPage/DonationDetailPage"
-import "./DonationCard.css"
+import * as React from "react";
+import { Link } from "react-router-dom";
+import DonationDetailPage from "../DonationDetailPage/DonationDetailPage";
+import "./DonationCard.css";
 
-export default function DonationCard(props) {
-    console.log("props!",props, props.avgRating)
-    const url = window.location.pathname
-    const last = url.split("/")
-    const lastSegment = last[last.length-2]
-    if (lastSegment == "id") {
-        return (
-            <div>
-                <h1>{console.log("image",props)}</h1>
-                <DonationDetailPage category={props.category} id = {props.id} imageUrl={props.imageUrl} name={props.name} quantity={props.quantity} createdAt={props.createdAt} avgRating={props.avgRating}/>
-            </div>
-            
-        )
-    } else {
-    return (
-        <div className="DonationCard">
-            <br></br>
-            {props.imageUrl ?  <img className="donation-image" src={props.imageUrl} alt="" />  : 
-                (
-                    <img className="donation-image" src="https://www.freeiconspng.com/thumbs/no-image-icon/no-image-icon-15.png"/>
-                )}
-            {/* <img className="donation-image" src={props.imageUrl} alt="" /> */}
-            <div className="donation-title">
-                <p className="donation-name">{props.name}</p>
-            </div>
-            
-            {
-            /* <div className="nutrition-text">
-            <p className="nutrition-name">{props.name}</p>
-            <p className="nutrition-category not-name">Category: {props.category}</p>
-            <p className="nutrition-quantity not-name">Quantity: {props.quantity}</p>
-            </div> */}
+export default function DonationCard({
+  quantity,
+  name,
+  imageUrl,
+  donation_desc,
+  location,
+  email,
+  created_at,
+}) {
+  return (
+    <div className="DonationCard">
+      <div className="container">
+        <div className="title">
+            <h1>Donation Detail</h1>
+        </div>   
+        <div className="picZommer">   
+            <img className="donation-image" src={imageUrl} alt="" />
         </div>
-    )
-        }
+        <div className="cold-md-6">
+            <div className="_product-detail-content">
+                <div className="info-card">
+                    <p className="donation-name">Title: {name}</p>
+                    <div className="_p-features">
+                        <span> Description About this product: </span>
+                        {donation_desc}
+                        <p className="donation-location">Location: {location}</p>
+                        <p className="donation-email">Donator Email: {email}</p>
+                        <p className="donation-quantity">Quantity: {quantity}</p>
+                        <p className="donation-create">Posted on: {created_at}</p>
+                    </div>
+               
+                </div>
+            </div>
+            
+        </div>
+        
+      </div>
+
+    </div>
+  );
 }

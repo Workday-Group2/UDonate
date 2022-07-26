@@ -36,8 +36,8 @@ class ApiClient {
       return await this.request({ endpoint: `donation/`, method: `GET` })
     }
 
-    async listDonation() {
-      return await this.request({ endpoint: `donation`, method: `GET` })
+    async listAllDonation() {
+      return await this.request({ endpoint: `allDonation`, method: `GET` })
     }
 
     async createDonation(newDonation) {
@@ -45,7 +45,11 @@ class ApiClient {
     }
 
     async fetchDonationById(donationId) {
-      return await this.request({ endpoint: `donation/id/${donationId}`, method: `GET` })
+      return await this.request({ endpoint: `donation/${donationId}`, method: `GET` })
+    }
+
+    async recoverAccount(email){
+      return await this.request({ endpoint: `auth/recover`,method: `POST`, data: email})
     }
 
     async fetchUserFromToken() {
@@ -65,6 +69,17 @@ class ApiClient {
     async logoutUser() {
       this.setToken(null)
       localStorage.setItem(this.tokenName, "")
+    }
+
+    async newBooking(donationId) {
+      return await this.request({ endpoint: `donation/${donationId}/newBooking`, method: `POST`})
+    }
+
+    // async listBookingForUser() {
+    //   return await this.request({ endpoint: `/userBookingHistory`, method: `GET` })
+    // }
+    async listBookingForUser() {
+      return await this.request({ endpoint: `booking/userHistory`, method: `GET` })
     }
   }
   

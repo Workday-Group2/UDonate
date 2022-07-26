@@ -1,17 +1,19 @@
 import * as React from "react"
 import "./DonationDetailPage.css"
 
-export default function DonationDetailPage(props) {
-    console.log("imahe",props)
+export default function DonationDetailPage({quantity,name,imageUrl,category,
+    id,avgRating,totalRatings,donation_desc,location,createdAt, email}) {
     return (
-        <div className="details">
-            <h1>Donation Detail</h1>
-            <img className="donation-image" src={props.imageUrl} alt="" />
-             <div className="nutrition-text">
-            <p className="nutrition-name">Title: {props.name}</p>
-            <p className="nutrition-category not-name">Category: {props.category}</p>
-            <p className="nutrition-quantity not-name">Quantity: {props.quantity}</p>
-            
+        <div className="donation-details">
+            <div className="details">
+                <div className="donation-text">
+                    <img className="donation-image2" src={imageUrl} alt="" />
+                    <p className="donation-name">{name}</p>
+                    <p className="card__description">{donation_desc}</p>
+                </div>
+                
+                <button className="donation-btn">View Donation</button>
+                
             </div> 
         </div>
     )

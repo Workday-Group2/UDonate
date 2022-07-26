@@ -1,15 +1,25 @@
 html, body {
-    background-color: #ffffff;
+    background-color:#a7c8f0;
 }
 .image {
-    width: 1000px;
-    height: 220px;
-    display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-.image img {
-    width: 100%;
-    height: auto;
+    display: flex;
+    justify-content: space-around;
+    z-index: 2;
     
+}
+
+.image img {
+    width: 500px;
+    height: auto;
+    background-size: cover;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+}
+
+.home-wrapper {
+    display: flex;
+    flex-direction: column;
 }
