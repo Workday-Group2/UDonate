@@ -4,11 +4,13 @@ const BookingReview = require("../models/bookingReview")
 const security = require("../middleware/security")
 
 
-router.post("/:donationId/bookingReview", security.requireAuthenticatedUser, async (req, res, next) => {
+router.post("/:bookingId/bookingReview", security.requireAuthenticatedUser, async (req, res, next) => {
     try {
         const {bookingId} = req.params
+        console.log('bookingId: ', bookingId);
         const {user} = res.locals
-        const newBookingReview = await BookingReview.createBookingReview({ newBookingReview: req.body.newBookingReview, user, bookingId })
+        console.log('req.body.newBookingReview: ', req.body.comment);
+        const newBookingReview = await BookingReview.createBookingReview({ newBookingReview: req.body.comment, user, bookingId })
         return res.status(201).json({ newBookingReview })
     } catch(err) {
         next(err)

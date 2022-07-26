@@ -51,6 +51,6 @@ CREATE TABLE review (
  user_id        INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
  comment       VARCHAR(1000) NOT NULL,
  created_at     TIMESTAMP NOT NULL DEFAULT NOW(),
- booking_comment_id    INTEGER NOT NULL REFERENCES booking(id) ON DELETE CASCADE
+ booking_id    INTEGER NOT NULL REFERENCES booking(id) ON DELETE CASCADE
 );
 
