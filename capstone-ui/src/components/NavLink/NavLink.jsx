@@ -10,9 +10,9 @@ export default function NavLink(props) {
         <div className="navlink">
                 <Link to="/profile"><h1 className={props.user.email ? "btn userEmail" : "ghost"}> <CgProfile/> {props.user.email}</h1></Link>
                 <Link to="/" label="Home" className="btn home">Home</Link>
+                <a href="/#about" label="About" className="btn about">About</a>
+                <a href="/#contact" label="Contact" className="btn contact">Contact</a>
                 <Link to="/resource" label="Resource" className="btn resource">Resource</Link>
-                <Link to="/about" label="About" className="btn about">About</Link>
-                <Link to="/contact" label="Contact" className="btn contact">Contact</Link>
                 <Link to="/browse" label="Browse" className="btn browse">Browse</Link>
                 <Link to="/upload" label="Upload" className="btn upload">Upload</Link>
                 <Link to="/" label="login" className={props.user.email ? "btn" : "ghost"} onClick={props.handleLogout}>Logout</Link>

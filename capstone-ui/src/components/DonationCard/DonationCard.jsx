@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
+import * as moment from 'moment'
 import DonationDetailPage from "../DonationDetailPage/DonationDetailPage";
 import "./DonationCard.css";
 
@@ -9,7 +10,7 @@ export default function DonationCard({
   imageUrl,
   donation_desc,
   location,
-  email,
+  username,
   created_at,
 }) {
   return (
@@ -29,9 +30,9 @@ export default function DonationCard({
                         <span> Description About this product: </span>
                         {donation_desc}
                         <p className="donation-location">Location: {location}</p>
-                        <p className="donation-email">Donator Email: {email}</p>
+                        <p className="donation-email">Donator username: {username}</p>
                         <p className="donation-quantity">Quantity: {quantity}</p>
-                        <p className="donation-create">Posted on: {created_at}</p>
+                        <p className="donation-create">Posted on: {(moment(created_at,'YYYY-MM-DD').format()).split('T')[0]}</p>
                     </div>
                
                 </div>

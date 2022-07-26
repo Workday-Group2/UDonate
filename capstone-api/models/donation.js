@@ -45,7 +45,7 @@ class Donation {
             d.user_id,
             d.created_at,
             d.quantity,
-            u.email,
+            u.username,
             d.donation_desc,
             d.location,
             d.bookee_user_id,
@@ -55,7 +55,7 @@ class Donation {
                 LEFT JOIN users AS u ON u.id = d.user_id
                 LEFT JOIN rating AS r ON r.donation_id = d.id
             WHERE d.id = $1
-            GROUP BY d.id, u.email
+            GROUP BY d.id, u.username
             `)
         
 
@@ -89,6 +89,7 @@ class Donation {
                 LEFT JOIN rating AS r ON r.donation_id = d.id
             WHERE d.user_id = (SELECT users.id FROM users WHERE email = $1)
             GROUP BY d.id, u.email
+            ORDER BY d.created_at DESC
             `,[user.email]
         )
         return results.rows
@@ -103,7 +104,7 @@ class Donation {
                    d.quantity,
                    d.image_url AS "imageUrl",
                    d.user_id AS "userId",
-                   u.email AS "userEmail",
+                   u.username AS "donaterUsername",
                    d.created_at AS "createdAt",
                    d.donation_desc,
                    d.location,
@@ -114,7 +115,8 @@ class Donation {
                 LEFT JOIN users AS u ON u.id = d.user_id
                 LEFT JOIN rating AS r ON r.donation_id = d.id
             WHERE d.bookee_user_id IS NULL
-            GROUP BY d.id, u.email
+            GROUP BY d.id, u.username
+            ORDER BY d.created_at DESC
             `
         )
         return results.rows
