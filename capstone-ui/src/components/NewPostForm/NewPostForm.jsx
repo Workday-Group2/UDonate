@@ -25,20 +25,23 @@ export default function NewPostForm({user, addPost}) {
       donation_desc: "",
       location: ""
     })
-
+    // function that increments quantity
     const incrementQuantity = (event) => {
       // setForm(form.quantity+1);
       setForm(form.quantity+1)
-
+      console.log("form",form)
     }
+    
     const decreaseQuantity = (event) => {
       // setForm((f) => ({ ...f, [event.target.name]: event.target.value - 1}))
       setForm(form.quantity-1)
-
+      console.log("form",form)
     }
 
     const handleOnInputChange = (event) => {
+      console.log("event",event)
       setForm((f) => ({ ...f, [event.target.name]: event.target.value }))
+      console.log(700,form)
     }
     
     const handleOnSubmit = async (e) => {
@@ -66,6 +69,7 @@ export default function NewPostForm({user, addPost}) {
           setLocation("")
           setDesc("")
         }
+        console.log(999,form)
         setIsLoading(false)
         navigate("/browse");
     }
