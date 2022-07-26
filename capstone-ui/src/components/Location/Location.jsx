@@ -10,7 +10,7 @@ export default function Location (){
                     name="address" placeholder="Address" type="text"
                     autoComplete="address-line1"
                 />
-            </AddressAutofill>
+            
             <input
                 name="apartment" placeholder="Apartment number" type="text"
                 autoComplete="address-line2"
@@ -31,6 +31,7 @@ export default function Location (){
                 name="postcode" placeholder="Postcode" type="text"
                 autoComplete="postal-code"
             />
+            </AddressAutofill>
         </form>
     );
 }

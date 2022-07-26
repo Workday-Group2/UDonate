@@ -179,10 +179,12 @@ export default function NewPostForm({user, addPost}) {
               <div className="title-form">
                 <label className= "title-name" htmlFor="location">Location: </label>
               </div>
+              <form>
               <AddressAutofill accessToken="pk.eyJ1Ijoicm9iYmVkMyIsImEiOiJjbDYxMHZjZDEwd3FpM2VueThkdXhvdjY3In0.9BnfhK_Gv049Gv1ks9i8yA">
               <input
               className="form-input"
                 type="text"
+                name="address"
                 // name="expiration date"
                 autoComplete="address-line1"
                 placeholder="Location"
@@ -190,6 +192,27 @@ export default function NewPostForm({user, addPost}) {
                 onChange={(e) => setLocation(e.target.value)}
               />
               </AddressAutofill>
+              <input
+                name="apartment" placeholder="Apartment number" type="text"
+                autoComplete="address-line2"
+            />
+            <input
+                name="city" placeholder="City" type="text"
+                autoComplete="address-level2"
+            />
+            <input
+                name="state" placeholder="State" type="text"
+                autoComplete="address-level1"
+            />
+            <input
+                name="country" placeholder="Country" type="text"
+                autoComplete="country"
+            />
+            <input
+                name="postcode" placeholder="Postcode" type="text"
+                autoComplete="postal-code"
+            />
+              </form>
             </div>
             <button className="post-button" disabled={isLoading} onClick={handleOnSubmit}>
               {isLoading ? "Loading..." : "Submit"}
