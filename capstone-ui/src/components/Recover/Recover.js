@@ -19,8 +19,9 @@ export default function Recover(){
             setIsProcessing(false)
             return
         }
-
-        const {data, error} = await apiClient.recoverAccount(email)
+        
+        const newEmail = {email}
+        const {data, error} = await apiClient.recoverAccount(newEmail)
         if(error) setError(error)
         if(data?.message){
             setMessage(data.message)
