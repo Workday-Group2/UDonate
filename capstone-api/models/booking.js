@@ -45,6 +45,22 @@ static async setBookedDonationInBooking(donationId) {
   return results.rows[0]
 }
 
+static async listBookingForUser({user}) {
+ 
+  const results = await db.query(
+      `
+      SELECT b.id, d.name, 
+      u.email AS "userEmail"
+      FROM booking AS b
+        LEFT JOIN users AS u ON u.id = b.user_id
+        LEFT JOIN donation AS d ON d.user_id = b.user_id
+      WHERE u.email = $1
+      `,[user.email]
+  )
+  return results.rows
+  
+}
+
 }
 
 module.exports = Booking

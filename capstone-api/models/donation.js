@@ -120,34 +120,6 @@ class Donation {
         return results.rows
     }
 
-    static async listBookingForUser({user}) {
-
-        const results = await db.query(
-            `
-            SELECT d.id,
-                   d.name,
-                   d.category,
-                   d.quantity,
-                   d.image_url AS "imageUrl",
-                   d.user_id AS "userId",
-                   u.email AS "userEmail",
-                   d.created_at AS "createdAt",
-                   d.donation_desc,
-                   d.location,
-                   d.bookee_user_id,
-                   CAST(AVG(r.rating) AS DECIMAL(10,1)) AS "avgRating",
-                   COUNT(r.rating) AS "totalRatings"
-            FROM donation AS d
-                LEFT JOIN users AS u ON u.id = d.user_id
-                LEFT JOIN rating AS r ON r.donation_id = d.id
-                LEFT JOIN booking AS b ON b.user_id = d.bookee_user_id
-            WHERE d.bookee_user_id = $1
-            GROUP BY d.id, u.email
-            `,[user.id]
-        )
-        return results.rows
-    }
-
 }
 
 module.exports = Donation
