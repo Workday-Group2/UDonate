@@ -28,7 +28,6 @@ export default function BookingPage(props) {
     const [donation, setDonation] = React.useState({})
     const [booking, setBooking] = React.useState(null)
     const handleOnSubmitBooking = async () => {
-        console.log(2983,donation.id)
         const request = async () => {
     
             const { data, error } = await apiClient.newBooking(donationId)
@@ -36,7 +35,6 @@ export default function BookingPage(props) {
         }
         request()
       }
-    console.log(10000,props)
     return (
         <Modal
             className="BookingModal"
