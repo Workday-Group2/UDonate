@@ -3,9 +3,7 @@ import apiClient from "../../services/apiClient"
 import AccessForbidden from "../AccessForbidden/AccessForbidden"
 import "./NewPostForm.css"
 import {useNavigate} from 'react-router-dom';
-import Location from "../Location/Location";
-import { AddressAutofill } from '@mapbox/search-js-react';
-import React from 'react';
+
 
 
 export default function NewPostForm({user, addPost}) {
@@ -179,17 +177,15 @@ export default function NewPostForm({user, addPost}) {
               <div className="title-form">
                 <label className= "title-name" htmlFor="location">Location: </label>
               </div>
-              <AddressAutofill accessToken="pk.eyJ1Ijoicm9iYmVkMyIsImEiOiJjbDYxMHZjZDEwd3FpM2VueThkdXhvdjY3In0.9BnfhK_Gv049Gv1ks9i8yA">
+              
               <input
               className="form-input"
                 type="text"
                 // name="expiration date"
-                autoComplete="address-line1"
                 placeholder="Location"
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
               />
-              </AddressAutofill>
             </div>
             <button className="post-button" disabled={isLoading} onClick={handleOnSubmit}>
               {isLoading ? "Loading..." : "Submit"}
