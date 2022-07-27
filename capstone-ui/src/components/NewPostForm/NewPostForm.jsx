@@ -3,7 +3,9 @@ import apiClient from "../../services/apiClient"
 import AccessForbidden from "../AccessForbidden/AccessForbidden"
 import "./NewPostForm.css"
 import {useNavigate} from 'react-router-dom';
-
+// import Location from "../Location/Location";
+import { AddressAutofill } from '@mapbox/search-js-react';
+import React from 'react';
 
 
 export default function NewPostForm({user, addPost}) {
@@ -23,27 +25,12 @@ export default function NewPostForm({user, addPost}) {
       donation_desc: "",
       location: ""
     })
-    // function that increments quantity
-    const incrementQuantity = (event) => {
-      // setForm(form.quantity+1);
-      setForm(form.quantity+1)
-      console.log("form",form)
-    }
     
-    const decreaseQuantity = (event) => {
-      // setForm((f) => ({ ...f, [event.target.name]: event.target.value - 1}))
-      setForm(form.quantity-1)
-      console.log("form",form)
-    }
-
     const handleOnInputChange = (event) => {
-      console.log("event",event)
       setForm((f) => ({ ...f, [event.target.name]: event.target.value }))
-      console.log(700,form)
     }
     
     const handleOnSubmit = async (e) => {
-      // e.preventDefault()
       setIsLoading(true)
       
       const { data, error } = await apiClient.createDonation( { name : form.name, 
@@ -63,13 +50,18 @@ export default function NewPostForm({user, addPost}) {
            donation_desc: "",
            location: ""  
           })
+          
           setDate("") 
           setLocation("")
           setDesc("")
+          navigate("/browse");
+        } else {
+          setIsLoading(false)
+          console.log("error")
+          setError(error)
+          // setError((e) => ({ ...e, errorMessage: "Please fill out all the required fields" }))
         }
-        console.log(999,form)
-        setIsLoading(false)
-        navigate("/browse");
+      
     }
     
     const renderForm = () => {
@@ -85,8 +77,8 @@ export default function NewPostForm({user, addPost}) {
           </div>
           <div className="form">
             <div className="form1">
-            <div className="input-field">
-                <label className= "title-name" htmlFor="title">Title: </label>
+            <div className="input-field" id="title">
+                <label className= "title-name" htmlFor="title" >Title: </label>
              
               <div className="title-form">
                 <input
@@ -105,14 +97,22 @@ export default function NewPostForm({user, addPost}) {
               <div className="title-form">
                 <label className= "title-name"  htmlFor="category">Category: </label>
               </div>
-              <input
-              className="form-input"
-                type="text"
+              <select
+                className="form-input"
                 name="category"
-                placeholder="Category"
                 value={form.category}
                 onChange={handleOnInputChange}
-              />
+              >
+              <option>Select a Category</option>
+              <option value="Fruits and Vegetables">Fruits and vegetables</option>
+              <option value="Dairy and Eggs">Dairy and Eggs</option>
+              <option value="Protein">Protein</option>
+              <option value="Pantry Essentials">Pantry Essentials</option>
+              <option value="Bread">Bread</option>
+              <option value="Desserts">Desserts</option>
+              <option value="Snacks">Snacks</option>
+              <option value="Beverages">Beverages</option>
+              </select>
             </div>
             
             <div className="input-field">
@@ -133,18 +133,14 @@ export default function NewPostForm({user, addPost}) {
               <div className="title-form">
                 <label className= "title-name"  htmlFor="quantity">Quantity: </label>
               </div>
-              <button className="qtyMinus" onClick={decreaseQuantity} >-</button>
               <input
               className="qty"
                 type="number"
                 name="quantity"
-                placeholder="quantity"
                 value={form.quantity}
                 onChange={handleOnInputChange}
-                // step="1"
                 min="0"
               />
-              <button className="qtyMinus" onClick={incrementQuantity}>+</button>
             </div>
             <div className="input-field">
               <div className="title-form">
@@ -154,7 +150,6 @@ export default function NewPostForm({user, addPost}) {
               <input
               className="form-input"
                 type="date"
-                // name="expiration date"
                 placeholder="MM-DD-YYYY"
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
@@ -167,7 +162,6 @@ export default function NewPostForm({user, addPost}) {
               <input
               className="form-input"
                 type="text"
-                // name="expiration date"
                 placeholder="Description"
                 value={desc}
                 onChange={(e) => setDesc(e.target.value)}
@@ -177,19 +171,51 @@ export default function NewPostForm({user, addPost}) {
               <div className="title-form">
                 <label className= "title-name" htmlFor="location">Location: </label>
               </div>
-              
+              <form>
+              <AddressAutofill accessToken="pk.eyJ1Ijoicm9iYmVkMyIsImEiOiJjbDYxMHZjZDEwd3FpM2VueThkdXhvdjY3In0.9BnfhK_Gv049Gv1ks9i8yA">
               <input
               className="form-input"
                 type="text"
-                // name="expiration date"
+                autoComplete="address-line1"
                 placeholder="Location"
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
               />
+              </AddressAutofill>
+              <div className="location-info">
+                <input
+                  name="apartment" placeholder="Apartment number" type="text"
+                  autoComplete="address-line2"
+                />
+              <input
+                  name="city" placeholder="City" type="text"
+                  autoComplete="address-level2"
+              />
+              <input
+                  name="state" placeholder="State" type="text"
+                  autoComplete="address-level1"
+              />
+              <input
+                  name="country" placeholder="Country" type="text"
+                  autoComplete="country"
+              />
+              <input
+                  name="postcode" placeholder="Postcode" type="text"
+                  autoComplete="postal-code"
+              />
+            </div>
+              </form>
+            </div>
+            
+            <div>
+              {error ?  "Please fill out all the required fields" : null}
             </div>
             <button className="post-button" disabled={isLoading} onClick={handleOnSubmit}>
               {isLoading ? "Loading..." : "Submit"}
             </button>
+            {/* <div className="booking-error"> 
+                {error.errorMessage && <span className="error">{error.errorMessage}</span>}
+              </div> */}
             </div>
             
           </div>

@@ -27,16 +27,21 @@ export default function BookingPage(props) {
     const {donationId} = useParams()
     const [donation, setDonation] = React.useState({})
     const [booking, setBooking] = React.useState(null)
+    const [error, setError] = React.useState(false)
     const handleOnSubmitBooking = async () => {
-        console.log(2983,donation.id)
         const request = async () => {
-    
             const { data, error } = await apiClient.newBooking(donationId)
-            setBooking(data)
+            if(error) {
+                setError(error)
+            }
+            if(data){
+                setBooking(data)
+            } else {
+                setError((e) => ({ ...e, errorMessage: "User is not allowed to book their own donation" }))
+            }
         }
         request()
       }
-    console.log(10000,props)
     return (
         <Modal
             className="BookingModal"
@@ -69,13 +74,18 @@ export default function BookingPage(props) {
                                 <p>Location: {props.donation.location}</p>
                             </div>
                         </div>
-                        <div>
-                            <button className = "bookingButton" onClick={handleOnSubmitBooking}>
+                        <div className="booking-page">
+                            <button className = "bookingButton"  onClick={handleOnSubmitBooking}>
                                 Confirm
                             </button>
+                            <div className="booking-error"> 
+                                {error.errorMessage && <span className="error">{error.errorMessage}</span>}
+                            </div>
+            
                         </div>
                     </div>
                     )}
+                    
             </div>
         </Modal>
         

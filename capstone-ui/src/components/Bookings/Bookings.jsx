@@ -12,8 +12,9 @@ export default function Bookings() {
       const {data, err} = await apiClient.listBookingForUser()
       if(err) setError(err)
       if(data){
+        
         setBooking(data.userBooking)
-      }
+      } 
 
       }
       useEffect(() => {
@@ -21,12 +22,12 @@ export default function Bookings() {
       }, []);
     return (
         <div className="your-booking">
-
+            <h1>Your Bookings</h1>
         <div className="your-booking-items">
         {booking.map((item) => {return(
                 <YourBookings key={item.id} quantity={item.quantity} name={item.name} 
                 imageUrl={item.imageUrl} donation_desc={item.donation_desc} location={item.location}
-                category={item.category}
+                category={item.category} donaterEmail={item.donaterEmail}
                  />
         )})}
         </div>

@@ -1,9 +1,11 @@
 const db = require("../db")
 const { BadRequestError, NotFoundError } = require("../utils/errors")
 
+
 class Booking {
+  //insert a new record into the database
   static async createBooking({ start_date, user, donationId }) {
-    //insert a new record into the database
+    
     const results = await db.query(
       `
         INSERT INTO booking (start_date, user_id, donation_id)
@@ -49,7 +51,9 @@ static async listBookingForUser({user}) {
  
   const results = await db.query(
       `
-      SELECT b.user_id AS "userId", 
+      SELECT d.id AS "donation_id",
+            d.user_email AS "donaterEmail",
+            b.user_id AS "userId",
             d.name, 
             d.category,
             d.quantity,
@@ -57,11 +61,13 @@ static async listBookingForUser({user}) {
             d.image_url AS "imageUrl",
             d.donation_desc,
             d.location,
+            d.user_id AS "donaterId",
             u.email AS "userEmail"
       FROM booking AS b
         LEFT JOIN users AS u ON u.id = b.user_id
         LEFT JOIN donation AS d ON d.id = b.donation_id
       WHERE u.email = $1
+      ORDER BY d.created_at DESC
       `,[user.email]
   )
   return results.rows

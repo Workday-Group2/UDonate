@@ -88,40 +88,10 @@ export default function Profile(props) {
 						</div>
                         
                     </div>
-                    <div className="password-tab" id="password" role="tabpanel" aria-labelledby="password-tab">
-                        <h3 className="mb-4">Password Settings</h3>
-                        <div className="row">
-							<div className="col-md-6">
-								<div className="form-group">
-								  	<label>Old password</label>
-                                      <div className="password-resets">
-                                        <input type="password" className="form-control"/>
-                                      </div>
-								</div>
-							</div>
-						</div>
-                        <div className="row">
-							<div className="col-md-6">
-								<div className="form-group">
-								  	<label>New password</label>
-                                      <div className="password-resets">
-                                        <input type="password" className="form-control"/>
-                                      </div>
-								</div>
-							</div>
-							<div className="col-md-6">
-								<div className="form-group">
-								  	<label>Confirm new password</label>
-                                      <div className="password-resets">
-                                        <input type="password" className="form-control"/>
-                                      </div>
-								</div>
-							</div>
-						</div>
-                    </div>
+                    
                     <div className="button-press">
                         <Link to="/browse">
-                            <button className="acc-btn btn-primary">Update</button>
+                            <button className="acc-btn btn-primary">Done</button>
                         </Link>
 					</div>
                 </div>

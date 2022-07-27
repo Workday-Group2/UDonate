@@ -15,8 +15,12 @@ export default function Home() {
             src="https://i.ibb.co/cxbQPyJ/imageedit-2-6335780812.png"
           />
         </div>
+        <div className="about-tab" id="about" role="tabpanel" aria-labelledby="about-tab">
         <About />
+        </div>
+        <div className="contact-tab" id="contact" role="tabpanel" aria-labelledby="contact-tab">
         <Contact />
+        </div>
       </div>
     </div>
   );

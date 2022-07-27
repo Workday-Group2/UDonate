@@ -48,6 +48,10 @@ class ApiClient {
       return await this.request({ endpoint: `donation/${donationId}`, method: `GET` })
     }
 
+    async resetPassword({token, newPassword}){
+      return await this.request({endpoint: `auth/password-reset?token=${token}`,method: `POST`, data: {newPassword}})
+    }
+
     async recoverAccount(email){
       return await this.request({ endpoint: `auth/recover`,method: `POST`, data: email})
     }
@@ -80,6 +84,10 @@ class ApiClient {
     // }
     async listBookingForUser() {
       return await this.request({ endpoint: `booking/userHistory`, method: `GET` })
+    }
+
+    async userBookingReview(donationId) {
+      return await this.request({ endpoint: `review/${donationId}/bookingReview`, method: `POST` })
     }
   }
   
