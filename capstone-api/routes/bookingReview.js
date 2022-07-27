@@ -6,9 +6,11 @@ const security = require("../middleware/security")
 
 router.post("/:donationId/bookingReview", security.requireAuthenticatedUser, async (req, res, next) => {
     try {
-        const {bookingId} = req.params
+        const {donationId} = req.params
         const {user} = res.locals
-        const newBookingReview = await BookingReview.createBookingReview({ newBookingReview: req.body.newBookingReview, user, bookingId })
+        const {comment} = req.body
+        const newBookingReview = await BookingReview.createBookingReview({ comment, user, donationId })
+        
         return res.status(201).json({ newBookingReview })
     } catch(err) {
         next(err)
