@@ -11,7 +11,6 @@ class Donation {
                 throw new BadRequestError(`Required field - ${field} - missing from request body.`)
               }
             }) 
-            console.log("email:",user.email)
         const result = await db.query(
             `
             INSERT INTO donation (user_id, user_email, name, category, quantity, image_url, expiration_date, donation_desc, location)
