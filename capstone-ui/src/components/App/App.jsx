@@ -18,6 +18,7 @@ import BookingPage from "../BookingPage/BookingPage"
 import { useAuthContext, AuthContextProvider } from "../../contexts/auth"
 import apiClient from "../../services/apiClient"
 import Recover from "../Recover/Recover"
+import PasswordReset from "../PasswordReset/PasswordReset"
 import './App.css';
 import Resource from "../Resource/Resource"
 import Donations from "../Donations/Donations"
@@ -68,6 +69,7 @@ function App() {
             <Route path="/login" element={<Login user={user} setUser={setUser} />}/>
             <Route path="/register" element={<Register  user={user} setUser={setUser} />}/>
             <Route path="/recover" element={<Recover  user={user} setUser={setUser} />}/>
+            <Route path="/password-reset" element={<PasswordReset  user={user} setUser={setUser} />}/>
             <Route path="/about" element={<About  user={user} setUser={setUser}/>}/>
             <Route path="/contact" element={<Contact user={user} setUser={setUser}/>}/>
             <Route path="/browse/*" element={user?.email ? (<Browse user={user} addPost={addPost} posts = {posts}/>) : (<AccessForbidden/>)}/>

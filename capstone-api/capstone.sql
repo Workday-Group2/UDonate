@@ -7,3 +7,11 @@ CREATE DATABASE capstone;
 
 \i capstone-schema.sql
 
+\echo 'Delete and recreate capstone_test db?'
+\prompt 'Return for yes or control-C to cancel > ' answer
+
+DROP DATABASE capstone_test;
+CREATE DATABASE capstone_test;
+\connect capstone_test
+
+\i capstone-schema.sql
