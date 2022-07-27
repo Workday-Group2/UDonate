@@ -3,7 +3,7 @@ import apiClient from "../../services/apiClient"
 import AccessForbidden from "../AccessForbidden/AccessForbidden"
 import "./NewPostForm.css"
 import {useNavigate} from 'react-router-dom';
-import Location from "../Location/Location";
+// import Location from "../Location/Location";
 import { AddressAutofill } from '@mapbox/search-js-react';
 import React from 'react';
 
@@ -50,12 +50,18 @@ export default function NewPostForm({user, addPost}) {
            donation_desc: "",
            location: ""  
           })
+          
           setDate("") 
           setLocation("")
           setDesc("")
+          navigate("/browse");
+        } else {
+          setIsLoading(false)
+          console.log("error")
+          setError(error,)
+          setError((e) => ({ ...e, errorMessage: "Please fill out all the required fields" }))
         }
-        setIsLoading(false)
-        navigate("/browse");
+      
     }
     
     const renderForm = () => {
@@ -203,6 +209,9 @@ export default function NewPostForm({user, addPost}) {
             <button className="post-button" disabled={isLoading} onClick={handleOnSubmit}>
               {isLoading ? "Loading..." : "Submit"}
             </button>
+            {/* <div className="booking-error"> 
+                {error.errorMessage && <span className="error">{error.errorMessage}</span>}
+              </div> */}
             </div>
             
           </div>
