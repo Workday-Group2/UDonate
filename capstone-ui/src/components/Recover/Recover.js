@@ -1,8 +1,9 @@
+import "./Recover.css"
 import {useState} from "react"
 import {Link} from "react-router-dom"
 import apiClient from "../../services/apiClient"
 
-import "./Recover.css"
+
 
 export default function Recover(){
     const [email,setEmail] = useState("")
@@ -43,7 +44,7 @@ export default function Recover(){
                         <p>Enter the email address associated with your account</p>
                         <br/>
                         <div className="form-input">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">Email: </label>
             <input
                 type="email"
                 name="email"
@@ -52,7 +53,7 @@ export default function Recover(){
                 onChange={(event) => setEmail(event.target.value)}
                 />
            </div>
-           <button className="btn" disabled={isProcessing} onClick={handleOnSubmit}>
+           <button className="submit-Recover" disabled={isProcessing} onClick={handleOnSubmit}>
             {isProcessing ? "Loading..." : "Recover Account"}
            </button>
          </div>
@@ -61,7 +62,7 @@ export default function Recover(){
 
                 
             <div className="footer">
-                 <p>Have an account? Login<Link to="/login">here</Link>.</p>
+                 <p>Have an account? Login<Link to="/login"> here</Link>.</p>
             </div>
             </div>
         </div>

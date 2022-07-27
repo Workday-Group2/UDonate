@@ -1,16 +1,14 @@
 import { useState } from "react"
 import apiClient from "../services/apiClient"
+import {useAuthenticationForm} from "../hooks/useAuthenticationForm"
 
 export const usePasswordResetForm = (token) => {
   const [isProcessing, setIsProcessing] = useState(false)
-  const [errors, setErrors] = useState({})
+  const { form, errors, setErrors, handleOnInputChange} = useAuthenticationForm({user: {}})
   const [message, setMessage] = useState(null)
-  const [form, setForm] = useState({
-    password: "",
-    passwordConfirm: "",
-  })
 
-  const handleOnChange = (event) => {
+
+  /*const handleOnChange = (event) => {
     if (event.target.name === "passwordConfirm") {
       if (event.target.value !== form.password) {
         setErrors((e) => ({ ...e, passwordConfirm: "Passwords do not match." }))
@@ -21,7 +19,7 @@ export const usePasswordResetForm = (token) => {
 
     setForm((f) => ({ ...f, [event.target.name]: event.target.value }))
   }
-
+*/
   const handleOnSubmit = async () => {
     setIsProcessing(true)
     setErrors((e) => ({ ...e, form: null }))
@@ -47,6 +45,6 @@ export const usePasswordResetForm = (token) => {
     message,
     isProcessing,
     handleOnSubmit,
-    handleOnChange,
+    handleOnInputChange,
   }
 }

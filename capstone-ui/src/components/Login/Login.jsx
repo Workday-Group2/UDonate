@@ -56,6 +56,10 @@ export default function Login() {
                     />
                     {errors.password && <span className="error">{errors.password}</span>}
             </div>
+
+            <p className="forgot-link">
+                Forgot your password? reset it <Link to="/recover">here.</Link>
+            </p>
            <button className="submit-login" onClick={handleOnSubmit} >Login</button>
            <div className="footer-login">
             <p className="footer-login">
