@@ -25,21 +25,7 @@ export default function NewPostForm({user, addPost}) {
       donation_desc: "",
       location: ""
     })
-<<<<<<< HEAD
     
-=======
-    // function that increments quantity
-    const incrementQuantity = (event) => {
-      // setForm(form.quantity+1);
-      setForm(form.quantity+1)
-    }
-    
-    const decreaseQuantity = (event) => {
-      // setForm((f) => ({ ...f, [event.target.name]: event.target.value - 1}))
-      setForm(form.quantity-1)
-    }
-
->>>>>>> booking-review
     const handleOnInputChange = (event) => {
       setForm((f) => ({ ...f, [event.target.name]: event.target.value }))
     }

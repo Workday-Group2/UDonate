@@ -27,11 +27,18 @@ export default function BookingPage(props) {
     const {donationId} = useParams()
     const [donation, setDonation] = React.useState({})
     const [booking, setBooking] = React.useState(null)
+    const [error, setError] = React.useState(false)
     const handleOnSubmitBooking = async () => {
         const request = async () => {
-    
             const { data, error } = await apiClient.newBooking(donationId)
-            setBooking(data)
+            if(error) {
+                setError(error)
+            }
+            if(data){
+                setBooking(data)
+            } else {
+                console.log("error",error)
+            }
         }
         request()
       }
