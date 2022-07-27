@@ -1,9 +1,11 @@
 const db = require("../db")
 const { BadRequestError, NotFoundError } = require("../utils/errors")
 
+
 class Booking {
+  //insert a new record into the database
   static async createBooking({ start_date, user, donationId }) {
-    //insert a new record into the database
+    
     const results = await db.query(
       `
         INSERT INTO booking (start_date, user_id, donation_id)

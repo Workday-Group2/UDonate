@@ -3,18 +3,7 @@ const { BadRequestError} = require("../utils/errors");
  
 class BookingReview {
    static async createBookingReview({ comment, user, donationId }) {
-       console.log('bookingId: models', donationId);
-       console.log('user: models', user);
-       console.log('comment: models', comment);
-        
-        // const requireFields = ["comment"]
-        // requireFields.forEach((field) => {
-        //     if (!comment?.hasOwnProperty(field)) {
-        //         throw new BadRequestError(`Required field - ${field} - missing from request body.`)
-        //     }
-        //     }) 
 
- 
        const results = await db.query (
            `
            INSERT INTO review (donation_id, user_id, comment)
