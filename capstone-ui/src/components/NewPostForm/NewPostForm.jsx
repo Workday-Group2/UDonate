@@ -3,7 +3,7 @@ import apiClient from "../../services/apiClient"
 import AccessForbidden from "../AccessForbidden/AccessForbidden"
 import "./NewPostForm.css"
 import {useNavigate} from 'react-router-dom';
-import Location from "../Location/Location";
+// import Location from "../Location/Location";
 import { AddressAutofill } from '@mapbox/search-js-react';
 import React from 'react';
 
@@ -27,9 +27,7 @@ export default function NewPostForm({user, addPost}) {
     })
     
     const handleOnInputChange = (event) => {
-      console.log("event",event)
       setForm((f) => ({ ...f, [event.target.name]: event.target.value }))
-      console.log(700,form)
     }
     
     const handleOnSubmit = async (e) => {
@@ -52,13 +50,18 @@ export default function NewPostForm({user, addPost}) {
            donation_desc: "",
            location: ""  
           })
+          
           setDate("") 
           setLocation("")
           setDesc("")
+          navigate("/browse");
+        } else {
+          setIsLoading(false)
+          console.log("error")
+          setError(error)
+          // setError((e) => ({ ...e, errorMessage: "Please fill out all the required fields" }))
         }
-        console.log(999,form)
-        setIsLoading(false)
-        navigate("/browse");
+      
     }
     
     const renderForm = () => {
@@ -100,7 +103,7 @@ export default function NewPostForm({user, addPost}) {
                 value={form.category}
                 onChange={handleOnInputChange}
               >
-              <option value=" "></option>
+              <option>Select a Category</option>
               <option value="Fruits and Vegetables">Fruits and vegetables</option>
               <option value="Dairy and Eggs">Dairy and Eggs</option>
               <option value="Protein">Protein</option>
@@ -179,31 +182,40 @@ export default function NewPostForm({user, addPost}) {
                 onChange={(e) => setLocation(e.target.value)}
               />
               </AddressAutofill>
+              <div className="location-info">
+                <input
+                  name="apartment" placeholder="Apartment number" type="text"
+                  autoComplete="address-line2"
+                />
               <input
-                name="apartment" placeholder="Apartment number" type="text"
-                autoComplete="address-line2"
-            />
-            <input
-                name="city" placeholder="City" type="text"
-                autoComplete="address-level2"
-            />
-            <input
-                name="state" placeholder="State" type="text"
-                autoComplete="address-level1"
-            />
-            <input
-                name="country" placeholder="Country" type="text"
-                autoComplete="country"
-            />
-            <input
-                name="postcode" placeholder="Postcode" type="text"
-                autoComplete="postal-code"
-            />
+                  name="city" placeholder="City" type="text"
+                  autoComplete="address-level2"
+              />
+              <input
+                  name="state" placeholder="State" type="text"
+                  autoComplete="address-level1"
+              />
+              <input
+                  name="country" placeholder="Country" type="text"
+                  autoComplete="country"
+              />
+              <input
+                  name="postcode" placeholder="Postcode" type="text"
+                  autoComplete="postal-code"
+              />
+            </div>
               </form>
+            </div>
+            
+            <div>
+              {error ?  "Please fill out all the required fields" : null}
             </div>
             <button className="post-button" disabled={isLoading} onClick={handleOnSubmit}>
               {isLoading ? "Loading..." : "Submit"}
             </button>
+            {/* <div className="booking-error"> 
+                {error.errorMessage && <span className="error">{error.errorMessage}</span>}
+              </div> */}
             </div>
             
           </div>

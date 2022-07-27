@@ -22,14 +22,6 @@ export default function BrowseDetail(props) {
 
         }
       
-    const makeBooking = async () => {
-      const request = async () => {
-
-         await apiClient.newBooking(donationId)
-
-      }
-      request()
-    }
     
     const handleBookingStartClick = () => {
       setIsBooking(true)
@@ -45,8 +37,6 @@ export default function BrowseDetail(props) {
             {notFound ? (<NotFound/>) : <DonationCard quantity={donation.quantity} id={donation.id} name={donation.name} imageUrl={donation.image_url} donation_desc={donation.donation_desc} location={donation.location}
             avgRating={donation.avgRating} category={donation.category} created_at={donation.created_at} email={donation.email} username={donation.username}  />}
 
-            {/* <Link to={'/bookingpage/' + donation.id}>  */}
-              {/* <button className="bookingButton" onClick={makeBooking} >Book</button> */}
               <button className="bookingButton" onClick={handleBookingStartClick} >Book</button>
            
         </div>

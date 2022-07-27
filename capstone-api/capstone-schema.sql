@@ -13,6 +13,7 @@ updated_at  TIMESTAMP DEFAULT NOW()
 
 CREATE TABLE donation (
 id          SERIAL PRIMARY KEY,
+user_email  TEXT NOT NULL,
 name        TEXT NOT NULL,
 category    TEXT NOT NULL,
 quantity    INTEGER NOT NULL DEFAULT 1,
@@ -51,6 +52,6 @@ CREATE TABLE review (
  user_id        INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
  comment       VARCHAR(1000) NOT NULL,
  created_at     TIMESTAMP NOT NULL DEFAULT NOW(),
- booking_comment_id    INTEGER NOT NULL REFERENCES booking(id) ON DELETE CASCADE
+ donation_id     INTEGER NOT NULL REFERENCES donation(id) ON DELETE CASCADE
 );
 
