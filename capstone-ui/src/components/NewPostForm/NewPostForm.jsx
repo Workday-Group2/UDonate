@@ -58,7 +58,7 @@ export default function NewPostForm({user, addPost}) {
         } else {
           setIsLoading(false)
           console.log("error")
-          setError(error,)
+          setError(error)
           // setError((e) => ({ ...e, errorMessage: "Please fill out all the required fields" }))
         }
       
@@ -205,6 +205,10 @@ export default function NewPostForm({user, addPost}) {
               />
             </div>
               </form>
+            </div>
+            
+            <div>
+              {error ?  "Please fill out all the required fields" : null}
             </div>
             <button className="post-button" disabled={isLoading} onClick={handleOnSubmit}>
               {isLoading ? "Loading..." : "Submit"}
