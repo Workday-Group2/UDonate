@@ -1,6 +1,6 @@
 .Browse-Detail .donation-image{
     object-fit: contain;
-
+    float:left;
 }
 
 .Browse-Detail .DonationCard .container {
@@ -16,5 +16,5 @@
     margin-top: 20px;
     border: solid 2px #317bdb;
     cursor: pointer;
-    transition: all 0.5s ease-in-out 0s;
+    margin-right: 300px;
 }

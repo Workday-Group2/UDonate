@@ -67,8 +67,8 @@ export default function BookingPage(props) {
                                 <p>Location: {props.donation.location}</p>
                             </div>
                         </div>
-                        <div>
-                            <button className = "bookingButton" onClick={handleOnSubmitBooking}>
+                        <div className="booking-page">
+                            <button className = "bookingButton"  onClick={handleOnSubmitBooking}>
                                 Confirm
                             </button>
                         </div>
