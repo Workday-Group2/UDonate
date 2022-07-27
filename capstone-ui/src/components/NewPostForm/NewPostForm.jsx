@@ -59,7 +59,7 @@ export default function NewPostForm({user, addPost}) {
           setIsLoading(false)
           console.log("error")
           setError(error,)
-          setError((e) => ({ ...e, errorMessage: "Please fill out all the required fields" }))
+          // setError((e) => ({ ...e, errorMessage: "Please fill out all the required fields" }))
         }
       
     }
@@ -103,7 +103,7 @@ export default function NewPostForm({user, addPost}) {
                 value={form.category}
                 onChange={handleOnInputChange}
               >
-              <option value=" "></option>
+              <option>Select a Category</option>
               <option value="Fruits and Vegetables">Fruits and vegetables</option>
               <option value="Dairy and Eggs">Dairy and Eggs</option>
               <option value="Protein">Protein</option>

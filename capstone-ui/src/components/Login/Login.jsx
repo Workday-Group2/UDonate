@@ -39,9 +39,7 @@ export default function Login() {
                         />
                         
                     </div>
-                    <div>
-                        {errors.email}
-                    </div>
+                    
                     
             </div>
             <div className="input-field">
@@ -54,7 +52,12 @@ export default function Login() {
                         value={form.password}
                         onChange={handleOnInputChange}
                     />
-                    {errors.password && <span className="error">{errors.password}</span>}
+                    <div className="booking-error">
+                        {errors.email}
+                        {errors.password && <span className="error">{errors.password}</span>}
+                    </div>
+
+            
             </div>
            <button className="submit-login" onClick={handleOnSubmit} >Login</button>
            <div className="footer-login">
