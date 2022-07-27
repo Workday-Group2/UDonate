@@ -3,12 +3,12 @@ const { BadRequestError} = require("../utils/errors");
  
 class BookingReview {
    static async createBookingReview({ comment, user, bookingId }) {
-        // const requireFields = ["comment"]
-        // requireFields.forEach((field) => {
-        //     if (!comment.hasOwnProperty(field)) {
-        //         throw new BadRequestError(`Required field - ${field} - missing from request body.`)
-        //     }
-        //     }) 
+        const requireFields = ["comment"]
+        requireFields.forEach((field) => {
+            if (!comment.hasOwnProperty(field)) {
+                throw new BadRequestError(`Required field - ${field} - missing from request body.`)
+            }
+            }) 
 
  
        const results = await db.query (
@@ -17,7 +17,7 @@ class BookingReview {
            VALUES ($1, (SELECT id FROM users WHERE email = $2), $3)
            RETURNING user_id, booking_id, comment, created_at;
            `,
-           [comment, user.email, bookingId]
+           [bookingId, user.email, comment]
        )
 
        return results.rows[0]
