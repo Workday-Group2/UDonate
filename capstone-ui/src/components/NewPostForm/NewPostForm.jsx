@@ -179,26 +179,28 @@ export default function NewPostForm({user, addPost}) {
                 onChange={(e) => setLocation(e.target.value)}
               />
               </AddressAutofill>
+              <div className="location-info">
+                <input
+                  name="apartment" placeholder="Apartment number" type="text"
+                  autoComplete="address-line2"
+                />
               <input
-                name="apartment" placeholder="Apartment number" type="text"
-                autoComplete="address-line2"
-            />
-            <input
-                name="city" placeholder="City" type="text"
-                autoComplete="address-level2"
-            />
-            <input
-                name="state" placeholder="State" type="text"
-                autoComplete="address-level1"
-            />
-            <input
-                name="country" placeholder="Country" type="text"
-                autoComplete="country"
-            />
-            <input
-                name="postcode" placeholder="Postcode" type="text"
-                autoComplete="postal-code"
-            />
+                  name="city" placeholder="City" type="text"
+                  autoComplete="address-level2"
+              />
+              <input
+                  name="state" placeholder="State" type="text"
+                  autoComplete="address-level1"
+              />
+              <input
+                  name="country" placeholder="Country" type="text"
+                  autoComplete="country"
+              />
+              <input
+                  name="postcode" placeholder="Postcode" type="text"
+                  autoComplete="postal-code"
+              />
+            </div>
               </form>
             </div>
             <button className="post-button" disabled={isLoading} onClick={handleOnSubmit}>

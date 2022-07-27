@@ -11,7 +11,9 @@ body {
 .profile-tab-nav {
 	min-width: 250px;
 }
-
+.button-press {
+    padding: 20px;
+}
 .tab-content {
     
 	flex: 1;
