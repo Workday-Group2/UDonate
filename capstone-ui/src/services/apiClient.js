@@ -81,6 +81,10 @@ class ApiClient {
     async listBookingForUser() {
       return await this.request({ endpoint: `booking/userHistory`, method: `GET` })
     }
+
+    async userBookingReview(donationId) {
+      return await this.request({ endpoint: `review/${donationId}/bookingReview`, method: `POST` })
+    }
   }
   
   export default new ApiClient("http://localhost:3001")
