@@ -37,7 +37,7 @@ export default function BookingPage(props) {
             if(data){
                 setBooking(data)
             } else {
-                console.log("error",error)
+                setError((e) => ({ ...e, errorMessage: "User is not allowed to book their own donation" }))
             }
         }
         request()
@@ -78,9 +78,14 @@ export default function BookingPage(props) {
                             <button className = "bookingButton"  onClick={handleOnSubmitBooking}>
                                 Confirm
                             </button>
+                            <div className="booking-error"> 
+                                {error.errorMessage && <span className="error">{error.errorMessage}</span>}
+                            </div>
+            
                         </div>
                     </div>
                     )}
+                    
             </div>
         </Modal>
         

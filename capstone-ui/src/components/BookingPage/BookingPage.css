@@ -106,3 +106,7 @@
     margin-right:0px
     /* margin-right: 300px; */
 }
+
+.booking-error{
+  color:red;
+}

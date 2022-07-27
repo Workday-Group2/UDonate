@@ -13,6 +13,7 @@ updated_at  TIMESTAMP DEFAULT NOW()
 
 CREATE TABLE donation (
 id          SERIAL PRIMARY KEY,
+user_email  TEXT NOT NULL,
 name        TEXT NOT NULL,
 category    TEXT NOT NULL,
 quantity    INTEGER NOT NULL DEFAULT 1,

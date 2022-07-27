@@ -11,12 +11,14 @@ class Donation {
                 throw new BadRequestError(`Required field - ${field} - missing from request body.`)
               }
             }) 
-            
+            console.log("email:",user.email)
         const result = await db.query(
             `
-            INSERT INTO donation (user_id, name, category, quantity, image_url, expiration_date, donation_desc, location)
-            VALUES ((SELECT id FROM users WHERE email = $1), $2, $3, $4, $5, $6, $7, $8)
+            INSERT INTO donation (user_id, user_email, name, category, quantity, image_url, expiration_date, donation_desc, location)
+            VALUES ((SELECT id FROM users WHERE email = $1), (SELECT email FROM users WHERE email = $2), $3, $4, 
+            $5, $6, $7, $8, $9)
             RETURNING id,
+                    user_email,
                     user_id AS "userId",
                     name,
                     category,
@@ -26,8 +28,9 @@ class Donation {
                     created_at AS "createdAt",
                     donation_desc AS "donation description",
                     location
+        
             `, 
-            [user.email, post.name, post.category, post.quantity, post.image_url, post.expiration_date, post.donation_desc, post.location]
+            [user.email, user.email, post.name, post.category, post.quantity, post.image_url, post.expiration_date, post.donation_desc, post.location]
         )
         return result.rows[0]
     }

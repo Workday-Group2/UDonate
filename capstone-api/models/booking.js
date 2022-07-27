@@ -52,6 +52,7 @@ static async listBookingForUser({user}) {
   const results = await db.query(
       `
       SELECT d.id AS "donation_id",
+            d.user_email AS "donaterEmail",
             b.user_id AS "userId",
             d.name, 
             d.category,
