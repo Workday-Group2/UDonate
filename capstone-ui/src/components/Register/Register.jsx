@@ -86,7 +86,7 @@ export default function Register() {
                     type="password"
                     name="passwordConfirm"
                     placeholder="Confirm Password"
-                    value={form.confirmPass}
+                    value={form.passwordConfirm}
                     onChange={handleOnInputChange}
                 />
                 {errors.password && <span className="error">{errors.password}</span>}
