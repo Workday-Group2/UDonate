@@ -76,7 +76,7 @@ class ApiClient {
     }
 
     async newBooking(donationId) {
-      return await this.request({ endpoint: `donation/${donationId}/newBooking`, method: `POST`})
+      return await this.request({ endpoint: `userBooking/${donationId}/newBooking`, method: `POST`})
     }
 
     // async listBookingForUser() {
@@ -84,6 +84,10 @@ class ApiClient {
     // }
     async listBookingForUser() {
       return await this.request({ endpoint: `booking/userHistory`, method: `GET` })
+    }
+
+    async userBookingReview(donationId) {
+      return await this.request({ endpoint: `review/${donationId}/bookingReview`, method: `POST` })
     }
   }
   
