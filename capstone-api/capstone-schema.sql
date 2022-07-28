@@ -32,6 +32,7 @@ CREATE TABLE rating (
   rating      INTEGER NOT NULL CHECK (rating > 0 AND rating <= 10),
   donation_id INTEGER NOT NULL REFERENCES donation(id) ON DELETE CASCADE,
   user_id     INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  donater_id  INTEGER NOT NULL,
   created_at  TIMESTAMP NOT NULL DEFAULT NOW(),  
   PRIMARY KEY (donation_id, user_id),
   FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
