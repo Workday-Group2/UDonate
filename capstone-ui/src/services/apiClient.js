@@ -89,6 +89,11 @@ class ApiClient {
     async userBookingReview(donationId) {
       return await this.request({ endpoint: `review/${donationId}/bookingReview`, method: `POST` })
     }
+
+    async userBookingReview(donationId) {
+      return await this.request({ endpoint: `rating/${donationId}/bookingReview`, method: `POST` })
+    }
+
   }
   
   export default new ApiClient("http://localhost:3001")
