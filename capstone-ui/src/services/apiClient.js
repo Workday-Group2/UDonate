@@ -76,7 +76,7 @@ class ApiClient {
     }
 
     async newBooking(donationId) {
-      return await this.request({ endpoint: `donation/${donationId}/newBooking`, method: `POST`})
+      return await this.request({ endpoint: `userBooking/${donationId}/newBooking`, method: `POST`})
     }
 
     // async listBookingForUser() {
