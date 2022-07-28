@@ -8,6 +8,7 @@ const donationRoutes = require("./routes/donation")
 const allRoutes = require("./routes/allDonation")
 const bookedRoutes = require("./routes/userBookingHistory")
 const bookingReview = require("./routes/bookingReview")
+const rating = require("./routes/rating")
 
 const app = express()
 
@@ -24,6 +25,7 @@ app.use("/donation", donationRoutes)
 app.use("/allDonation", allRoutes)
 app.use("/booking", bookedRoutes)
 app.use("/review", bookingReview)
+app.use("/rating", bookingReview)
 
 // app.get("/", async(req, res, next) => {
 //     res.status(200).json({ ping: "pong"})
