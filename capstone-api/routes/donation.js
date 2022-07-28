@@ -39,17 +39,4 @@ router.get("/", security.requireAuthenticatedUser, async (req, res, next) => {
 })
 
 
-router.post("/:donationId/newBooking", security.requireAuthenticatedUser, permissions.authedUserIsNotDonationOwner, async (req, res, next) => {
-    try {
-        const {donationId} = req.params
-        const {user} = res.locals
-        const newBooking = await Booking.createBooking({ newBooking: req.body.newBooking, user, donationId })
-        const updateDonationInDonation = await Booking.setBookedDonationInDonation( donationId )
-        const updateDonationInBooking = await Booking.setBookedDonationInBooking( donationId )
-        return res.status(201).json({ newBooking, updateDonationInDonation, updateDonationInBooking })
-    } catch(err) {
-        next(err)
-    }
-})
-
 module.exports = router
