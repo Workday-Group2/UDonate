@@ -39,12 +39,16 @@ class Rating {
       }
 
      
-       static async fetchDonaterRating({ user }) {
+       static async fetchDonaterRating({  donaterId }) {
+        console.log('donaterId: ', donaterId);
         const results = await db.query(
           `
-            
+            SELECT CAST(AVG(r.rating) AS DECIMAL(10,1)) AS "avgRating", r.donater_id, COUNT(r.rating) AS "totalRatings"
+            FROM rating AS r
+            WHERE r.donater_id = $1
+            GROUP BY r.donater_id
           `,
-          [user.email]
+          [donaterId]
         )
     
         return results.rows[0]

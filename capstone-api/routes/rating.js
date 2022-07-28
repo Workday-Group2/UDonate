@@ -16,4 +16,16 @@ router.post("/:donationId", security.requireAuthenticatedUser, async (req, res, 
     }
 })
 
+router.get("/user/:donaterId", security.requireAuthenticatedUser, async (req, res, next) => {
+    try {
+        const {donaterId} = req.params //donater
+        
+        const donaterRating = await Rating.fetchDonaterRating({donaterId})
+        return res.status(200).json({donaterRating})
+
+    } catch(err) {
+        next(err)
+    }
+})
+
 module.exports = router
