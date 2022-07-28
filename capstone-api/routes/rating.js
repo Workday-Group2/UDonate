@@ -5,11 +5,11 @@ const security = require("../middleware/security")
 
 
 
-router.post("/:user_id", security.requireAuthenticatedUser, async (req, res, next) => {
+router.post("/:donationId", security.requireAuthenticatedUser, async (req, res, next) => {
     try {
-        const {user_id} = req.params
+        const {donationId} = req.params
         const {user} = res.locals
-        const rating = await Rating.createRatingForDonation({ rating: req.body.rating, user, user_id })
+        const rating = await Rating.createRatingForDonation({ rating: req.body.rating, user, donationId })
         return res.status(201).json({ rating })
     } catch(err) {
         next(err)
