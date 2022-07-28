@@ -37,6 +37,18 @@ class Rating {
     
         return results.rows[0]
       }
+
+     
+       static async fetchDonaterRating({ user }) {
+        const results = await db.query(
+          `
+            
+          `,
+          [user.email]
+        )
+    
+        return results.rows[0]
+      }
 }
 
 module.exports = Rating
