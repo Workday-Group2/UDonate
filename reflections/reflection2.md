@@ -1,6 +1,6 @@
 # Reflection #2
 
-Pod Members: **Add Pod Members Names**
+Pod Members: **Ada Pici, Esteban Ayala, Nasradin Kewden**
 
 ## Reflection Questions
 
