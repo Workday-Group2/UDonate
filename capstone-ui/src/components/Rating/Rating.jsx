@@ -95,7 +95,6 @@ export default function Rating(props) {
         </div>
                 
                 
-        
     </Modal>
     )
 }
