@@ -44,12 +44,10 @@ export default function Rating(props) {
 
   const handleOnSubmit = async (e) => {
     setIsLoading(true)
-    let donationId = props.donation_id
     console.log('rating: ', rating);
-    console.log('donationId: ', donationId);
-    const { data, error } = await apiClient.createRating({donationId:props.donation_id, rating:form.rating})
+    console.log('donationId: ', props.donation_id);
+    const { data, error } = await apiClient.createRating(props.donation_id, {rating:form.rating})
     
-
     console.log('data rating: ', data);
       if (error) {
         setError(error)
@@ -81,8 +79,6 @@ export default function Rating(props) {
         </button>
         <div className="content">
             <h1>Hi!</h1>
-            <p>Rate this setup</p>
-           
             <div className="input-field">
               <div className="title-form">
                 <label className= "title-name"  htmlFor="quantity">rating: </label>
