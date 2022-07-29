@@ -29,7 +29,7 @@ FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
 CREATE TABLE rating (
-  rating      INTEGER NOT NULL CHECK (rating > 0 AND rating <= 10),
+  rating      INTEGER NOT NULL CHECK (rating > 0 AND rating <= 5),
   donation_id INTEGER NOT NULL REFERENCES donation(id) ON DELETE CASCADE,
   user_id     INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
   donater_id  INTEGER NOT NULL,

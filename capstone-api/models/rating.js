@@ -3,8 +3,8 @@ const { BadRequestError } = require("../utils/errors")
 
 class Rating {
     static async createRatingForDonation({ rating, user, donationId }) {
-        if (!Number(rating) || Number(rating) <= 0 || Number(rating) > 10) {
-          throw new BadRequestError(`Invalid rating provided. Must be an integer between 1-10.`)
+        if (!Number(rating) || Number(rating) <= 0 || Number(rating) > 5) {
+          throw new BadRequestError(`Invalid rating provided. Must be an integer between 1-5.`)
         }
         // check if user has already added a rating for this donation
         const existingRating = await Rating.fetchRatingForDonationByUser({ user, donationId })

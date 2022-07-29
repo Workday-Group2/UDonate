@@ -88,6 +88,19 @@ export default function Profile(props) {
 						</div>
                         
                     </div>
+
+                    <div className="manage-tab" id="manage" role="tabpanel" aria-labelledby="manage-tab">
+                        <h3 className="mb-4">Your ratings</h3>
+                        <div className="row">
+							<div className="col-md-6">
+								<div className="form-group">
+                                    
+								</div>
+                                
+							</div>
+						</div>
+                        
+                    </div>
                     
                     <div className="button-press">
                         <Link to="/browse">
