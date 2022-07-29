@@ -12,7 +12,6 @@ export default function Bookings() {
       const {data, err} = await apiClient.listBookingForUser()
       if(err) setError(err)
       if(data){
-        console.log("data!:",data)
         setBooking(data.userBooking)
       } 
 

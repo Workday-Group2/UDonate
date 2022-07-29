@@ -25,7 +25,6 @@ const modalStyles = {
   }
 
 export default function Rating(props) {
-    console.log("props rating",props)
     const [rating, setRating] = useState([])
     const [error, setError] = useState() 
     const [isLoading, setIsLoading] = useState(false)
@@ -35,7 +34,6 @@ export default function Rating(props) {
 
   const addRating = (newRating) => {
     setRating((oldRating) => [newRating, ...oldRating])
-    console.log("rating",rating)
   }
 
   const handleOnInputChange = (event) => {
@@ -44,11 +42,8 @@ export default function Rating(props) {
 
   const handleOnSubmit = async (e) => {
     setIsLoading(true)
-    console.log('rating: ', rating);
-    console.log('donationId: ', props.donation_id);
     const { data, error } = await apiClient.createRating(props.donation_id, {rating:form.rating})
     
-    console.log('data rating: ', data);
       if (error) {
         setError(error)
       }
@@ -97,7 +92,6 @@ export default function Rating(props) {
             <button className="post-button" disabled={isLoading} onClick={handleOnSubmit}>
               {isLoading ? "Loading..." : "Submit"}
             </button>
-            {console.log("type",typeof(form.rating))}
         </div>
                 
                 
