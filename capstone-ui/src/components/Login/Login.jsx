@@ -60,13 +60,14 @@ export default function Login() {
             
             </div>
 
-            <p className="forgot-link">
-                Forgot your password? reset it <Link to="/recover">here.</Link>
-            </p>
+            
            <button className="submit-login" onClick={handleOnSubmit} >Login</button>
            <div className="footer-login">
             <p className="footer-login">
               Don't have an account? Sign up <Link to="/register">here</Link>
+            </p>
+            <p className="forgot-link">
+                Forgot your password? reset it <Link to="/recover">here.</Link>
             </p>
           </div>
             </div>

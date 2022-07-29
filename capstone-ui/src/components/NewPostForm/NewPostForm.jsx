@@ -57,9 +57,8 @@ export default function NewPostForm({user, addPost}) {
           navigate("/browse");
         } else {
           setIsLoading(false)
-          console.log("error")
           setError(error)
-          // setError((e) => ({ ...e, errorMessage: "Please fill out all the required fields" }))
+          alert("Please fill out all the required fields")
         }
       
     }

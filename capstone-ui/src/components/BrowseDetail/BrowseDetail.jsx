@@ -35,7 +35,7 @@ export default function BrowseDetail(props) {
           <BookingPage  isOpen={isBooking} toggleModal={() => setIsBooking(false)} donation={donation} user={props.user}/>
 
             {notFound ? (<NotFound/>) : <DonationCard quantity={donation.quantity} id={donation.id} name={donation.name} imageUrl={donation.image_url} donation_desc={donation.donation_desc} location={donation.location}
-            avgRating={donation.avgRating} category={donation.category} created_at={donation.created_at} email={donation.email} username={donation.username}  />}
+            avgRating={donation.avgRating} category={donation.category} created_at={donation.created_at} email={donation.email} username={donation.username} totalRatings={donation.totalRatings} avgRating={donation.avgRating}/>}
 
               <button className="bookingButton" onClick={handleBookingStartClick} >Book</button>
            

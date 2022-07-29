@@ -52,13 +52,14 @@ class Donation {
             d.location,
             d.bookee_user_id,
             u.email,
+            r.donater_id,
             CAST(AVG(r.rating) AS DECIMAL(10,1)) AS "avgRating",
             COUNT(r.rating) AS "totalRatings"
             FROM donation AS d
                 LEFT JOIN users AS u ON u.id = d.user_id
                 LEFT JOIN rating AS r ON r.donation_id = d.id
             WHERE d.id = $1
-            GROUP BY d.id, u.username, u.email
+            GROUP BY d.id, u.username, u.email, r.donater_id
             `)
         
 
@@ -103,6 +104,7 @@ class Donation {
             `
             SELECT d.id,
                    d.name,
+                   u.email,
                    d.category,
                    d.quantity,
                    d.image_url AS "imageUrl",
@@ -118,7 +120,7 @@ class Donation {
                 LEFT JOIN users AS u ON u.id = d.user_id
                 LEFT JOIN rating AS r ON r.donation_id = d.id
             WHERE d.bookee_user_id IS NULL
-            GROUP BY d.id, u.username
+            GROUP BY d.id, u.username, u.email
             ORDER BY d.created_at DESC
             `
         )
