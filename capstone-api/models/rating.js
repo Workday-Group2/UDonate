@@ -20,7 +20,7 @@ class Rating {
             INSERT INTO rating (rating, user_id, donation_id, donater_id, email)
             VALUES ($1, (SELECT id FROM users WHERE email = $2), $3, 
             (SELECT donation.user_id FROM donation WHERE id = $3 ), 
-            (SELECT user_email FROM donation WHERE user_id = donation.user_id LIMIT 1))
+            (SELECT user_email FROM donation WHERE donation.id = $3))
             RETURNING rating, user_id AS "rater_id" , donation_id, donater_id, email AS "donater_email", created_at;
           `,
           [rating, user.email, donationId]
