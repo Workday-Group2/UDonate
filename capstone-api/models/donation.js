@@ -57,7 +57,7 @@ class Donation {
             COUNT(r.rating) AS "totalRatings"
             FROM donation AS d
                 LEFT JOIN users AS u ON u.id = d.user_id
-                LEFT JOIN rating AS r ON r.donation_id = d.id
+                LEFT JOIN rating AS r ON r.email = d.user_email
             WHERE d.id = $1
             GROUP BY d.id, u.username, u.email, r.donater_id
             `)
