@@ -97,7 +97,8 @@ class User {
 
         const query =  `
         SELECT 
-        COUNT(r.rating) AS "totalRating"
+        COUNT(r.rating) AS "totalRating",
+        CAST(AVG(r.rating) AS DECIMAL(10,1)) AS "avgRating"
         FROM rating AS r
         WHERE email = $1
         `
