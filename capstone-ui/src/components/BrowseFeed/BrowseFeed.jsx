@@ -14,6 +14,7 @@ export default function BrowseFeed(props) {
       const {data, error} = await apiClient.listAllDonation()
       if(error) setError(error)
       if(data){
+        console.log("datattaa",data)
         setDonation(data.donations)
       }
       }
@@ -65,7 +66,7 @@ export default function BrowseFeed(props) {
                          
                         <DonationDetailPage key={item.item} quantity={item.quantity} name={item.name} 
                         imageUrl={item.imageUrl} donation_desc={item.donation_desc} location={item.location}
-                        category={item.category} donaterUsername={item.donaterUsername}
+                        category={item.category} donaterUsername={item.donaterUsername} expiration_date={item.expiration_date}
                          />
                     </Link>
                 )})}

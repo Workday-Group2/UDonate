@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import * as moment from 'moment'
 import DonationDetailPage from "../DonationDetailPage/DonationDetailPage";
 import "./DonationCard.css";
+import { AiFillStar } from 'react-icons/ai';
 
 export default function DonationCard({
   quantity,
@@ -13,31 +14,40 @@ export default function DonationCard({
   username,
   created_at,
   totalRatings,
-  avgRating
+  avgRating,
+  expiration_date
 }) {
   return (
     <div className="DonationCard">
-      <div className="container">
-        <div className="title">
-            <h1>Donation Detail</h1>
-        </div>   
-        <div className="picZommer">   
-            <img className="donation-image" src={imageUrl} alt="" />
+       <div className="title">
+          <h1 className="donation-name"> {name}</h1>
+        </div> 
+      <div className="container" id="card-id">
+         
+        <div className="box-pic">
+          <div className="pic-donation">   
+              <img className="donation-image" src={imageUrl} alt="" />
+          </div>
         </div>
+        
         <div className="cold-md-6">
-            <div className="_product-detail-content">
+            <div className="product-detail-content">
                 <div className="info-card">
-                    <p className="donation-name"> {name}</p>
+                    
                     <div className="_p-features">
-                        <span> Description: </span>
-                        {donation_desc}
-                        <p className="donation-location">Location: {location}</p>
-                        <p className="donation-email">Donator: {username}</p>
-                        <p className="donation-quantity">Quantity: {quantity}</p>
-                        <p className="donation-create">Posted on: {(moment(created_at,'YYYY-MM-DD').format()).split('T')[0]}</p>
-                        <p className="donation-quantity">Average User Rating: {avgRating}/5</p>
-                        <p className="donation-quantity">Total Ratings: {totalRatings}</p>
-                
+                        <p className="donation-expiration"><strong>Expiration Date: </strong>{(moment(expiration_date,'YYYY-MM-DD').format()).split('T')[0]}</p>
+                        <p className="donation-location"><strong>Location: </strong> {location}</p>
+                        <p className="donation-description"><strong>Description: </strong> {donation_desc} </p>
+                        <p className="donation-email"><strong>Donator: </strong> {username}</p>
+                        <p className="donation-quantity"><strong>Quantity: </strong> {quantity}</p>
+                        <p className="donation-create"><strong>Posted on: </strong> {(moment(created_at,'YYYY-MM-DD').format()).split('T')[0]}</p>
+                        <AiFillStar/>
+                        <AiFillStar/>
+                        <AiFillStar/>
+                        <AiFillStar/>
+                        <AiFillStar/>
+                        <p className="donation-rating"><strong>Average Rating: </strong>{avgRating}/5</p>
+                        <p className="donation-totalRating"><strong>Total Ratings: </strong>{totalRatings}</p>
                     </div>
                
                 </div>
