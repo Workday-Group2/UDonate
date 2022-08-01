@@ -35,7 +35,7 @@ export default function DonationCard({
                         <p className="donation-email">Donator: {username}</p>
                         <p className="donation-quantity">Quantity: {quantity}</p>
                         <p className="donation-create">Posted on: {(moment(created_at,'YYYY-MM-DD').format()).split('T')[0]}</p>
-                        <p className="donation-quantity">Average User Rating: {avgRating}</p>
+                        <p className="donation-quantity">Average User Rating: {avgRating}/5</p>
                         <p className="donation-quantity">Total Ratings: {totalRatings}</p>
                 
                     </div>

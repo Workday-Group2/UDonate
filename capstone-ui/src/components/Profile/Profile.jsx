@@ -95,8 +95,8 @@ export default function Profile(props) {
                         <div className="row">
 							<div className="col-md-6">
 								<div className="form-group">
-                                <div className="form-control"  >Average Rating: {props.user.avgRating}</div> 
-                                <div className="form-control"  >Total User Rating: {props.user.totalRating}</div> 
+                                <div className="form-control"  >Average Rating: {props.user.avgRating}/5</div> 
+                                <div className="form-control"  >Total Number of Ratings: {props.user.totalRating}</div> 
 								</div>
                                 
 							</div>
