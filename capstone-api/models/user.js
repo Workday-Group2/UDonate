@@ -88,7 +88,28 @@ class User {
 
         return user
 
-        
+    }
+
+    static async fetchRatingByEmail(email) {
+        if (!email) {  
+            throw new BadRequestError("No email provided")
+        }
+
+        const query =  `
+        SELECT 
+        COUNT(r.rating) AS "totalRating",
+        CAST(AVG(r.rating) AS DECIMAL(10,1)) AS "avgRating"
+        FROM rating AS r
+        WHERE email = $1
+        `
+
+        const result = await db.query(query, [email.toLowerCase()])
+
+
+        const user = result.rows[0]
+
+
+        return user
 
     }
 

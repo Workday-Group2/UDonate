@@ -3,6 +3,9 @@ const { BadRequestError } = require("../utils/errors")
 
 class Rating {
     static async createRatingForDonation({ rating, user, donationId }) {
+      console.log('donationId: ', donationId);
+      console.log('user: ', user);
+      console.log('rating: ', rating);
         if (!Number(rating) || Number(rating) <= 0 || Number(rating) > 5) {
           throw new BadRequestError(`Invalid rating provided. Must be an integer between 1-5.`)
         }
@@ -14,9 +17,11 @@ class Rating {
         // otherwise insert a new record into the database
         const results = await db.query(
           `
-            INSERT INTO rating (rating, user_id, donation_id, donater_id)
-            VALUES ($1, (SELECT id FROM users WHERE email = $2), $3, (SELECT donation.user_id FROM donation WHERE id = $3 ))
-            RETURNING rating, user_id AS "rater_id" , donation_id, donater_id, created_at;
+            INSERT INTO rating (rating, user_id, donation_id, donater_id, email)
+            VALUES ($1, (SELECT id FROM users WHERE email = $2), $3, 
+            (SELECT donation.user_id FROM donation WHERE id = $3 ), 
+            (SELECT user_email FROM donation WHERE user_id = donation.user_id LIMIT 1))
+            RETURNING rating, user_id AS "rater_id" , donation_id, donater_id, email AS "donater_email", created_at;
           `,
           [rating, user.email, donationId]
         )

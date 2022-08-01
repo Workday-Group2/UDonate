@@ -67,6 +67,7 @@ export default function Profile(props) {
                                     <span className="form-control"  >{props.user.email}</span> 
 								</div>
 							</div>
+                
                         </div>
                     </div>
                     
@@ -94,7 +95,8 @@ export default function Profile(props) {
                         <div className="row">
 							<div className="col-md-6">
 								<div className="form-group">
-                                    
+                                <div className="form-control"  >Average Rating: {props.user.avgRating}/5</div> 
+                                <div className="form-control"  >Total Number of Ratings: {props.user.totalRating}</div> 
 								</div>
                                 
 							</div>
@@ -110,7 +112,7 @@ export default function Profile(props) {
                 </div>
                 
             </div>
-            
+
         </div>
     )
 }
