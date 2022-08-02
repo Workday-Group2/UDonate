@@ -152,7 +152,8 @@ class User {
     }
 
 
-    static async editProfile({ profileUpdate, user }) {
+    static async editProfile({ profileUpdate, email }) {
+        console.log('email: ', email);
         const requiredFields = ["profile_pic"]
         requiredFields.forEach((field) => {
           if (!profileUpdate.hasOwnProperty(field)) {
@@ -166,20 +167,20 @@ class User {
           UPDATE users
           SET profile_pic = $1,
               updated_at = NOW()
-          WHERE users = $2
+          WHERE users.email = $2
           RETURNING id, 
                     profile_pic, 
                     email,
                     first_name,
                     last_name,
-                    username,
-                    totalrating,
-                    avgRating
+                    username
         `,
-          [profileUpdate.profile_pic, user]
+          [profileUpdate.profile_pic, email]
         )
     
+        console.log('result: ', result);
         return result.rows[0]
+        
       }
     
 }

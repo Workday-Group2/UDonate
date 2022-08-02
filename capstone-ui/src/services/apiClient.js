@@ -96,6 +96,10 @@ class ApiClient {
       return await this.request({ endpoint: `rating/${donationId}`, method: `POST`, data: rating })
     }
 
+    async updateProfile(updateProfile) {
+      return await this.request({ endpoint: `auth/profile`, method: `PATCH`, data: updateProfile })
+    }
+
   }
   
   export default new ApiClient("http://localhost:3001")

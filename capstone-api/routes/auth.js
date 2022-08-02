@@ -75,8 +75,8 @@ router.patch("/profile", async (req, res, next) => {
     try {
       // update profile picture
       const {email} = res.locals.user
-      const post = await User.editProfile({ profileUpdate: req.body, email })
-      return res.status(200).json({ post })
+      const updateProfile = await User.editProfile({ profileUpdate: req.body, email })
+      return res.status(200).json({ updateProfile })
     } catch (err) {
       next(err)
     }
