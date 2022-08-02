@@ -46,7 +46,7 @@ export default function DonationCard({
                         <AiFillStar/>
                         <AiFillStar/>
                         <AiFillStar/>
-                        <p className="donation-rating"><strong>Average Rating: </strong>{avgRating}/5</p>
+                        <p className="donation-rating"><strong>Donator Average Rating: </strong>{avgRating}/5</p>
                         <p className="donation-totalRating"><strong>Total Ratings: </strong>{totalRatings}</p>
                     </div>
                
