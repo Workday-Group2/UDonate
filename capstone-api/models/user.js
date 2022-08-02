@@ -37,6 +37,7 @@ class User {
     }
 
     static async register (credentials) {
+        console.log('credentials: ', credentials);
         const requireFields = ["email", "userName", "firstName", "lastName", "password"]
         requireFields.forEach((field) => {
             if (!credentials?.hasOwnProperty(field)) {
@@ -59,13 +60,14 @@ class User {
                 username,               
                 first_name,
                 last_name,
-                password
-
+                password,
+                profile_pic
                 
             )
-            VALUES ($1, $2, $3, $4, $5)
-            RETURNING id, email, username, first_name, last_name, updated_at, created_at;
-        `, [lowercasedEmail, credentials.userName, credentials.firstName, credentials.lastName, hashedPassword])
+            VALUES ($1, $2, $3, $4, $5, $6)
+            RETURNING id, email, username, first_name, last_name, updated_at, profile_pic, created_at;
+        `, [lowercasedEmail, credentials.userName, credentials.firstName, credentials.lastName,
+             hashedPassword, credentials.profile_pic])
 
         const user = result.rows[0]
 

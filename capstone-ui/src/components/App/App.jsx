@@ -40,7 +40,7 @@ function App() {
   useEffect(() => {
     const fetchUser = async () => {
       const { data, err } = await apiClient.fetchUserFromToken()
-      console.log('data: ', data);
+      console.log('data app: ', data);
       if (data) setUser(data.user)
       if(error) setError(err)
 
