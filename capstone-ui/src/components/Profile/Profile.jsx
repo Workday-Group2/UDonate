@@ -20,7 +20,8 @@ export default function Profile(props) {
 
     return (
         <div className="Profile">
-            <ChangeProfilePic  isOpen={isProfile} toggleModal={() => setIsProfile(false)} />
+            <ChangeProfilePic  isOpen={isProfile} toggleModal={() => setIsProfile(false)} 
+            email={props.user.email}/>
             <div className="container">
                 <h1 className="title">Account Details</h1>
             </div>
