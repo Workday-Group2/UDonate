@@ -1,16 +1,26 @@
 import * as React from "react"
 import "./Profile.css"
 import { FaUserCircle, FaKey } from "react-icons/fa";
+import { useState } from "react"
 import { Link } from "react-router-dom"
 import { FiSettings } from "react-icons/fi";
+import ChangeProfilePic from "../ChangeProfilePic/ChangeProfilePic"
 
+  
 const defaultAvatar =
   "https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png"
   
 const avatarUrl = defaultAvatar
 export default function Profile(props) {
+    const [isProfile, setIsProfile] = useState(false) 
+    const handleProfilePic = () => {
+        setIsProfile(true)
+    }
+
+
     return (
         <div className="Profile">
+            <ChangeProfilePic  isOpen={isProfile} toggleModal={() => setIsProfile(false)} />
             <div className="container">
                 <h1 className="title">Account Details</h1>
             </div>
@@ -18,9 +28,9 @@ export default function Profile(props) {
                 <div className="profile-tab-nav border-right">
                     <div className="p-4">
                         <div className="img-circle text-center mb-3">
-                            <img src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png"/>
+                            <img src={props.user.profile_pic}/>
                         </div>
-                        
+                        <button className="pic-Button" onClick={handleProfilePic} >Change profile picture </button>
                         <h4 className="text-center">{props.user.first_name}</h4>
                     </div>
                     <div className="acc-title" id="v-pills-tab" role="tablist" aria-orientation="vertical">

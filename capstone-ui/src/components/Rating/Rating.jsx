@@ -2,7 +2,7 @@ import * as React from "react"
 import "./Rating.css"
 import Modal from "react-modal"
 import apiClient from "../../services/apiClient"
-import { useState, useEffect } from "react"
+import { useState} from "react"
 import { useParams, Link } from "react-router-dom"
 import { BsCheckCircle } from "react-icons/bs";
 
