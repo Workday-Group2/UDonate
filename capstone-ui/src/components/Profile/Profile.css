@@ -31,7 +31,7 @@ body {
     padding: 16px 28px;
     background: rgb(240, 245, 248);
     padding: 8px 16px;
-   
+    
     flex-direction: column;
     border-radius: 4px;
     flex-direction: column;
@@ -48,6 +48,7 @@ body {
     grid-gap: 15px;
     gap: 15px;
     font-size: 18px;
+    
 }
 .password-resets{
     margin-top: 10px;
@@ -80,9 +81,9 @@ body {
 .pic-Button{
     /* background-color: #0d275f; */
    
-    background-image: linear-gradient(10deg, #2392c5 10%, #1130e2 100%);
+    background-image: linear-gradient(10deg, #04b0ff 10%, #8291e5 100%);
     border:rgb(253, 253, 253);
-    color: rgb(241, 241, 241);
+    color: rgb(248, 248, 248);
     padding: 10px 10px;
     text-align: center;
 

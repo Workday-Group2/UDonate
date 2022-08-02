@@ -10,8 +10,16 @@
 
 .donaterUsername{
     color:black;
+    font-weight: bold;
+    float:right;
+    margin-right:30px;
 }
 
+.donater-profilepic{
+    border-radius: 50%;
+    size:10px;
+
+}
 
 
 .donation-details .details {

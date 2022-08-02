@@ -4,7 +4,8 @@ import { FaUserCircle } from 'react-icons/fa';
 import * as moment from 'moment'
 
 export default function DonationDetailPage({quantity,name,imageUrl,category,
-    id,avgRating,totalRatings,donation_desc,location,createdAt, email, donaterUsername,expiration_date}) {
+    id,avgRating,totalRatings,donation_desc,location,createdAt, email, 
+    donaterUsername,expiration_date, donater_profilePic}) {
     return (
         <div className="donation-details">
             <div className="details">
@@ -17,10 +18,11 @@ export default function DonationDetailPage({quantity,name,imageUrl,category,
                 
                 </div>
                 <button className="donation-btn">View Donation</button>
-                <p className="donaterUsername">
-                    
-                    <FaUserCircle className="userpic" size={20}/>
-                     @{donaterUsername}
+                <p className="donater-info">
+                    <img className="donater-profilepic" src={donater_profilePic}/>
+                    {/* <FaUserCircle className="userpic" size={20}/> */}
+                    <p className="donaterUsername">@{donaterUsername}</p>
+                     
                 </p>
             </div> 
         </div>

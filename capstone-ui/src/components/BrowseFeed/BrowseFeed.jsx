@@ -66,7 +66,8 @@ export default function BrowseFeed(props) {
                          
                         <DonationDetailPage key={item.item} quantity={item.quantity} name={item.name} 
                         imageUrl={item.imageUrl} donation_desc={item.donation_desc} location={item.location}
-                        category={item.category} donaterUsername={item.donaterUsername} expiration_date={item.expiration_date}
+                        category={item.category} donaterUsername={item.donaterUsername} 
+                        expiration_date={item.expiration_date} donater_profilePic={item.donater_profilePic}
                          />
                     </Link>
                 )})}

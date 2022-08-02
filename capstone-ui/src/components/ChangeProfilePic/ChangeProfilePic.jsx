@@ -93,10 +93,12 @@ export default function ChangeProfilePic(props) {
                         value={url}
                         onChange={handleOnInputChange}
                         />
-                     
-                      <button className="pic-button" disabled={isLoading} onClick={handleOnUpdate}>
-                            {isLoading ? "Loading..." : "Submit"}
-                     </button>
+                     <div className="user-button">
+                        <button className="pic-button" disabled={isLoading} onClick={handleOnUpdate}>
+                                {isLoading ? "Loading..." : "Submit"}
+                        </button>
+                     </div>
+                      
                     </div>}
                      
                       

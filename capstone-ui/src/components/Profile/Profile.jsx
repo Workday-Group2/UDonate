@@ -31,7 +31,7 @@ export default function Profile(props) {
                         <div className="img-circle text-center mb-3">
                             <img src={props.user.profile_pic}/>
                         </div>
-                        <button className="pic-Button" onClick={handleProfilePic} >Change profile picture <AiOutlineEdit/> </button>
+                        <button className="pic-Button" onClick={handleProfilePic} >Edit Photo <AiOutlineEdit/> </button>
                         <h4 className="text-center">{props.user.first_name}</h4>
                     </div>
                     <div className="acc-title" id="v-pills-tab" role="tablist" aria-orientation="vertical">

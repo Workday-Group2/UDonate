@@ -111,6 +111,7 @@ class Donation {
                    d.image_url AS "imageUrl",
                    d.user_id AS "userId",
                    u.username AS "donaterUsername",
+                   u.profile_pic AS "donater_profilePic",
                    d.created_at AS "createdAt",
                    d.donation_desc,
                    d.location,
@@ -122,7 +123,7 @@ class Donation {
                 LEFT JOIN users AS u ON u.id = d.user_id
                 LEFT JOIN rating AS r ON r.donation_id = d.id
             WHERE d.bookee_user_id IS NULL
-            GROUP BY d.id, u.username, u.email
+            GROUP BY d.id, u.username, u.email, u.profile_pic
             ORDER BY d.created_at DESC
             `
         )
