@@ -96,7 +96,7 @@ class ApiClient {
       return await this.request({ endpoint: `rating/${donationId}`, method: `POST`, data: rating })
     }
 
-    async updateProfile({profileUpdate, email}) {
+    async updateProfile(email, profileUpdate) {
       return await this.request({ endpoint: `auth/profile`, method: `PATCH`, data: profileUpdate })
     }
 
