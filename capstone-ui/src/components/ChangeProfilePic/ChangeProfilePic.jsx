@@ -24,29 +24,36 @@ const modalStyles = {
     },
   }
 export default function ChangeProfilePic(props) {
-    console.log('props: ', props);
-    const [profilePicUrl, setProfilePicUrl] = useState("")
+   
     const [url, setUrl] = useState("")
+
     const [error, setError] = useState() 
     const [isLoading, setIsLoading] = useState(false)
     const [isUpdated, setIsUpdated] = useState(false)
     
-    
+    useEffect(() => {
+        
+    },[])
+
     const handleOnUpdate = async () => {
         setIsLoading(true)
-    
-        const { data, error } = await apiClient.updateProfile(props.email,{profile_pic: url} )
-        setIsUpdated(true)
-        if (data) {
         
-        setProfilePicUrl("")
+        const { data, error } = await apiClient.updateProfile(props.email,{profile_pic: url} ) 
+        
+        if (data) {
+        setIsUpdated(true)
+        console.log("data",data)
+        setUrl((url)=>url) 
+        console.log("url123",url)
         }
+        console.log('props: ', props);
         if (error) {
           setError(error)
         }
-    
+        
     }
 
+    
     const handleOnInputChange = (event) => {
         setUrl(event.target.value )
       }

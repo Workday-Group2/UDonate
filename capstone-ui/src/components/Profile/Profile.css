@@ -77,6 +77,32 @@ body {
     margin: 0 auto;
     margin-top: 60px;
 }
+.pic-Button{
+    /* background-color: #0d275f; */
+   
+    background-image: linear-gradient(10deg, #2392c5 10%, #1130e2 100%);
+    border:rgb(253, 253, 253);
+    color: rgb(241, 241, 241);
+    padding: 10px 10px;
+    text-align: center;
+
+    cursor: pointer;
+    border-radius: 20px;
+    display: inline-block;
+    font-size: 14px;
+}
+.ratings-tab {
+    align-items:center;
+    grid-gap: 15px;
+    gap: 15px;
+    font-size: 18px;
+    background: rgb(240, 245, 248);
+    border: 5px solid rgb(14, 122, 223);
+    max-width: 580px;
+    margin-bottom: 100px;
+    margin: 0 auto;
+    margin-top: 60px;
+}
 .form-group {
 
     /* display: flex; */
@@ -113,7 +139,8 @@ a.nav-link {
 	height: 100px;
 	width: 100px;
 	border-radius: 100%;
-	border: 5px solid #fff;
+    border: 5px solid #fff;
+    
 }
 
 .button-manage {

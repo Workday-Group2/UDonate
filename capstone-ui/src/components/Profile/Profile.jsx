@@ -5,8 +5,8 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import { FiSettings } from "react-icons/fi";
 import ChangeProfilePic from "../ChangeProfilePic/ChangeProfilePic"
-
-  
+import { AiOutlineEdit, AiFillStar } from "react-icons/ai"
+import { FcRating } from "react-icons/fc";
 const defaultAvatar =
   "https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png"
   
@@ -31,7 +31,7 @@ export default function Profile(props) {
                         <div className="img-circle text-center mb-3">
                             <img src={props.user.profile_pic}/>
                         </div>
-                        <button className="pic-Button" onClick={handleProfilePic} >Change profile picture </button>
+                        <button className="pic-Button" onClick={handleProfilePic} >Change profile picture <AiOutlineEdit/> </button>
                         <h4 className="text-center">{props.user.first_name}</h4>
                     </div>
                     <div className="acc-title" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -43,9 +43,9 @@ export default function Profile(props) {
 							<i className="fa fa-key text-center mr-1"></i> 
 						    Manage <FiSettings/>
 						</a>
-                        <a className="nav-link" id="password-tab" data-toggle="pill" href="#password" role="tab" aria-controls="password" aria-selected="false">
+                        <a className="nav-link" id="ratings-tab" data-toggle="pill" href="#ratings" role="tab" aria-controls="ratings" aria-selected="false">
 							<i className="fa fa-key text-center mr-1"></i> 
-						    Password <FaKey/>
+						    Ratings <AiFillStar/>
 						</a>
                        
                     </div>
@@ -101,7 +101,7 @@ export default function Profile(props) {
                         
                     </div>
 
-                    <div className="manage-tab" id="manage" role="tabpanel" aria-labelledby="manage-tab">
+                    <div className="ratings-tab" id="ratings" role="tabpanel" aria-labelledby="ratings-tab">
                         <h3 className="mb-4">Your ratings</h3>
                         <div className="row">
 							<div className="col-md-6">
