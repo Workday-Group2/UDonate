@@ -29,6 +29,7 @@ export default function Rating(props) {
     const [rating, setRating] = useState([])
     const [error, setError] = useState() 
     const [isLoading, setIsLoading] = useState(false)
+    const [isRating, setIsRating] = useState(false)
     const [form, setForm] = useState({
         rating: 1,
     })
@@ -43,13 +44,14 @@ export default function Rating(props) {
 
   const handleOnSubmit = async (e) => {
     setIsLoading(true)
+    
     const { data, error } = await apiClient.createRating(props.donation_id, {rating:form.rating})
     
       if (error) {
         setError(error)
       }
       if (data) {
-        
+      setIsRating(true)
       addRating(data.donation_id)
       setForm({
          rating:1
@@ -57,7 +59,7 @@ export default function Rating(props) {
         
       } else {
         setIsLoading(false)
-        setError(error)
+        setError('You already rated this user!');
 
       }
     
@@ -74,7 +76,7 @@ export default function Rating(props) {
         <button buttonType="ghost" role="button" onClick={() => props.toggleModal()} className="close-button">
             X
         </button>
-        {isLoading ? (
+        {isLoading && isRating ? (
                     <div className="completed">
                         <h1>Thank you for your rating!</h1>
                         <div className="icon">
@@ -103,6 +105,9 @@ export default function Rating(props) {
                   <button className="post-button" disabled={isLoading} onClick={handleOnSubmit}>
                     {isLoading ? "Loading..." : "Submit"}
                   </button>
+                  {error && (
+                      <p className="rating-error"> {error} </p>
+                    )}
               </div>
                     )}
         

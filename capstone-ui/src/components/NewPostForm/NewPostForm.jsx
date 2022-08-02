@@ -212,9 +212,7 @@ export default function NewPostForm({user, addPost}) {
             <button className="post-button" disabled={isLoading} onClick={handleOnSubmit}>
               {isLoading ? "Loading..." : "Submit"}
             </button>
-            {/* <div className="booking-error"> 
-                {error.errorMessage && <span className="error">{error.errorMessage}</span>}
-              </div> */}
+           
             </div>
             
           </div>
