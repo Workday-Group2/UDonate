@@ -7,7 +7,7 @@ import About from "../About/About";
 export default function Home() {
   return (
     <div className="home">
-      {/* <h1>Home</h1> */}
+      <h1 className="project-title"><a className="title-home" >UDONATE</a></h1>
       <div className="home-wrapper">
         <div className="image">
           <img
