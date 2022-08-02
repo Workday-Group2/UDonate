@@ -53,7 +53,7 @@ export default function ChangeProfilePic(props) {
    
 
     const handleOnInputChange = (event) => {
-        this.setForm({value: event.target.value});
+      setForm((f) => ({ ...f, [event.target.name]: event.target.value }))
     }
 
     return (
@@ -74,8 +74,8 @@ export default function ChangeProfilePic(props) {
                         className="picUrl"
                         type="text"
                         name="url"
-                        value={url}
-                        onChange={(e) => setProfilePicUrl(e.target.value)}
+                        value={form.profilePicUrl}
+                        onChange={handleOnInputChange}
                         />
                   </div>
                   <button className="pic-button" disabled={isLoading} onClick={handleOnUpdate}>
