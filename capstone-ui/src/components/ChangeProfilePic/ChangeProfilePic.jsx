@@ -1,9 +1,9 @@
 import * as React from "react"
 import Modal from "react-modal"
-import { useState } from "react" 
+import { useState, useEffect } from "react" 
 import { BsCheckCircle } from "react-icons/bs";
 import apiClient from "../../services/apiClient"
-
+import "./ChangeProfilePic.css"
 
 const modalStyles = {
     content: {
@@ -29,17 +29,16 @@ export default function ChangeProfilePic(props) {
     const [url, setUrl] = useState("")
     const [error, setError] = useState() 
     const [isLoading, setIsLoading] = useState(false)
-    const [isProfile, setIsProfile] = useState(false)
+    const [isUpdated, setIsUpdated] = useState(false)
     
- 
+    
     const handleOnUpdate = async () => {
         setIsLoading(true)
     
-        const profileUpdate = { profilePicUrl }
-    
-        const { data, error } = await apiClient.updateProfile({profileUpdate},props.email )
+        const { data, error } = await apiClient.updateProfile(props.email,{profile_pic: url} )
+        setIsUpdated(true)
         if (data) {
-        console.log('data: change proifle', data);
+        
         setProfilePicUrl("")
         }
         if (error) {
@@ -47,12 +46,9 @@ export default function ChangeProfilePic(props) {
         }
     
     }
-   
 
     const handleOnInputChange = (event) => {
-        console.log('event: ', event.target.value);
         setUrl(event.target.value )
-        console.log("form on iput",url)
       }
 
     return (
@@ -68,8 +64,21 @@ export default function ChangeProfilePic(props) {
         </button>
                 <div className="content">
                   <div>
-                      <h1>Edit your picture url</h1>
-                    <input
+
+                      {/* <h1>Edit your picture url</h1> */}
+                      <h1 className="profile-updated"></h1>
+                        
+                        {isUpdated ? 
+                        <div className="completed">
+                        <h1>Profile Picture Updated!</h1>
+                        <div className="icon">
+                            <BsCheckCircle  size={40}/>
+                        </div> 
+                        </div>
+                    : 
+                    <div>
+                        <h1>Edit your picture url</h1>
+                      <input
                         className="picUrl"
                         type="text"
                         placeholder="The image URL"
@@ -77,13 +86,16 @@ export default function ChangeProfilePic(props) {
                         value={url}
                         onChange={handleOnInputChange}
                         />
+                     
+                      <button className="pic-button" disabled={isLoading} onClick={handleOnUpdate}>
+                            {isLoading ? "Loading..." : "Submit"}
+                     </button>
+                    </div>}
+                     
+                      
+                      
+                    
                   </div>
-                  <button className="pic-button" disabled={isLoading} onClick={handleOnUpdate}>
-                    {isLoading ? "Loading..." : "Submit"}
-                  </button>
-                  {error && (
-                      <p className="rating-error"> {error} </p>
-                    )}
                 </div> 
         </Modal>
     )

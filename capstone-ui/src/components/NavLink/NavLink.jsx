@@ -5,10 +5,13 @@ import { CgProfile} from "react-icons/cg";
 import "./NavLink.css"
 
 export default function NavLink(props) {
+    console.log('props:navlink ', props);
     
     return (
         <div className="navlink">
-                <Link to="/profile"><h1 className={props.user.email ? "btn userEmail" : "ghost"}> <CgProfile/> {props.user.username}</h1></Link>
+            
+                <Link to="/profile"><h1 className={props.user.email ? "btn userEmail" : "ghost"}> <img className="profile-icon" src={props.user.profile_pic}/></h1>
+                <h1 className="link-username"> {props.user.username}</h1></Link>           
                 <Link to="/" label="Home" className="btn home">Home</Link>
                 <a href="/#about" label="About" className="btn about">About</a>
                 <a href="/#contact" label="Contact" className="btn contact">Contact</a>
