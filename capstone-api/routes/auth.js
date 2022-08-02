@@ -69,8 +69,18 @@ router.post("/password-reset", async (req,res,next) =>{
         next(error)
     }
 }
-
 )
+
+router.patch("/profile", async (req, res, next) => {
+    try {
+      // update profile picture
+      const {email} = res.locals.user
+      const post = await User.editProfile({ profileUpdate: req.body, email })
+      return res.status(200).json({ post })
+    } catch (err) {
+      next(err)
+    }
+  })
 
 
 module.exports = router

@@ -148,7 +148,39 @@ class User {
         if (user) return User.makePublicUser(user)
         throw new BadRequestError("That token is either expires or invalid")
     }
+
+
+    static async editProfile({ profileUpdate, user }) {
+        const requiredFields = ["profile_pic"]
+        requiredFields.forEach((field) => {
+          if (!profileUpdate.hasOwnProperty(field)) {
+            throw new BadRequestError(`Required field - ${field} - missing from request body.`)
+          }
+        })
+    
+        // update profile pic
+        const result = await db.query(
+          `
+          UPDATE users
+          SET profile_pic = $1,
+              updated_at = NOW()
+          WHERE users = $2
+          RETURNING id, 
+                    profile_pic, 
+                    email,
+                    first_name,
+                    last_name,
+                    username,
+                    totalrating,
+                    avgRating
+        `,
+          [profileUpdate.profile_pic, user]
+        )
+    
+        return result.rows[0]
+      }
     
 }
+
 
 module.exports = User
