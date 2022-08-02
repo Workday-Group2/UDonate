@@ -4,6 +4,7 @@ import { useState } from "react"
 import { BsCheckCircle } from "react-icons/bs";
 import apiClient from "../../services/apiClient"
 
+
 const modalStyles = {
     content: {
       position: "relative",
@@ -23,38 +24,36 @@ const modalStyles = {
     },
   }
 export default function ChangeProfilePic(props) {
+    console.log('props: ', props);
     const [profilePicUrl, setProfilePicUrl] = useState("")
     const [url, setUrl] = useState("")
     const [error, setError] = useState() 
     const [isLoading, setIsLoading] = useState(false)
-
     const [isProfile, setIsProfile] = useState(false)
-    const [form, setForm] = useState({
-        profilePicUrl: "",
-    })
+    
+ 
     const handleOnUpdate = async () => {
         setIsLoading(true)
     
         const profileUpdate = { profilePicUrl }
     
-        const { data, error } = await apiClient.updateProfile({profileUpdate},props.user.email )
+        const { data, error } = await apiClient.updateProfile({profileUpdate},props.email )
         if (data) {
-            console.log('data: change proifle', data);
-        //   setPost({ ...profilePicUrl, profilePicUrl: data.post.caption })
-        //   updatePost({ postId, postUpdate })
+        console.log('data: change proifle', data);
         setProfilePicUrl("")
         }
         if (error) {
           setError(error)
         }
     
-        // setIsUpdating(false)
     }
    
 
     const handleOnInputChange = (event) => {
-      setForm((f) => ({ ...f, [event.target.name]: event.target.value }))
-    }
+        console.log('event: ', event.target.value);
+        setUrl(event.target.value )
+        console.log("form on iput",url)
+      }
 
     return (
         <Modal
@@ -73,8 +72,9 @@ export default function ChangeProfilePic(props) {
                     <input
                         className="picUrl"
                         type="text"
+                        placeholder="The image URL"
                         name="url"
-                        value={form.profilePicUrl}
+                        value={url}
                         onChange={handleOnInputChange}
                         />
                   </div>
