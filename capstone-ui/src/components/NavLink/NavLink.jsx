@@ -5,7 +5,7 @@ import { CgProfile} from "react-icons/cg";
 import "./NavLink.css"
 
 export default function NavLink(props) {
-    console.log('props:navlink ', props);
+
     
     return (
         <div className="navlink">

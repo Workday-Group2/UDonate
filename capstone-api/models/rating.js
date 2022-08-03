@@ -3,9 +3,6 @@ const { BadRequestError } = require("../utils/errors")
 
 class Rating {
     static async createRatingForDonation({ rating, user, donationId }) {
-      console.log('donationId: ', donationId);
-      console.log('user: ', user);
-      console.log('rating: ', rating);
         if (!Number(rating) || Number(rating) <= 0 || Number(rating) > 5) {
           throw new BadRequestError(`Invalid rating provided. Must be an integer between 1-5.`)
         }

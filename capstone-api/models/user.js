@@ -37,7 +37,6 @@ class User {
     }
 
     static async register (credentials) {
-        console.log('credentials: ', credentials);
         const requireFields = ["email", "userName", "firstName", "lastName", "password"]
         requireFields.forEach((field) => {
             if (!credentials?.hasOwnProperty(field)) {
@@ -153,7 +152,6 @@ class User {
 
 
     static async editProfile({ profileUpdate, email }) {
-        console.log('email: ', email);
         const requiredFields = ["profile_pic"]
         requiredFields.forEach((field) => {
           if (!profileUpdate.hasOwnProperty(field)) {
@@ -177,8 +175,7 @@ class User {
         `,
           [profileUpdate.profile_pic, email]
         )
-    
-        console.log('result: ', result);
+
         return result.rows[0]
         
       }

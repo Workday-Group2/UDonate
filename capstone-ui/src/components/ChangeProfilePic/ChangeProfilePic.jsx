@@ -42,11 +42,8 @@ export default function ChangeProfilePic(props) {
         
         if (data) {
         setIsUpdated(true)
-        console.log("data",data)
         setUrl((url)=>url) 
-        console.log("url123",url)
         }
-        console.log('props: ', props);
         if (error) {
           setError(error)
         }

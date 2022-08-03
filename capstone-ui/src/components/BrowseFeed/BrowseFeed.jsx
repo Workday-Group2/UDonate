@@ -13,7 +13,6 @@ export default function BrowseFeed(props) {
       const {data, error} = await apiClient.listAllDonation()
       if(error) setError(error)
       if(data){
-        console.log("datattaa",data)
         setDonation(data.donations)
       }
       }
