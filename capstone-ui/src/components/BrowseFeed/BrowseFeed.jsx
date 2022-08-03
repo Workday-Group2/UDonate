@@ -5,7 +5,6 @@ import { Link } from "react-router-dom"
 import apiClient from "../../services/apiClient"
 import DonationDetailPage from "../DonationDetailPage/DonationDetailPage"
 
-
 export default function BrowseFeed(props) {
     const [donation, setDonation] = useState([])
     const [error, setError] = useState() 
@@ -61,9 +60,7 @@ export default function BrowseFeed(props) {
            </div>
             <div className="donation-items">
                 {filtedList.map((item) => {return(
-                
-                    <Link to={`id/`+item.id}>
-                         
+                    <Link to={`id/`+item.id}>    
                         <DonationDetailPage key={item.item} quantity={item.quantity} name={item.name} 
                         imageUrl={item.imageUrl} donation_desc={item.donation_desc} location={item.location}
                         category={item.category} donaterUsername={item.donaterUsername} 

@@ -15,7 +15,8 @@ export default function DonationCard({
   created_at,
   totalRatings,
   avgRating,
-  expiration_date
+  expiration_date,
+  donater_profilePic
 }) {
   return (
     <div className="DonationCard">
@@ -35,10 +36,11 @@ export default function DonationCard({
                 <div className="info-card">
                     
                     <div className="_p-features">
+                    <img className="donation-card-profile" src={donater_profilePic}/>
+                        <p className="donation-username-card"><strong>@{username}</strong></p>
                         <p className="donation-expiration"><strong>Expiration Date: </strong>{(moment(expiration_date,'YYYY-MM-DD').format()).split('T')[0]}</p>
                         <p className="donation-location"><strong>Location: </strong> {location}</p>
                         <p className="donation-description"><strong>Description: </strong> {donation_desc} </p>
-                        <p className="donation-email"><strong>Donator: </strong> {username}</p>
                         <p className="donation-quantity"><strong>Quantity: </strong> {quantity}</p>
                         <p className="donation-create"><strong>Posted on: </strong> {(moment(created_at,'YYYY-MM-DD').format()).split('T')[0]}</p>
                         <AiFillStar/>

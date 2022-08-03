@@ -12,7 +12,7 @@ export default function DonationDetailPage({quantity,name,imageUrl,category,
                 <div className="donation-text">
                     <img className="donation-image2" src={imageUrl} alt="" />
                     <p className="donation-name">{name}</p>
-                    <p className="donation-expiration"><strong>Expiration Date: </strong>{(moment(expiration_date,'YYYY-MM-DD').format()).split('T')[0]}</p>
+                    <p className="donation-expiration"><strong>Exp Date: </strong>{(moment(expiration_date,'YYYY-MM-DD').format()).split('T')[0]}</p>
                 </div>
                 <div>
                 
@@ -20,7 +20,6 @@ export default function DonationDetailPage({quantity,name,imageUrl,category,
                 <button className="donation-btn">View Donation</button>
                 <p className="donater-info">
                     <img className="donater-profilepic" src={donater_profilePic}/>
-                    {/* <FaUserCircle className="userpic" size={20}/> */}
                     <p className="donaterUsername">@{donaterUsername}</p>
                      
                 </p>

@@ -43,6 +43,7 @@
 .donation-details .details .donation-text .donation-name{
     padding: 1rem;
     font-weight:bold;
+    font-size:18px;
 }
 .donation-details .details .donation-text .card__description{
     padding: 0 1rem;

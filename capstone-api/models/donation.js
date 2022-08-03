@@ -52,6 +52,7 @@ class Donation {
             d.location,
             d.bookee_user_id,
             u.email,
+            u.profile_pic AS "donater_profilePic",
             r.donater_id,
             d.expiration_date,
             CAST(AVG(r.rating) AS DECIMAL(10,1)) AS "avgRating",
@@ -60,7 +61,7 @@ class Donation {
                 LEFT JOIN users AS u ON u.id = d.user_id
                 LEFT JOIN rating AS r ON r.email = d.user_email
             WHERE d.id = $1
-            GROUP BY d.id, u.username, u.email, r.donater_id
+            GROUP BY d.id, u.username, u.email, r.donater_id, u.profile_pic
             `)
         
 

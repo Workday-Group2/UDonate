@@ -18,6 +18,7 @@ export default function BrowseDetail(props) {
         const {data, err} = await apiClient.fetchDonationById(donationId)
         if(err) setError(err)
         if(data){
+          console.log("DATATA!",data)
           setDonation(data.donation)
         }
 
@@ -38,7 +39,8 @@ export default function BrowseDetail(props) {
             {notFound ? (<NotFound/>) : <DonationCard quantity={donation.quantity} id={donation.id} name={donation.name} imageUrl={donation.image_url} donation_desc={donation.donation_desc} location={donation.location}
             category={donation.category} created_at={donation.created_at} email={donation.email} 
             username={donation.username} totalRatings={donation.totalRatings} 
-            avgRating={donation.avgRating} expiration_date={donation.expiration_date}/>}
+            avgRating={donation.avgRating} expiration_date={donation.expiration_date} 
+            donater_profilePic={donation.donater_profilePic}/>}
 
               <button className="bookingButton" onClick={handleBookingStartClick} >Book</button>
            
