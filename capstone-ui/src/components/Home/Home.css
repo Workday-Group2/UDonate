@@ -7,7 +7,37 @@ html, body {
     z-index: 2;
     
 }
+.project-title {
+    border-radius: 20px;
+    font-size: 3vw;
+    margin-top:90px;
+    color: #000000;
+    font-family: 'Raleway';
+    background: linear-gradient(10deg, #04b0ff 10%, #8291e5 100%);
+    width:22vw;
+    margin-left: 39vw;
+}
+.project-title::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -50px;
+    width: 600px;
+    margin-left: -300px;
+    margin-top: -220px;
+    height: 600px;
+    background: radial-gradient(50% 50%, ellipse closest-side, #444, black);
+    z-index: -1;
+  }
 
+.project-title .title-home {
+    /* background: black; */
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+   
+    color: white;
+  }
 .image img {
     width: 500px;
     height: auto;

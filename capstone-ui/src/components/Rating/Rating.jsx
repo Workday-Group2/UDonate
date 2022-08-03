@@ -2,8 +2,9 @@ import * as React from "react"
 import "./Rating.css"
 import Modal from "react-modal"
 import apiClient from "../../services/apiClient"
-import { useState, useEffect } from "react"
+import { useState} from "react"
 import { useParams, Link } from "react-router-dom"
+import { BsCheckCircle } from "react-icons/bs";
 
 const modalStyles = {
     content: {
@@ -28,6 +29,7 @@ export default function Rating(props) {
     const [rating, setRating] = useState([])
     const [error, setError] = useState() 
     const [isLoading, setIsLoading] = useState(false)
+    const [isRating, setIsRating] = useState(false)
     const [form, setForm] = useState({
         rating: 1,
     })
@@ -42,13 +44,14 @@ export default function Rating(props) {
 
   const handleOnSubmit = async (e) => {
     setIsLoading(true)
+    
     const { data, error } = await apiClient.createRating(props.donation_id, {rating:form.rating})
     
       if (error) {
         setError(error)
       }
       if (data) {
-        
+      setIsRating(true)
       addRating(data.donation_id)
       setForm({
          rating:1
@@ -56,7 +59,8 @@ export default function Rating(props) {
         
       } else {
         setIsLoading(false)
-        setError(error)
+        setError('You already rated this user!');
+
       }
     
   }
@@ -72,30 +76,43 @@ export default function Rating(props) {
         <button buttonType="ghost" role="button" onClick={() => props.toggleModal()} className="close-button">
             X
         </button>
-        <div className="content">
-            <h1>Hi!</h1>
-            <div className="input-field">
-              <div className="title-form">
-                <label className= "title-name"  htmlFor="quantity">rating: </label>
+        {isLoading && isRating ? (
+                    <div className="completed">
+                        <h1>Thank you for your rating!</h1>
+                        <div className="icon">
+                            <BsCheckCircle  size={40}/>
+                        </div>
+                        
+                    </div>
+                ) : (
+                  <div className="content">
+                  <h1>Hi!</h1>
+                  <div className="input-field">
+                    <div className="title-form">
+                      <label className= "title-name"  htmlFor="quantity">rating: </label>
+                    </div>
+                    <input
+                    className="qty"
+                      type="number"
+                      name="rating"
+                      value={form.rating}
+                      onChange={handleOnInputChange}
+                      min="0"
+                      max="5"
+                    />
+      
+                  </div>
+                  <button className="post-button" disabled={isLoading} onClick={handleOnSubmit}>
+                    {isLoading ? "Loading..." : "Submit"}
+                  </button>
+                  {error && (
+                      <p className="rating-error"> {error} </p>
+                    )}
               </div>
-              <input
-              className="qty"
-                type="number"
-                name="rating"
-                value={form.rating}
-                onChange={handleOnInputChange}
-                min="0"
-                max="5"
-              />
-
-            </div>
-            <button className="post-button" disabled={isLoading} onClick={handleOnSubmit}>
-              {isLoading ? "Loading..." : "Submit"}
-            </button>
-        </div>
-                
-                
+                    )}
         
+                
+                
     </Modal>
     )
 }

@@ -1,6 +1,7 @@
 .Browse-Detail .donation-image{
     object-fit: contain;
     float:left;
+    max-width:fit-content;
 }
 
 .Browse-Detail .DonationCard .container {

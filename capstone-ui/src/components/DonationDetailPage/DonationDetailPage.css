@@ -10,8 +10,16 @@
 
 .donaterUsername{
     color:black;
+    font-weight: bold;
+    float:right;
+    margin-right:30px;
 }
 
+.donater-profilepic{
+    border-radius: 50%;
+    size:10px;
+
+}
 
 
 .donation-details .details {
@@ -35,6 +43,7 @@
 .donation-details .details .donation-text .donation-name{
     padding: 1rem;
     font-weight:bold;
+    font-size:18px;
 }
 .donation-details .details .donation-text .card__description{
     padding: 0 1rem;

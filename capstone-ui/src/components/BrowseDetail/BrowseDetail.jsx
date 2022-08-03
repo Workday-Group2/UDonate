@@ -7,6 +7,7 @@ import "./BrowseDetail.css"
 import { useParams, Link } from "react-router-dom"
 
 export default function BrowseDetail(props) {
+   
     const [donation, setDonation] = React.useState({})
     const [notFound, setNotFound] = React.useState(false)
     const [error, setError] = React.useState(false)
@@ -35,7 +36,10 @@ export default function BrowseDetail(props) {
           <BookingPage  isOpen={isBooking} toggleModal={() => setIsBooking(false)} donation={donation} user={props.user}/>
 
             {notFound ? (<NotFound/>) : <DonationCard quantity={donation.quantity} id={donation.id} name={donation.name} imageUrl={donation.image_url} donation_desc={donation.donation_desc} location={donation.location}
-            avgRating={donation.avgRating} category={donation.category} created_at={donation.created_at} email={donation.email} username={donation.username} totalRatings={donation.totalRatings} avgRating={donation.avgRating}/>}
+            category={donation.category} created_at={donation.created_at} email={donation.email} 
+            username={donation.username} totalRatings={donation.totalRatings} 
+            avgRating={donation.avgRating} expiration_date={donation.expiration_date} 
+            donater_profilePic={donation.donater_profilePic}/>}
 
               <button className="bookingButton" onClick={handleBookingStartClick} >Book</button>
            

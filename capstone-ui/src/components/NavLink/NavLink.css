@@ -6,6 +6,7 @@
     justify-content: space-around;
     list-style-type: none;
     margin-left: auto;
+    height:80px;
 }
 a {
     text-decoration: none;
@@ -57,4 +58,19 @@ ul{
     /* font-weight: 900; */
 
     /* background-color: #7382b3; */
+}
+
+.profile-icon {
+    padding: 5px;
+    width: 50px;
+    border-radius: 100%;
+    height: 50px;
+}
+
+.link-username{
+    float:right;
+    margin-top:40px;
+    margin-left:5px;
+    color:black;
+    font-size:18px;
 }

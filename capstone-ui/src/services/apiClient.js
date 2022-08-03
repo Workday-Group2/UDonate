@@ -92,8 +92,12 @@ class ApiClient {
     }
 
     // rating
-    async createRating(donationId) {
-      return await this.request({ endpoint: `rating/${donationId}`, method: `POST`})
+    async createRating(donationId, rating) {
+      return await this.request({ endpoint: `rating/${donationId}`, method: `POST`, data: rating })
+    }
+
+    async updateProfile(email, profileUpdate) {
+      return await this.request({ endpoint: `auth/profile`, method: `PATCH`, data: profileUpdate })
     }
 
   }
