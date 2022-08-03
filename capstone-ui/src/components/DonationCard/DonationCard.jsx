@@ -43,11 +43,6 @@ export default function DonationCard({
                         <p className="donation-description"><strong>Description: </strong> {donation_desc} </p>
                         <p className="donation-quantity"><strong>Quantity: </strong> {quantity}</p>
                         <p className="donation-create"><strong>Posted on: </strong> {(moment(created_at,'YYYY-MM-DD').format()).split('T')[0]}</p>
-                        <AiFillStar/>
-                        <AiFillStar/>
-                        <AiFillStar/>
-                        <AiFillStar/>
-                        <AiFillStar/>
                         <p className="donation-rating"><strong>Donator Average Rating: </strong>{avgRating}/5</p>
                         <p className="donation-totalRating"><strong>Total Ratings: </strong>{totalRatings}</p>
                     </div>
