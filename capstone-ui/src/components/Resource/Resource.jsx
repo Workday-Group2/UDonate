@@ -4,7 +4,10 @@ import "./Resource.css"
 export default function Resource() {
   return (
     <div className="resource-container">
-        <h3>Resources</h3>
+        <div className="resource-title">
+          <h3>Resources</h3>
+        </div>
+        
 
         <div className="safety-wrapper">
 

@@ -71,8 +71,9 @@ export default function NewPostForm({user, addPost}) {
         <div className="newPost">
           <div className="left-donation"> 
           <div className="overlay-donation">
-              <h1>Let's start saving food.</h1>   
+              <h1 className="newform-text">Let's start saving food.</h1>   
           </div>
+          <img className="donation-form-pic" src="https://media.istockphoto.com/vectors/happy-woman-holds-food-box-in-hands-food-drive-donation-concept-of-vector-id1221187998?k=20&m=1221187998&s=170667a&w=0&h=SVEsjLS8FdmhNpJmdIUiY8A__shFKg0-nHGbf4aE8EE="/>
           </div>
           <div className="form">
             <div className="form1">
@@ -81,7 +82,7 @@ export default function NewPostForm({user, addPost}) {
              
               <div className="title-form">
                 <input
-                  className="form-input"
+                  className="new-form-input"
                   type="text"
                   name="name"
                   placeholder="Title"
@@ -97,7 +98,7 @@ export default function NewPostForm({user, addPost}) {
                 <label className= "title-name"  htmlFor="category">Category: </label>
               </div>
               <select
-                className="form-input"
+                className="new-form-input"
                 name="category"
                 value={form.category}
                 onChange={handleOnInputChange}
@@ -120,7 +121,7 @@ export default function NewPostForm({user, addPost}) {
               </div>
               
               <input
-              className="form-input"
+              className="new-form-input"
                 type="text"
                 name="imageUrl"
                 placeholder="The image URL"
@@ -147,7 +148,7 @@ export default function NewPostForm({user, addPost}) {
               </div>
               
               <input
-              className="form-input"
+              className="new-form-input"
                 type="date"
                 placeholder="MM-DD-YYYY"
                 value={date}
@@ -158,11 +159,12 @@ export default function NewPostForm({user, addPost}) {
               <div className="title-form">
                 <label className= "title-name" htmlFor="donation_desc">Description: </label>
               </div>
-              <input
-              className="form-input"
+              <textarea
+              className="description-input"
                 type="text"
                 placeholder="Description"
                 value={desc}
+                maxlength = "210"
                 onChange={(e) => setDesc(e.target.value)}
               />
             </div>
@@ -173,7 +175,7 @@ export default function NewPostForm({user, addPost}) {
               <form>
               <AddressAutofill accessToken="pk.eyJ1Ijoicm9iYmVkMyIsImEiOiJjbDYxMHZjZDEwd3FpM2VueThkdXhvdjY3In0.9BnfhK_Gv049Gv1ks9i8yA">
               <input
-              className="form-input"
+              className="new-form-input"
                 type="text"
                 autoComplete="address-line1"
                 placeholder="Location"
@@ -183,24 +185,25 @@ export default function NewPostForm({user, addPost}) {
               </AddressAutofill>
               <div className="location-info">
                 <input
+                  className="location-input"
                   name="apartment" placeholder="Apartment number" type="text"
                   autoComplete="address-line2"
                 />
               <input
                   name="city" placeholder="City" type="text"
-                  autoComplete="address-level2"
+                  autoComplete="address-level2" className="location-input"
               />
               <input
                   name="state" placeholder="State" type="text"
-                  autoComplete="address-level1"
+                  autoComplete="address-level1" className="location-input"
               />
               <input
                   name="country" placeholder="Country" type="text"
-                  autoComplete="country"
+                  autoComplete="country" className="location-input"
               />
               <input
                   name="postcode" placeholder="Postcode" type="text"
-                  autoComplete="postal-code"
+                  autoComplete="postal-code" className="location-input"
               />
             </div>
               </form>
@@ -216,7 +219,10 @@ export default function NewPostForm({user, addPost}) {
             </div>
             
           </div>
+          
+          
         </div>
+        
       )
     }
 
@@ -228,7 +234,9 @@ export default function NewPostForm({user, addPost}) {
             {Boolean(error) && <span className="error">{error}</span>}
 
             {renderForm()}
+            
         </div>
+        
     </div>
     )
 }
