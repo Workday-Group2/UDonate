@@ -1,0 +1,9 @@
+.rating-error {
+    color:red;
+}
+.rating-stars{
+    margin-left:20px;
+    margin-top:20px;
+    margin-bottom:20px;
+    size:40px;
+}
