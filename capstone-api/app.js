@@ -29,9 +29,9 @@ app.use("/review", bookingReview)
 app.use("/rating", rating)
 app.use("/userBooking", newBooking)
 
-// app.get("/", async(req, res, next) => {
-//     res.status(200).json({ ping: "pong"})
-// })
+app.get("/", async(req, res, next) => {
+    res.status(200).json({ ping: "pong"})
+})
 
 app.use((req, res, next) => {
     return next(new NotFoundError())
