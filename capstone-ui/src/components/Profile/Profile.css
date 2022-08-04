@@ -136,6 +136,9 @@ a.nav-link {
 	width: 20px;
 }
 
+.text-center-name{
+    font-size: 25px;
+}
 .img-circle img {
     height: 150px;
     width: 150px;

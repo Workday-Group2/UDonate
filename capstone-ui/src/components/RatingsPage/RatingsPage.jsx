@@ -1,9 +1,9 @@
 import * as React from "react"
-import "./Rating.css"
+import "./RatingsPage.css"
 import Modal from "react-modal"
 import apiClient from "../../services/apiClient"
 import { useState} from "react"
-import { useParams, Link } from "react-router-dom"
+import { Rating } from '@mui/material';
 import { BsCheckCircle } from "react-icons/bs";
 
 const modalStyles = {
@@ -25,7 +25,7 @@ const modalStyles = {
     },
   }
 
-export default function Rating(props) {
+export default function RatingsPage(props) {
     const [rating, setRating] = useState([])
     const [error, setError] = useState() 
     const [isLoading, setIsLoading] = useState(false)
