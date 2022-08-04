@@ -88,6 +88,7 @@ export default function RatingsPage(props) {
                 ) : (
                   <div className="content">
                   <div className="input-field">
+                    <h1>Hi {props.first_name}!</h1>
                     <div className="title-form">
                       <label className= "title-name"  htmlFor="quantity">You are rating: {props.donaterEmail} </label>
                     </div>
