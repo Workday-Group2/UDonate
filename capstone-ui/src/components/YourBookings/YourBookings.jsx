@@ -5,6 +5,7 @@ import "./YourBookings.css"
 import RatingsPage from "../RatingsPage/RatingsPage"
 
 export default function YourBookings(props) {
+  console.log('props!!!: ', props);
   const [isRating, setIsRating] = useState(false) // rating state of donation
   const handleRatingClick = () => {
     setIsRating(true)

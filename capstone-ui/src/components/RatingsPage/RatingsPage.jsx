@@ -26,6 +26,7 @@ const modalStyles = {
   }
 
 export default function RatingsPage(props) {
+  console.log('props: ', props);
     const [rating, setRating] = useState([])
     const [error, setError] = useState() 
     const [isLoading, setIsLoading] = useState(false)
@@ -86,19 +87,16 @@ export default function RatingsPage(props) {
                     </div>
                 ) : (
                   <div className="content">
-                  <h1>Hi!</h1>
                   <div className="input-field">
                     <div className="title-form">
-                      <label className= "title-name"  htmlFor="quantity">rating: </label>
+                      <label className= "title-name"  htmlFor="quantity">You are rating: {props.donaterEmail} </label>
                     </div>
-                    <input
-                    className="qty"
-                      type="number"
+                    <Rating
+                      className="rating-stars"
                       name="rating"
                       value={form.rating}
                       onChange={handleOnInputChange}
-                      min="0"
-                      max="5"
+                      precision={0.5}
                     />
       
                   </div>
