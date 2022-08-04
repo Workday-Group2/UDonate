@@ -38,15 +38,16 @@ export default function BrowseFeed(props) {
         <div className="browse-feed">
            <h1>Browse Donations</h1>
            <div className="filter-container">
-              <div>Filter by Category:</div>
+              {/* <div className="filter-title">Filter by Category:</div> */}
               <div>
                 <select
+                  className="filter-list"
                   name="category-list"
                   id="category-list"
                   onChange={handleCategoryChange}
                   >
-                    <option value="">All</option>
-                    <option value="Fruits and Vegetables">Fruits and Vegetables</option>
+                    <option value="" >Filter by category </option>
+                    <option value="Fruits and Vegetables">Fruits and Vegetables </option>
                     <option value="Dairy and Eggs">Dairy and Eggs</option>
                     <option value="Protein">Protein</option>
                     <option value="Pantry Essentials">Pantry Essentials</option>
