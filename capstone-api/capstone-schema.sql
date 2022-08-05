@@ -23,6 +23,8 @@ user_id     INTEGER NOT NULL,
 created_at  TIMESTAMP NOT NULL DEFAULT NOW(),
 donation_desc    TEXT NOT NULL,
 location    TEXT NOT NULL,
+city        TEXT,
+state       TEXT,
 bookee_user_id  INTEGER NULL REFERENCES users(id) ON DELETE CASCADE,
 FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 

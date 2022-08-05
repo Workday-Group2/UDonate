@@ -23,7 +23,9 @@ export default function NewPostForm({user, addPost}) {
       quantity:1,
       expiration_date: "",
       donation_desc: "",
-      location: ""
+      location: "",
+      city: "",
+      state: "",
     })
     
     const handleOnInputChange = (event) => {
@@ -35,12 +37,14 @@ export default function NewPostForm({user, addPost}) {
       
       const { data, error } = await apiClient.createDonation( { name : form.name, 
         category : form.category, image_url: form.imageUrl, quantity : form.quantity,
-         expiration_date: date, donation_desc: desc, location: location})
+         expiration_date: date, donation_desc: desc, location: location, city: form.city, state: form.state})
         if (error) {
           setError(error)
         }
         if (data) {
+          console.log(565,data)
         addPost(data.user)
+        console.log(555,form)
         setForm({
            name: "", 
            category: "",
@@ -48,7 +52,9 @@ export default function NewPostForm({user, addPost}) {
            quantity: 1,
            expiration_date: "",   
            donation_desc: "",
-           location: ""  
+           location: "",
+           city: "",
+           state: "", 
           })
           
           setDate("") 
@@ -190,10 +196,14 @@ export default function NewPostForm({user, addPost}) {
               <input
                   name="city" placeholder="City" type="text"
                   autoComplete="address-level2"
+                  value={form.city}
+                onChange={handleOnInputChange}
               />
               <input
                   name="state" placeholder="State" type="text"
                   autoComplete="address-level1"
+                  value={form.state}
+                onChange={handleOnInputChange}
               />
               <input
                   name="country" placeholder="Country" type="text"
