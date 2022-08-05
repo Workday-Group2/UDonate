@@ -97,7 +97,6 @@ export default function RatingsPage(props) {
                       name="rating"
                       value={form.rating}
                       onChange={handleOnInputChange}
-                      precision={0.5}
                     />
       
                   </div>

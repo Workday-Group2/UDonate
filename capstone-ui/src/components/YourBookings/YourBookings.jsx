@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from "react"
 import apiClient from "../../services/apiClient"
 import "./YourBookings.css"
-import RatingsPage from "../RatingsPage/RatingsPage"
+import RatingsPage from "../RatingsPage/RatingsPage";
 
 export default function YourBookings(props) {
   console.log('props!!!: ', props);
