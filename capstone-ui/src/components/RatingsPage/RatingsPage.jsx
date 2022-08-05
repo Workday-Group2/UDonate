@@ -26,7 +26,6 @@ const modalStyles = {
   }
 
 export default function RatingsPage(props) {
-  console.log('props: ', props);
     const [rating, setRating] = useState([])
     const [error, setError] = useState() 
     const [isLoading, setIsLoading] = useState(false)

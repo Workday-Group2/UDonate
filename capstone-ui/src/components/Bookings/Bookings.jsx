@@ -5,7 +5,6 @@ import apiClient from "../../services/apiClient"
 import YourBookings from "../YourBookings/YourBookings"
 
 export default function Bookings(props) {
-  console.log('props bookings: ', props);
     const [booking, setBooking] = useState([])
     const [error, setError] = useState() 
  
@@ -13,7 +12,6 @@ export default function Bookings(props) {
       const {data, err} = await apiClient.listBookingForUser()
       if(err) setError(err)
       if(data){
-        console.log('data: ', data);
         setBooking(data.userBooking)
       } 
 
