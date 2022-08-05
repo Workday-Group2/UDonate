@@ -170,7 +170,7 @@ export default function NewPostForm({user, addPost}) {
             </div>
             <div className="input-field">
               <div className="title-form">
-                <label className= "title-name" htmlFor="location">Location: </label>
+                <label className= "title-name" htmlFor="location">Public Address: </label>
               </div>
               <form>
               <AddressAutofill accessToken="pk.eyJ1Ijoicm9iYmVkMyIsImEiOiJjbDYxMHZjZDEwd3FpM2VueThkdXhvdjY3In0.9BnfhK_Gv049Gv1ks9i8yA">
@@ -178,32 +178,36 @@ export default function NewPostForm({user, addPost}) {
               className="new-form-input"
                 type="text"
                 autoComplete="address-line1"
-                placeholder="Location"
+                placeholder="Enter an address"
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
               />
               </AddressAutofill>
               <div className="location-info">
-                <input
+                {/* <input
                   className="location-input"
                   name="apartment" placeholder="Apartment number" type="text"
                   autoComplete="address-line2"
-                />
+                /> */}
               <input
                   name="city" placeholder="City" type="text"
                   autoComplete="address-level2" className="location-input"
+                  readOnly = {true}
               />
               <input
                   name="state" placeholder="State" type="text"
                   autoComplete="address-level1" className="location-input"
+                  readOnly = {true}
               />
               <input
                   name="country" placeholder="Country" type="text"
                   autoComplete="country" className="location-input"
+                  readOnly = {true}
               />
               <input
                   name="postcode" placeholder="Postcode" type="text"
                   autoComplete="postal-code" className="location-input"
+                  readOnly = {true}
               />
             </div>
               </form>

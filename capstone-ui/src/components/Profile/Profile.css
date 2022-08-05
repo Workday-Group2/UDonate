@@ -136,12 +136,14 @@ a.nav-link {
 	width: 20px;
 }
 
+.text-center-name{
+    font-size: 25px;
+}
 .img-circle img {
-	height: 100px;
-	width: 100px;
-	border-radius: 100%;
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
     border: 5px solid #fff;
-    
 }
 
 .button-manage {
