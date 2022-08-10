@@ -5,7 +5,7 @@
 .filter-list {
     appearance: none;
     width: 180px;
-    height: 45px;
+    height: 40px;
     padding: 10px 1px ;
     /* text-align: center; */
     font-size: 15px;
@@ -35,20 +35,10 @@
     gap: 20px;
     /* margin: auto; */
     justify-content: center; 
+   
 }
 
 #category-list {
     margin-top: 10px;
-    appearance: none;
-    width: 180px;
-    height: 40px;
-    padding: 10px 1px;
-    font-size: 15px;
-    line-height: 16px;
-    border: 2px solid rgb(8, 8, 8);
-    border-radius: 3px;
-    overflow-x: hidden;
-    transition: all 0.15s linear 0s;
-    background: url(data:image/svg+xml,<svg  ) no-repeat;
-    background-position: calc(100% - 0.75rem) center !important;
+   
 }

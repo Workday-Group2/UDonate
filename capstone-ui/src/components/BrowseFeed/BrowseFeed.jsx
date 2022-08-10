@@ -76,6 +76,7 @@ export default function BrowseFeed(props) {
               </div>
               <div>
                 <select
+                className="filter-list"
                   name="category-list"
                   id="category-list"
                   onChange={handleCityChange}
