@@ -59,13 +59,14 @@ class User {
                 username,               
                 first_name,
                 last_name,
-                password
-
+                password,
+                profile_pic
                 
             )
-            VALUES ($1, $2, $3, $4, $5)
-            RETURNING id, email, username, first_name, last_name, updated_at, created_at;
-        `, [lowercasedEmail, credentials.userName, credentials.firstName, credentials.lastName, hashedPassword])
+            VALUES ($1, $2, $3, $4, $5, $6)
+            RETURNING id, email, username, first_name, last_name, updated_at, profile_pic, created_at;
+        `, [lowercasedEmail, credentials.userName, credentials.firstName, credentials.lastName,
+             hashedPassword, credentials.profile_pic])
 
         const user = result.rows[0]
 
@@ -88,7 +89,28 @@ class User {
 
         return user
 
-        
+    }
+
+    static async fetchRatingByEmail(email) {
+        if (!email) {  
+            throw new BadRequestError("No email provided")
+        }
+
+        const query =  `
+        SELECT 
+        COUNT(r.rating) AS "totalRating",
+        CAST(AVG(r.rating) AS DECIMAL(10,1)) AS "avgRating"
+        FROM rating AS r
+        WHERE email = $1
+        `
+
+        const result = await db.query(query, [email.toLowerCase()])
+
+
+        const user = result.rows[0]
+
+
+        return user
 
     }
 
@@ -127,7 +149,38 @@ class User {
         if (user) return User.makePublicUser(user)
         throw new BadRequestError("That token is either expires or invalid")
     }
+
+
+    static async editProfile({ profileUpdate, email }) {
+        const requiredFields = ["profile_pic"]
+        requiredFields.forEach((field) => {
+          if (!profileUpdate.hasOwnProperty(field)) {
+            throw new BadRequestError(`Required field - ${field} - missing from request body.`)
+          }
+        })
+    
+        // update profile pic
+        const result = await db.query(
+          `
+          UPDATE users
+          SET profile_pic = $1,
+              updated_at = NOW()
+          WHERE users.email = $2
+          RETURNING id, 
+                    profile_pic, 
+                    email,
+                    first_name,
+                    last_name,
+                    username
+        `,
+          [profileUpdate.profile_pic, email]
+        )
+
+        return result.rows[0]
+        
+      }
     
 }
+
 
 module.exports = User

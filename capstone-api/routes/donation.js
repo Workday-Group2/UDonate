@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const Donation = require("../models/donation")
 const security = require("../middleware/security")
-const Rating = require("../models/rating")
 const Booking = require("../models/booking")
 const permissions = require("../middleware/permissions")
 
@@ -17,7 +16,7 @@ router.post("/", security.requireAuthenticatedUser, async (req, res, next) => {
     }
 })
 
-//router to list a donation by it's ID
+//router to list a donation by it's ID -browse/id
 router.get("/:donationId", security.requireAuthenticatedUser, async(req, res, next) => {
     try{
         const {donationId} = req.params
@@ -28,37 +27,12 @@ router.get("/:donationId", security.requireAuthenticatedUser, async(req, res, ne
     }
 })
 
-//router to list all of the donations
+//router to list all of the donations -your profile
 router.get("/", security.requireAuthenticatedUser, async (req, res, next) => {
     try {
         const {user} = res.locals;
         const donations = await Donation.listDonationForUser({user})
         return res.status(200).json({donations})
-    } catch(err) {
-        next(err)
-    }
-})
-
-
-router.post("/:donationId/rating", security.requireAuthenticatedUser, async (req, res, next) => {
-    try {
-        const {donationId} = req.params
-        const {user} = res.locals
-        const rating = await Rating.createRatingForDonation({ rating: req.body.rating, user, donationId })
-        return res.status(201).json({ rating })
-    } catch(err) {
-        next(err)
-    }
-})
-
-router.post("/:donationId/newBooking", security.requireAuthenticatedUser, permissions.authedUserIsNotDonationOwner, async (req, res, next) => {
-    try {
-        const {donationId} = req.params
-        const {user} = res.locals
-        const newBooking = await Booking.createBooking({ newBooking: req.body.newBooking, user, donationId })
-        const updateDonationInDonation = await Booking.setBookedDonationInDonation( donationId )
-        const updateDonationInBooking = await Booking.setBookedDonationInBooking( donationId )
-        return res.status(201).json({ newBooking, updateDonationInDonation, updateDonationInBooking })
     } catch(err) {
         next(err)
     }

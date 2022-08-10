@@ -1,15 +1,15 @@
 .newPost{
     margin: 0 auto;
-    height: 5 0vw;
-    background: #ffffff;
+    height: 65vw;
+    background-image: linear-gradient(10deg, #6cbee4 10%, #dee1ec 100%);
     border-radius: 10px;
-    overflow: hidden;
     display: flex;
     flex: 1 1 100%;
     align-items: stretch;
     box-shadow: 0 0 20px 6px #9196e6;
-    width: 1100px;
+    width: 70vw;
     padding: 24px 36px;
+    overflow:scroll;
 }
  .qtyMinus, .qtyPlus {
     width: 34px;
@@ -29,10 +29,10 @@
     text-align: center;
 }
 
-.form1 {
+/* .form1 {
     margin-left: 75px;
-    margin-top: 35px;
-}
+   
+} */
 
 .form-input-donation {
     width: 190%;
@@ -43,30 +43,29 @@
     outline: none;
     /* border-bottom: 2px solid #6d737e; */
 }
-.left-donation {
+/* .left-donation {
     margin-right: 25px;
-    margin-top: 30px;
+    margin-top: 60px;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url(https://i.pinimg.com/736x/5d/73/ea/5d73eaa…--tumblr-backgrounds-iphone-phone-wallpapers-iphone-wallaper-tumblr.jpg);
     overflow: hidden;
-}
-.overlay-donation{
-    padding: 30px;
-    background-image: url("https://www.quicklly.com/images/organic-indian-grocery-box.jpg");
-    overflow: hidden;
-    box-sizing: border-box;
-    background-size: cover;
-    margin-left:-30px;
-    margin-top: 30px;
     
+ 
+} */
+/* .newform-text{
+    margin-bottom:60px;
+} */
+.donation-form-pic{
+    height: 30vw;
+    width:30vw;
+    margin-top: 3vw;
 }
 
 .left-donation h1 {
     font-size: 4vmax;
     line-height: 1;
     font-weight: 500;
-    margin-top: 300px;
+    /* margin-top: 300px; */
     margin-bottom: 20px;
     color:rgb(0, 0, 0);
 }
@@ -75,6 +74,7 @@
 .title-name {
     font-size: 20px;
     text-align: left;
+    font-weight: bold;
 }
 
 .form1 .input-field {
@@ -88,7 +88,7 @@
 .post-button{
     cursor: pointer;
     color: #fff;
-    margin-bottom: 20px;
+    align-content: center;
     font-size: 16px;
     padding: 12px 35px;
     border-radius: 50px;
@@ -112,3 +112,41 @@
     outline: none;
     border-bottom: 2px solid #0d360c;
 }
+.new-form-input{
+    width: 25vw;
+    padding: 5px;
+    margin-top: 25px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #000000;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    font-family: inherit;
+}
+
+.description-input{
+    width: 100%;
+    height: 80px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+    border-radius: 8px; 
+    font-family: inherit;
+}
+
+.location-input{
+    width: 10vw;
+    /* padding: px; */
+    border-radius: 8px; 
+    font-size: 16px;
+    margin-top: 5px;
+    border-bottom: 2px solid #000000;
+    margin-bottom: 15px;
+    margin-right:10px;
+   
+} 

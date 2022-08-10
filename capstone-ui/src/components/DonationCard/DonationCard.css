@@ -5,14 +5,59 @@
     max-width: 100%;
     
 }
+#card-id  {
+    border: 5px solid rgb(255 255 255);
+    height: 33vw;
+    width: 100vw;
+    border-style: double;
+    
+}
+
+.cold-md-6{
+    display: flex;
+    overflow:scroll;
+    margin-left:50px;
+    padding:10px;
+}
+
+.pic-donation{
+    padding:10px;
+    
+}
+
+.donation-card-profile{
+    border-radius: 50%;
+    border: 3px solid #fff;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+}
+
+.donation-username-card{
+    float:right;
+    margin-right:170px;
+    color: #000000;
+}
 .DonationCard {
     
-    /* border: 2px solid rgb(8, 8, 8); */
-    margin: 90px 90px 20px 0;
+    margin-top: 3vw;
 }
+
+.product-detail-content {
+    margin-left:60px;
+   
+
+}
+.DonationCard .info-card {
+    text-align: left;
+    margin-top: 40px;
+}
+
 .donation-image {
   height:50%;
   width:50%;
+  border-radius: 20px;
+  margin-top: 55px;
 }
 
 .donation-name {
@@ -22,6 +67,9 @@
     color: #0f0f0f;
     /* font-weight: 600; */
     margin: 10px 0 0;
+}
+.DonationCard .title {
+    padding:20px;
 }
 .donation-title {
     padding: 15px;

@@ -1,0 +1,20 @@
+.rateButton{
+    /* width: 130px;
+    margin-left: 7vw;
+    background: #317bdb;
+    color: white;
+    border-radius: 30px; */
+    background-color: #0d275f;
+    background-image: linear-gradient(10deg, #0a58ff 10%, #8186ce 100%);
+    border: rgb(253, 253, 253);
+    color: rgb(255, 255, 255);
+    padding: 10px 10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 20px;
+    display: inline-block;
+    font-size: 20px;
+    width:120px;
+    align-content: center;
+    margin-left: 8vw;
+}

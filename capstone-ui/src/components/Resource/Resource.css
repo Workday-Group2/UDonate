@@ -1,5 +1,6 @@
 .resource-container {
     margin-top: 10px;
+    
 }
 
 .safety {
@@ -24,7 +25,7 @@
 }
 
 .donators {
-    margin-right: 24vw;
+    /* margin-right: 24vw; */
     height: 400px;
     width: 800px;
     background-color: #97bbe7;
@@ -33,7 +34,11 @@
 }
 
 .safety-wrapper{
-    margin-left: 28vw;
+    margin-left: 23vw;
+}
+
+.resource-title{
+    font-size:30px;
 }
 
 .emergency{

@@ -8,6 +8,8 @@ const donationRoutes = require("./routes/donation")
 const allRoutes = require("./routes/allDonation")
 const bookedRoutes = require("./routes/userBookingHistory")
 const bookingReview = require("./routes/bookingReview")
+const rating = require("./routes/rating")
+const newBooking = require("./routes/newBooking")
 
 const app = express()
 
@@ -24,10 +26,12 @@ app.use("/donation", donationRoutes)
 app.use("/allDonation", allRoutes)
 app.use("/booking", bookedRoutes)
 app.use("/review", bookingReview)
+app.use("/rating", rating)
+app.use("/userBooking", newBooking)
 
-// app.get("/", async(req, res, next) => {
-//     res.status(200).json({ ping: "pong"})
-// })
+app.get("/", async(req, res, next) => {
+    res.status(200).json({ ping: "pong"})
+})
 
 app.use((req, res, next) => {
     return next(new NotFoundError())

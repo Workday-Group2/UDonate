@@ -35,7 +35,7 @@ List the current user stories you will implement.
 2. As a receiver I want to have the option to browse all the donation.
 3. As a donator/receiver I would like a confirmation email for the booked donation. 
 4. As a receiver I want to be able to filter food items by category.
-5. As a user I would like to see a other users profile information.
+5. As a user I would like to see my profile.
 6. As a receiver/donater I would like to see my past activity.
 7. As a donater I would like to upload images of the products I want to donate
 8. As a receiver I want to have a detailed description of the food item posted for donation.

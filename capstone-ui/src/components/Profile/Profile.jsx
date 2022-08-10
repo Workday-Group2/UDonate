@@ -1,16 +1,27 @@
 import * as React from "react"
 import "./Profile.css"
 import { FaUserCircle, FaKey } from "react-icons/fa";
+import { useState } from "react"
 import { Link } from "react-router-dom"
 import { FiSettings } from "react-icons/fi";
-
+import ChangeProfilePic from "../ChangeProfilePic/ChangeProfilePic"
+import { AiOutlineEdit, AiFillStar } from "react-icons/ai"
+import { FcRating } from "react-icons/fc";
 const defaultAvatar =
   "https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png"
   
 const avatarUrl = defaultAvatar
 export default function Profile(props) {
+    const [isProfile, setIsProfile] = useState(false) 
+    const handleProfilePic = () => {
+        setIsProfile(true)
+    }
+
+
     return (
         <div className="Profile">
+            <ChangeProfilePic  isOpen={isProfile} toggleModal={() => setIsProfile(false)} 
+            email={props.user.email}/>
             <div className="container">
                 <h1 className="title">Account Details</h1>
             </div>
@@ -18,10 +29,10 @@ export default function Profile(props) {
                 <div className="profile-tab-nav border-right">
                     <div className="p-4">
                         <div className="img-circle text-center mb-3">
-                            <img src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png"/>
+                            <img src={props.user.profile_pic}/>
                         </div>
-                        
-                        <h4 className="text-center">{props.user.first_name}</h4>
+                        <button className="pic-Button" onClick={handleProfilePic} >Edit Photo <AiOutlineEdit/> </button>
+                        <h4 className="text-center-name">{props.user.first_name} {props.user.last_name}</h4>
                     </div>
                     <div className="acc-title" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <a className="nav-link active" id="account-tab" data-toggle="pill" href="#account" role="tab" aria-controls="account" aria-selected="true">
@@ -32,9 +43,9 @@ export default function Profile(props) {
 							<i className="fa fa-key text-center mr-1"></i> 
 						    Manage <FiSettings/>
 						</a>
-                        <a className="nav-link" id="password-tab" data-toggle="pill" href="#password" role="tab" aria-controls="password" aria-selected="false">
+                        <a className="nav-link" id="ratings-tab" data-toggle="pill" href="#ratings" role="tab" aria-controls="ratings" aria-selected="false">
 							<i className="fa fa-key text-center mr-1"></i> 
-						    Password <FaKey/>
+						    Ratings <AiFillStar/>
 						</a>
                        
                     </div>
@@ -67,6 +78,7 @@ export default function Profile(props) {
                                     <span className="form-control"  >{props.user.email}</span> 
 								</div>
 							</div>
+                
                         </div>
                     </div>
                     
@@ -88,6 +100,20 @@ export default function Profile(props) {
 						</div>
                         
                     </div>
+
+                    <div className="ratings-tab" id="ratings" role="tabpanel" aria-labelledby="ratings-tab">
+                        <h3 className="mb-4">Your ratings</h3>
+                        <div className="row">
+							<div className="col-md-6">
+								<div className="form-group">
+                                <div className="form-control"  >Average Rating: {props.user.avgRating}/5</div> 
+                                <div className="form-control"  >Total Number of Ratings: {props.user.totalRating}</div> 
+								</div>
+                                
+							</div>
+						</div>
+                        
+                    </div>
                     
                     <div className="button-press">
                         <Link to="/browse">
@@ -97,7 +123,7 @@ export default function Profile(props) {
                 </div>
                 
             </div>
-            
+
         </div>
     )
 }

@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.520213ce.css",
+    "main.js": "/static/js/main.b65a4451.js",
+    "static/js/787.fea275d1.chunk.js": "/static/js/787.fea275d1.chunk.js",
+    "static/media/rubik-all-400-normal.woff": "/static/media/rubik-all-400-normal.84344aed90cae7142af2.woff",
+    "static/media/rubik-latin-400-normal.woff2": "/static/media/rubik-latin-400-normal.9e93371ff3a7cf393143.woff2",
+    "static/media/rubik-latin-ext-400-normal.woff2": "/static/media/rubik-latin-ext-400-normal.885aa459f539afd12ff3.woff2",
+    "static/media/rubik-cyrillic-400-normal.woff2": "/static/media/rubik-cyrillic-400-normal.4079b7a6be7ad6e3e4e5.woff2",
+    "static/media/rubik-cyrillic-ext-400-normal.woff2": "/static/media/rubik-cyrillic-ext-400-normal.278b98a647b399d24ae5.woff2",
+    "static/media/rubik-hebrew-400-normal.woff2": "/static/media/rubik-hebrew-400-normal.ed87eb2718a159d8d12f.woff2",
+    "index.html": "/index.html",
+    "main.520213ce.css.map": "/static/css/main.520213ce.css.map",
+    "main.b65a4451.js.map": "/static/js/main.b65a4451.js.map",
+    "787.fea275d1.chunk.js.map": "/static/js/787.fea275d1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.520213ce.css",
+    "static/js/main.b65a4451.js"
+  ]
+}

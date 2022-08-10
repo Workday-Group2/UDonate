@@ -76,7 +76,7 @@ class ApiClient {
     }
 
     async newBooking(donationId) {
-      return await this.request({ endpoint: `donation/${donationId}/newBooking`, method: `POST`})
+      return await this.request({ endpoint: `userBooking/${donationId}/newBooking`, method: `POST`})
     }
 
     // async listBookingForUser() {
@@ -85,6 +85,21 @@ class ApiClient {
     async listBookingForUser() {
       return await this.request({ endpoint: `booking/userHistory`, method: `GET` })
     }
+
+    // comment
+    async createCommment(donationId) {
+      return await this.request({ endpoint: `review/${donationId}/bookingReview`, method: `POST` })
+    }
+
+    // rating
+    async createRating(donationId, rating) {
+      return await this.request({ endpoint: `rating/${donationId}`, method: `POST`, data: rating })
+    }
+
+    async updateProfile(email, profileUpdate) {
+      return await this.request({ endpoint: `auth/profile`, method: `PATCH`, data: profileUpdate })
+    }
+
   }
   
-  export default new ApiClient("http://localhost:3001")
+  export default new ApiClient(process.env.REACT_APP_REMOTE_HOST_URL || "http://localhost:3001")

@@ -12,8 +12,8 @@ export default function BrowseFeed(props) {
     const [selectedCategory, setSelectedCategory] = useState();
     const [selectedCity, setSelectedCity] = useState();
     async function getDonation(){
-      const {data, err} = await apiClient.listAllDonation()
-      if(err) setError(err)
+      const {data, error} = await apiClient.listAllDonation()
+      if(error) setError(error)
       if(data){
         setDonation(data.donations)
         console.log(999,data)
@@ -41,8 +41,11 @@ export default function BrowseFeed(props) {
     function filterCity(){
       
 
-    let filteredList = useMemo(getFilteredList,[selectedCategory,donation]);
+    
     }
+
+    let filteredList = useMemo(getFilteredList,[selectedCategory,donation]);
+    
     function getFilteredList() {
       if(!selectedCategory || !selectCity) {
         return donation;
@@ -62,15 +65,16 @@ export default function BrowseFeed(props) {
         <div className="browse-feed">
            <h1>Browse Donations</h1>
            <div className="filter-container">
-              <div>Filter by Category:</div>
+              {/* <div className="filter-title">Filter by Category:</div> */}
               <div>
                 <select
+                  className="filter-list"
                   name="category-list"
                   id="category-list"
                   onChange={handleCategoryChange}
                   >
-                    <option value="">All</option>
-                    <option value="Fruits and Vegetables">Fruits and Vegetables</option>
+                    <option value="" >Filter by category </option>
+                    <option value="Fruits and Vegetables">Fruits and Vegetables </option>
                     <option value="Dairy and Eggs">Dairy and Eggs</option>
                     <option value="Protein">Protein</option>
                     <option value="Pantry Essentials">Pantry Essentials</option>
@@ -95,12 +99,11 @@ export default function BrowseFeed(props) {
            </div>
             <div className="donation-items">
                 {filtedList.map((item) => {return(
-                
-                    <Link to={`id/`+item.id}>
-                         
-                        <DonationDetailPage key={item.id} quantity={item.quantity} name={item.name} 
+                    <Link to={`id/`+item.id}>    
+                        <DonationDetailPage key={item.item} quantity={item.quantity} name={item.name} 
                         imageUrl={item.imageUrl} donation_desc={item.donation_desc} location={item.location}
-                        category={item.category} donaterUsername={item.donaterUsername}
+                        category={item.category} donaterUsername={item.donaterUsername} 
+                        expiration_date={item.expiration_date} donater_profilePic={item.donater_profilePic}
                          />
                     </Link>
                 )})}

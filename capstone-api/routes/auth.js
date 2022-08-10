@@ -29,7 +29,10 @@ router.get("/me", security.requireAuthenticatedUser, async (req, res, next) => {
     try {
         const {email} = res.locals.user
         const user = await User.fetchUserByEmail(email)
-        const publicUser = {id: user.id, email: user.email, first_name: user.first_name, last_name: user.last_name, username:user.username}
+        const emailRating = await User.fetchRatingByEmail(email)
+        const publicUser = {id: user.id, email: user.email, first_name: user.first_name, 
+            last_name: user.last_name, username:user.username, totalRating: emailRating.totalRating,
+            avgRating: emailRating.avgRating, profile_pic: user.profile_pic}
         return res.status(200).json({user: publicUser})
     }catch(error){
         next(error)
@@ -66,8 +69,18 @@ router.post("/password-reset", async (req,res,next) =>{
         next(error)
     }
 }
-
 )
+
+router.patch("/profile", async (req, res, next) => {
+    try {
+      // update profile picture
+      const {email} = res.locals.user
+      const updateProfile = await User.editProfile({ profileUpdate: req.body, email })
+      return res.status(200).json({ updateProfile })
+    } catch (err) {
+      next(err)
+    }
+  })
 
 
 module.exports = router

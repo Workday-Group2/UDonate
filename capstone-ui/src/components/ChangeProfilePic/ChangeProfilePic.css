@@ -1,0 +1,19 @@
+.completed{
+    color: rgb(53, 216, 107);
+}
+.pic-button{
+    background-image: linear-gradient(10deg, #04b0ff 10%, #8291e5 100%);
+    border:rgb(253, 253, 253);
+    color: rgb(248, 248, 248);
+    padding: 10px 10px;
+    text-align: center;
+  
+    cursor: pointer;
+    border-radius: 20px;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.user-button{
+    padding:10px;
+}
