@@ -13,9 +13,9 @@ class Donation {
             }) 
         const result = await db.query(
             `
-            INSERT INTO donation (user_id, user_email, name, category, quantity, image_url, expiration_date, donation_desc, location)
+            INSERT INTO donation (user_id, user_email, name, category, quantity, image_url, expiration_date, donation_desc, location,city,state)
             VALUES ((SELECT id FROM users WHERE email = $1), (SELECT email FROM users WHERE email = $2), $3, $4, 
-            $5, $6, $7, $8, $9)
+            $5, $6, $7, $8, $9,$10,$11)
             RETURNING id,
                     user_email,
                     user_id AS "userId",
@@ -26,10 +26,12 @@ class Donation {
                     expiration_date AS "expirationDate",
                     created_at AS "createdAt",
                     donation_desc AS "donation description",
-                    location
+                    location,
+                    city,
+                    state
         
             `, 
-            [user.email, user.email, post.name, post.category, post.quantity, post.image_url, post.expiration_date, post.donation_desc, post.location]
+            [user.email, user.email, post.name, post.category, post.quantity, post.image_url, post.expiration_date, post.donation_desc, post.location, post.city, post.state]
         )
         return result.rows[0]
     }
@@ -52,6 +54,8 @@ class Donation {
             d.location,
             d.bookee_user_id,
             u.email,
+            d.city,
+            d.state,
             u.profile_pic AS "donater_profilePic",
             r.donater_id,
             d.expiration_date,
@@ -116,6 +120,8 @@ class Donation {
                    d.created_at AS "createdAt",
                    d.donation_desc,
                    d.location,
+                   d.city,
+                   d.state,
                    d.bookee_user_id,
                    d.expiration_date,
                    CAST(AVG(r.rating) AS DECIMAL(10,1)) AS "avgRating",

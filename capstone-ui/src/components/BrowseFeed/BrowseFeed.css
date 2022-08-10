@@ -5,7 +5,7 @@
 .filter-list {
     appearance: none;
     width: 180px;
-    height: 45px;
+    height: 40px;
     padding: 10px 1px ;
     /* text-align: center; */
     font-size: 15px;
@@ -35,4 +35,10 @@
     gap: 20px;
     /* margin: auto; */
     justify-content: center; 
+   
+}
+
+#category-list {
+    margin-top: 10px;
+   
 }

@@ -39,7 +39,7 @@ export default function BrowseDetail(props) {
             category={donation.category} created_at={donation.created_at} email={donation.email} 
             username={donation.username} totalRatings={donation.totalRatings} 
             avgRating={donation.avgRating} expiration_date={donation.expiration_date} 
-            donater_profilePic={donation.donater_profilePic}/>}
+            donater_profilePic={donation.donater_profilePic} city={donation.city} state={donation.state}/>}
 
               <button className="bookingButton" onClick={handleBookingStartClick} >Book</button>
            

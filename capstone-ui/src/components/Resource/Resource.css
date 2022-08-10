@@ -12,7 +12,7 @@
 }
 
 .donation-safety {
-    height: 200px;
+    height: 230px;
     width: 800px;
     background-color: #97bbe7;
     border-radius: 20px;
@@ -47,4 +47,18 @@
 
 .donator-image2{
     width: 100px;
+}
+
+.donation-youPost{
+    color: #3CA532;
+    font-weight: bold;
+    font-size: 40px;
+}
+.packaged {
+    color: rgba(0, 0, 0, 0.98);
+    font-weight: 200;
+    font-size: 25px;
+}
+.donations-youcan{
+    margin-left: 200px;
 }

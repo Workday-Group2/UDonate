@@ -4,11 +4,13 @@ import { useState, useEffect,  useMemo } from "react"
 import { Link } from "react-router-dom"
 import apiClient from "../../services/apiClient"
 import DonationDetailPage from "../DonationDetailPage/DonationDetailPage"
+import { getFormAutofillValues } from "@mapbox/search-js-web"
 
 export default function BrowseFeed(props) {
     const [donation, setDonation] = useState([])
     const [error, setError] = useState() 
     const [selectedCategory, setSelectedCategory] = useState();
+    const [selectedCity, setSelectedCity] = useState();
     async function getDonation(){
       const {data, error} = await apiClient.listAllDonation()
       if(error) setError(error)
@@ -23,16 +25,31 @@ export default function BrowseFeed(props) {
     function handleCategoryChange(event) {
       setSelectedCategory(event.target.value);
     }
-
-    function getFilteredList() {
-      if(!selectedCategory) {
-        return donation;
-      }
-      return donation.filter((item) => item.category === selectedCategory);
-      
+    function handleCityChange(event){
+      setSelectedCity(event.target.value)
     }
 
-    let filtedList = useMemo(getFilteredList, [selectedCategory, donation]);
+    function getFilteredList() {
+      if(!selectedCategory && !selectedCity) {
+        return donation;
+      }
+      if(selectedCategory && !selectedCity) {
+        return donation.filter((item) => item.category === selectedCategory);
+      }
+      if(!selectedCategory && selectedCity) {
+        return donation.filter((item) => item.city.toLowerCase() === selectedCity.toLowerCase());
+      }
+      if(selectedCategory && selectedCity) {
+        return donation.filter((item) => item.city.toLowerCase() === selectedCity.toLowerCase() && item.category === selectedCategory);
+      }      
+    }
+
+    let filtedList = useMemo(getFilteredList,[selectedCategory,donation, selectedCity]);
+
+    
+
+    
+
 
     return (
         <div className="browse-feed">
@@ -55,6 +72,19 @@ export default function BrowseFeed(props) {
                     <option value="Desserts">Desserts</option>
                     <option value="Snacks">Snacks</option>
                     <option value="Beverages">Beverages</option>
+                </select>
+              </div>
+              <div>
+                <select
+                className="filter-list"
+                  name="category-list"
+                  id="category-list"
+                  onChange={handleCityChange}
+                  >
+                    <option value="">Select City</option>
+                    {donation.map((item) => {return(<option value={item.city}>{item.city}</option>)})}
+                    
+                    
                 </select>
               </div>
            </div>
