@@ -26,35 +26,28 @@ export default function BrowseFeed(props) {
     function handleCategoryChange(event) {
       setSelectedCategory(event.target.value);
     }
-    function selectCity(event){
+    function handleCityChange(event){
       setSelectedCity(event.target.value)
-      console.log(956,event.target.value)
+      // console.log(956,event.target.value)
     }
 
-    function getFilteredCity() {
-      if(!selectedCity) {
-        return donation;
-      }
-      return donation.filter((item) => item.city === selectedCity);
-      
-    }
-    function filterCity(){
-      
-
-    
-    }
-
-    let filteredList = useMemo(getFilteredList,[selectedCategory,donation]);
-    
     function getFilteredList() {
-      if(!selectedCategory || !selectCity) {
+      console.log(selectedCategory, selectedCity);
+      if(!selectedCategory && !selectedCity) {
         return donation;
       }
-      return donation.filter((item) => item.category === selectedCategory);
-      
+      if(selectedCategory && !selectedCity) {
+        return donation.filter((item) => item.category === selectedCategory);
+      }
+      if(!selectedCategory && selectedCity) {
+        return donation.filter((item) => item.city.toLowerCase() === selectedCity.toLowerCase());
+      }
+      if(selectedCategory && selectedCity) {
+        return donation.filter((item) => item.city.toLowerCase() === selectedCity.toLowerCase() && item.category === selectedCategory);
+      }      
     }
 
-    let filtedList = useMemo(getFilteredList,[selectedCategory,donation]);
+    let filtedList = useMemo(getFilteredList,[selectedCategory,donation, selectedCity]);
 
     
 
@@ -88,7 +81,7 @@ export default function BrowseFeed(props) {
                 <select
                   name="category-list"
                   id="category-list"
-                  onChange={selectCity}
+                  onChange={handleCityChange}
                   >
                     <option value="">Select City</option>
                     {donation.map((item) => {return(<option value={item.city}>{item.city}</option>)})}

@@ -198,12 +198,16 @@ export default function NewPostForm({user, addPost}) {
               <input
                   name="city" placeholder="City" type="text"
                   autoComplete="address-level2" className="location-input"
+                  value={form.city}
+                  onChange={handleOnInputChange}
                   readOnly = {true}
               />
               <input
                   name="state" placeholder="State" type="text"
                   autoComplete="address-level1" className="location-input"
                   readOnly = {true}
+                  onChange={handleOnInputChange}
+                  value={form.state}
               />
               <input
                   name="country" placeholder="Country" type="text"
