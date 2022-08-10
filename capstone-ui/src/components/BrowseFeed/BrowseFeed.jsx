@@ -16,7 +16,6 @@ export default function BrowseFeed(props) {
       if(error) setError(error)
       if(data){
         setDonation(data.donations)
-        console.log(999,data)
       }
       }
       useEffect(() => {
@@ -28,11 +27,9 @@ export default function BrowseFeed(props) {
     }
     function handleCityChange(event){
       setSelectedCity(event.target.value)
-      // console.log(956,event.target.value)
     }
 
     function getFilteredList() {
-      console.log(selectedCategory, selectedCity);
       if(!selectedCategory && !selectedCity) {
         return donation;
       }

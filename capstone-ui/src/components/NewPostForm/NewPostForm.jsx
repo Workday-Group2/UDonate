@@ -42,9 +42,7 @@ export default function NewPostForm({user, addPost}) {
           setError(error)
         }
         if (data) {
-          console.log(565,data)
         addPost(data.user)
-        console.log(555,form)
         setForm({
            name: "", 
            category: "",
