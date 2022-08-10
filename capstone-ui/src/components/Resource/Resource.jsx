@@ -34,6 +34,21 @@ export default function Resource() {
         <p>The food must meet all quality and labeling standards imposed by federal, state and local laws and regulations.</p>
         <p>For food safety reasons we cannot accept cooked food/meals (food that has been heated/reheated), food that has previously been served to the public (hot bar items, food from a serving/buffet line, etc.) and prepared food that is not in individually sealed packaging. </p>
         </div>
+       
+        </div>
+        <div className="donators">
+        
+        <div className="donation-guidelines">
+          <h1 className="donation-youPost">Donations You Can Post</h1>
+          <div className="donations-youcan">
+            <li className="packaged">Packaged Perishable Goods</li>
+            <li className="packaged">Frozen Food</li>
+            <li className="packaged">Baked Goods</li>
+            <li className="packaged">Dry Goods</li>
+            
+          </div>
+          
+        </div>
         </div>
 
       
