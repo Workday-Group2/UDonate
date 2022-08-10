@@ -54,6 +54,8 @@ class Donation {
             d.location,
             d.bookee_user_id,
             u.email,
+            d.city,
+            d.state,
             u.profile_pic AS "donater_profilePic",
             r.donater_id,
             d.expiration_date,
