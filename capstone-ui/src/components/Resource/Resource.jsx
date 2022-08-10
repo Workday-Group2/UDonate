@@ -36,20 +36,7 @@ export default function Resource() {
         </div>
        
         </div>
-        <div className="donators">
-        
-        <div className="donation-guidelines">
-          <h1 className="donation-youPost">Donations You Can Post</h1>
-          <div className="donations-youcan">
-            <li className="packaged">Packaged Perishable Goods</li>
-            <li className="packaged">Frozen Food</li>
-            <li className="packaged">Baked Goods</li>
-            <li className="packaged">Dry Goods</li>
-            
-          </div>
-          
-        </div>
-        </div>
+       
 
       
         </div>
