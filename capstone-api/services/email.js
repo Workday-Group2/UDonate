@@ -52,10 +52,10 @@ class EmailService{
             <br />
             <p>You are receiving this email because you made a request to reset the password for your account.</p>
             <br />
-            <p>Click on the link below to finish the password reset process</p>
+            <p>Click on the link below to finish the password reset process. This link will expire in 24hrs.</p>
             <a href="${resetPasswordUrl}">${resetPasswordUrl}</a>
             <br />
-            <p>If you did not make this request contact support immediatly</p>
+            <p>If you did not make this request contact support immediatly!</p>
             </body>
             </html>
             `,

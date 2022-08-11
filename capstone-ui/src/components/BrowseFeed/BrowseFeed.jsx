@@ -11,6 +11,7 @@ export default function BrowseFeed(props) {
     const [error, setError] = useState() 
     const [selectedCategory, setSelectedCategory] = useState();
     const [selectedCity, setSelectedCity] = useState();
+    const [nothing,setNothing ] = useState(false)
     async function getDonation(){
       const {data, error} = await apiClient.listAllDonation()
       if(error) setError(error)
@@ -41,11 +42,11 @@ export default function BrowseFeed(props) {
       }
       if(selectedCategory && selectedCity) {
         return donation.filter((item) => item.city.toLowerCase() === selectedCity.toLowerCase() && item.category === selectedCategory);
-      }      
+      }  
+      
     }
 
     let filtedList = useMemo(getFilteredList,[selectedCategory,donation, selectedCity]);
-
     
 
     
@@ -55,7 +56,6 @@ export default function BrowseFeed(props) {
         <div className="browse-feed">
            <h1>Browse Donations</h1>
            <div className="filter-container">
-              {/* <div className="filter-title">Filter by Category:</div> */}
               <div>
                 <select
                   className="filter-list"
@@ -98,6 +98,11 @@ export default function BrowseFeed(props) {
                          />
                     </Link>
                 )})}
+                {!filtedList?.length ? (
+                  <div className="no-donation-card">
+                    <p>No donation available</p>
+                  </div>
+                ) : null}
             </div>
         </div>
     )

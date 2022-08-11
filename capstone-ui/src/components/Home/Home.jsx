@@ -3,6 +3,7 @@ import "./Home.css";
 import Footer from "../Footer/Footer";
 import Contact from "../Contact/Contact";
 import About from "../About/About";
+import heartbox from "../../media/heart-box.png"
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
         <div className="image">
           <img
             className="hero-img"
-            src="https://i.ibb.co/cxbQPyJ/imageedit-2-6335780812.png"
+            src={heartbox}
           />
         </div>
         <div className="about-tab" id="about" role="tabpanel" aria-labelledby="about-tab">

@@ -1,6 +1,7 @@
 import "./Register.css"
 import { useRegistrationForm } from "../../hooks/useRegistrationForm"
 import { Link } from "react-router-dom"
+import image from "../../media/signup.jpeg"
 
 export default function Register() {
   const {form, errors, handleOnInputChange, handleOnSubmit} = useRegistrationForm()
@@ -10,9 +11,9 @@ export default function Register() {
         <div className="register">
             <div className="left">
                 <div className="overlay">
-                    <h1>Create an account.</h1>
+                    <h1>Create account.</h1>
                     <div className="illustration-wrapper">
-                        <img src="https://i.ibb.co/d2N0ZSC/imageedit-4-7027504588.png" alt="register"/>
+                        <img className="register-box" src={image} alt="register"/>
                     </div>
                 </div>
             </div>

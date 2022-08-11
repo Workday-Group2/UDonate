@@ -41,11 +41,12 @@ export default function Recover(){
                     <span className="message">{message}</span>
                 ) : (
                     <div className="form">
-                        <p>Enter the email address associated with your account</p>
+                        <p>Enter the email address associated with your account to reset your password</p>
                         <br/>
-                        <div className="form-input">
+                        <div className="form-input-password">
             <label htmlFor="email">Email: </label>
             <input
+                className="email-input"
                 type="email"
                 name="email"
                 placeholder="Enter a valid email"

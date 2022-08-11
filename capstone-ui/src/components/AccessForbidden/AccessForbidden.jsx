@@ -5,7 +5,7 @@ import Login from "../Login/Login"
 export default function AccessForbidden() {
     return (
         <div className="access-forbidden">
-            <h1>Please Log In</h1>
+            <h1 className="login-error">Please Log In</h1>
             <Login/>
         </div>
     )

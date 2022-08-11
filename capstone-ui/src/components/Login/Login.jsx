@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Link } from "react-router-dom"
 import { useLoginForm } from "../../hooks/useLoginForm"
+import donate from "../../media/login.webp"
 import "./Login.css"
 
 
@@ -13,14 +14,12 @@ export default function Login() {
                    <div className="overlay">
                     <h1>Welcome Back.</h1>
                     <div className="illustration-wrapper">
-                        <img src="https://i.ibb.co/4ppSWYF/imageedit-1-7522402154.png" alt="Login"/>
+                        <img className="login-image" src={donate} alt="Login"/>
                     </div>
                    </div>
                     
                </div>
-            {/* <div className="illustration-wrapper">
-                <img src="https://mixkit.imgix.net/art/preview/mixkit-left-handed-man-sitting-at-a-table-writing-in-a-notebook-27-original-large.png?q=80&auto=format%2Ccompress&h=700" alt="Login"/>
-            </div> */}
+            
            
             <div className="loginForm" >
             <p className="form-title">Login</p>

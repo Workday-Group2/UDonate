@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import { FaUserAlt,FaUserCircle,FaRegUser } from "react-icons/fa";
 import { CgProfile} from "react-icons/cg";
 import "./NavLink.css"
+import hand from "../../media/u-donate.png"
 
 export default function NavLink(props) {
 
@@ -15,13 +16,13 @@ export default function NavLink(props) {
                 <Link to="/" label="Home" className="btn home">Home</Link>
                 <a href="/#about" label="About" className="btn about">About</a>
                 <a href="/#contact" label="Contact" className="btn contact">Contact</a>
-                <Link to="/resource" label="Resource" className="btn resource">Resource</Link>
+                <Link to="/resources" label="Resource" className="btn resource">Resources</Link>
                 <Link to="/browse" label="Browse" className="btn browse">Browse</Link>
                 <Link to="/upload" label="Upload" className="btn upload">Upload</Link>
                 <Link to="/" label="login" className={props.user.email ? "btn" : "ghost"} onClick={props.handleLogout}>Logout</Link>
                 <Link to="/login" label="Login" className={props.user.email ? "ghost" : "btn"}>Login</Link>
                 <Link to="/register" label="Sign Up" className={props.user.email ? "ghost" : "btn primary"}>Sign Up</Link>
-                <Link className = "btn logo"  to="/"> <img alt="website" src="https://i.ibb.co/GdwHzNZ/imageedit-4-3163864271.png"/></Link> 
+                <Link className = "btn logo"  to="/"> <img className="navlink-image" alt="website" src={hand}/></Link> 
             
          </div> 
     )

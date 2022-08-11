@@ -41,8 +41,9 @@
     font-size: 14px;
     color: #080808;
 }
-.form-input {
-    width: 10vw;
+.form-input-password {
+    display: flex;
+    flex-direction: column;
     padding: 10px;
     margin-top: 25px;
     font-size: 16px;
@@ -64,4 +65,9 @@
     outline: 0;
     box-shadow: 0px 4px 20px 0px #2066a8a6;
     background-image: linear-gradient(135deg, #1c54ce 10%, #4f36dd 100%);
+}
+.email-input {
+    width: 70%;
+    align-self: center;
+    margin-top: 8px;
 }

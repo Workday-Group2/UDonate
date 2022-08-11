@@ -66,7 +66,7 @@ function App() {
         <Navbar user={user} setUser={setUser} handleLogout={handleLogout}/>
           <Routes>
             <Route path="/" element={<Home/>}/>
-            <Route path="resource" element={<Resource />}/>
+            <Route path="resources" element={<Resource />}/>
             <Route path="/login" element={<Login user={user} setUser={setUser} />}/>
             <Route path="/register" element={<Register  user={user} setUser={setUser} />}/>
             <Route path="/recover" element={<Recover  user={user} setUser={setUser} />}/>

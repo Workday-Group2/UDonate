@@ -71,3 +71,8 @@
     box-shadow: 0px 4px 20px 0px #2066a8a6;
     background-image: linear-gradient(135deg, #1c54ce 10%, #4f36dd 100%);
 }
+
+.register-box {
+    align-self: center;
+    margin-left: -35px;
+}

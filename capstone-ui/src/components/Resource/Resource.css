@@ -9,6 +9,9 @@
     background-color: #97bbe7;
     border-radius: 20px;
     line-height: 1.7;
+    align-self: center;
+    padding: 10px;
+    
 }
 
 .donation-safety {
@@ -17,6 +20,9 @@
     background-color: #97bbe7;
     border-radius: 20px;
     line-height: 1.7;
+    align-self: center;
+    margin: 20px 0;
+    padding: 10px;
 }
 
 .donation-guidelines {
@@ -31,11 +37,15 @@
     background-color: #97bbe7;
     border-radius: 20px;
     line-height: 1.7;
+    align-self: center;
+    margin: 20px 0;
+    padding: 10px;
+    
 }
 
-.safety-wrapper{
+/* .safety-wrapper{
     margin-left: 23vw;
-}
+} */
 
 .resource-title{
     font-size:30px;
@@ -61,4 +71,9 @@
 }
 .donations-youcan{
     margin-left: 200px;
+}
+
+.safety-wrapper {
+    display: flex;
+    flex-direction: column
 }
