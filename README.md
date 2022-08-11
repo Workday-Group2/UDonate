@@ -13,8 +13,8 @@ Mentors Names: **Cris Lopez, Marisa Doig, Darryl Nguyen**
 
 Project Code Repository Links
 
-* [Frontend Repo Link]()
-* [Backend Repo Link]()
+* [Frontend Repo Link](https://github.com/Workday-Group2/UDonate/tree/main/capstone-ui)
+* [Backend Repo Link](https://github.com/Workday-Group2/UDonate/tree/main/capstone-api)
 
 ## Project Overview
 
