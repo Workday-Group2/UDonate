@@ -18,7 +18,6 @@ export default function BrowseDetail(props) {
         const {data, err} = await apiClient.fetchDonationById(donationId)
         if(err) setError(err)
         if(data){
-          console.log('data: ', data);
           setDonation(data.donation)
         }
 
