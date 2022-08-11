@@ -25,3 +25,6 @@ Deployment Website: **https://u_donate.surge.sh/**
 ### Open-source libraries used
 
 - Add any links to open-source libraries used in your project.
+- https://mui.com/material-ui/api/rating/
+- https://docs.mapbox.com/mapbox-search-js/api/web/autofill
+- https://www.twilio.com/sendgrid/email-api
